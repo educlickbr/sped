@@ -1,0 +1,38 @@
+[
+ {
+  "tipo_relatorio": "MATRIZ_PROCESSOS",
+  "user_expandido_id": "30be632a-2741-4ddf-89dc-226dfb73a633",
+  "aluno": "Beatriz",
+  "turma": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "area": "regulares",
+  "pergunta_obrigatoria": "Por que voc\u00ea deseja participar deste curso?",
+  "status_requisito": "RESPONDIDO (Vinculado)"
+ },
+ {
+  "tipo_relatorio": "MATRIZ_PROCESSOS",
+  "user_expandido_id": "30be632a-2741-4ddf-89dc-226dfb73a633",
+  "aluno": "Beatriz",
+  "turma": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "area": "regulares",
+  "pergunta_obrigatoria": "Por que voc\u00ea deseja participar deste curso?",
+  "status_requisito": "RESPONDIDO (Vinculado)"
+ },
+ {
+  "tipo_relatorio": "AUDITORIA_RESPOSTAS",
+  "user_expandido_id": "30be632a-2741-4ddf-89dc-226dfb73a633",
+  "aluno": "Beatriz",
+  "turma": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "area": "regulares",
+  "pergunta_obrigatoria": "Por que voc\u00ea deseja participar deste curso?",
+  "status_requisito": "VALIDO"
+ },
+ {
+  "tipo_relatorio": "AUDITORIA_RESPOSTAS",
+  "user_expandido_id": "30be632a-2741-4ddf-89dc-226dfb73a633",
+  "aluno": "Beatriz",
+  "turma": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "area": "regulares",
+  "pergunta_obrigatoria": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "status_requisito": "INVALIDO (Turma nao exige)"
+ }
+]

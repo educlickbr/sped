@@ -1,0 +1,86 @@
+[
+ {
+  "pergunta_id": "57ea34cf-27ed-460d-b27c-244f49d36d62",
+  "label": "Idade",
+  "escopo_configurado": "area",
+  "total_respostas_com_turma": "100",
+  "total_usuarios_afetados": "20"
+ },
+ {
+  "pergunta_id": "8925bdc2-538a-408d-bd34-fb64b2638621",
+  "label": "Data de Nascimento",
+  "escopo_configurado": "area",
+  "total_respostas_com_turma": "100",
+  "total_usuarios_afetados": "20"
+ },
+ {
+  "pergunta_id": "78e5931f-9f8f-4f9b-bbb0-36041c404c4e",
+  "label": "M\u00eddias Sociais",
+  "escopo_configurado": "area",
+  "total_respostas_com_turma": "90",
+  "total_usuarios_afetados": "18"
+ },
+ {
+  "pergunta_id": "93642773-5a9c-4ada-8356-21e7e7bb9eda",
+  "label": "Telefone Celular",
+  "escopo_configurado": "area",
+  "total_respostas_com_turma": "85",
+  "total_usuarios_afetados": "17"
+ },
+ {
+  "pergunta_id": "c95e476a-c4dc-4520-badd-d7392b0aeab7",
+  "label": "Sua Foto",
+  "escopo_configurado": "area",
+  "total_respostas_com_turma": "65",
+  "total_usuarios_afetados": "13"
+ },
+ {
+  "pergunta_id": "2f53dcc3-4429-457c-bcb1-6487bc3ab5af",
+  "label": "Telefone Fixo",
+  "escopo_configurado": "area",
+  "total_respostas_com_turma": "45",
+  "total_usuarios_afetados": "9"
+ },
+ {
+  "pergunta_id": "e31a53ea-a7d3-49d2-8241-282ac8be7913",
+  "label": "Mini Bio: Fale um pouco da sua trajet\u00f3ria",
+  "escopo_configurado": "area",
+  "total_respostas_com_turma": "32",
+  "total_usuarios_afetados": "8"
+ },
+ {
+  "pergunta_id": "95e3d2c9-7507-4c53-84da-4c71bdd8726f",
+  "label": "Comprovante de Endere\u00e7o",
+  "escopo_configurado": "area",
+  "total_respostas_com_turma": "16",
+  "total_usuarios_afetados": "4"
+ },
+ {
+  "pergunta_id": "6a2dc4d0-5994-42fb-b0bf-66f79a227c98",
+  "label": "Complemento",
+  "escopo_configurado": "area",
+  "total_respostas_com_turma": "5",
+  "total_usuarios_afetados": "1"
+ },
+ {
+  "pergunta_id": "142a7c41-fe7c-4dc9-9d5c-d7f407403dc9",
+  "label": "Naturalidade (cidade onde nasceu)",
+  "escopo_configurado": "area",
+  "total_respostas_com_turma": "5",
+  "total_usuarios_afetados": "1"
+ },
+ {
+  "pergunta_id": "5902e39e-26bb-40a3-b117-15799c0bb231",
+  "label": "Curr\u00edculo Resumido",
+  "escopo_configurado": "area",
+  "total_respostas_com_turma": "4",
+  "total_usuarios_afetados": "1"
+ },
+ {
+  "pergunta_id": "6e7ba1c1-1822-43e9-a93d-06325bce7a0b",
+  "label": "C\u00f3pia do comprovante de matr\u00edcula do ensino regular (para menores de 18 anos).",
+  "escopo_configurado": "area",
+  "total_respostas_com_turma": "3",
+  "total_usuarios_afetados": "1"
+ }
+]

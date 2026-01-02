@@ -35,6 +35,8 @@ supabase link --project-ref <seu-project-ref>
 
 *   Ele vai pedir a senha do banco de dados (Database Password) do projeto na nuvem.
 *   **Dica:** Se você esqueceu, pode redefinir em Project Settings > Database > Reset Database Password.
+* se ainda não fez o git hub faça 
+* supabase migration repair --status applied codigo da migration cvriada automaticamenteY
 
 ## 3. Primeiro Pull (Baixar o Banco)
 

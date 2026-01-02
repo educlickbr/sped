@@ -1,0 +1,136 @@
+// Variáveis de ambiente
+const SUPABASE_URL = Deno.env.get("SUPABASE_URL")!;
+const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!; 
+const POWER_AUTOMATE_URL = Deno.env.get("power_automate_envio_email")!; 
+
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+import { corsHeaders } from "../_shared/cors.ts";
+
+const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY, {
+    auth: { persistSession: false },
+});
+
+interface EmailQueueItem {
+    id: string;
+    email_destino: string;
+    mensagem: string;
+    [key: string]: unknown;
+}
+
+// Edge Function de Controle
+Deno.serve(async (req) => {
+    if (req.method === "OPTIONS") {
+        return new Response("ok", { headers: corsHeaders });
+    }
+
+    let threadId: string | null = null;
+    let newStatus: string | null = null;
+
+    try {
+        const payload = await req.json();
+
+        // 1. FILTRAR EVENTO (WEBHOOK APENAS)
+        if (payload?.table === 'email_threads' && payload?.type === 'UPDATE') {
+            threadId = payload.record.id;
+            newStatus = payload.record.status_thread;
+        } else {
+            return new Response(JSON.stringify({ success: true, message: "Evento ignorado (não é UPDATE em email_threads)." }), { status: 200 });
+        }
+        
+        // 2. FILTRO DE STATUS STRICTO: APENAS 'enviando'
+        if (newStatus !== 'enviando') {
+            console.log(`Thread ${threadId}: Status '${newStatus}' ignorado.`);
+            return new Response(JSON.stringify({ success: true, message: `Status ${newStatus} ignorado.` }), { status: 200 });
+        }
+        
+        console.log(`Thread ${threadId}: Status 'enviando' detectado. Processando lote...`);
+
+        // 3. BUSCAR ITENS JÁ TRAVADOS (Status 'enviando')
+        // *Não realizamos lock aqui, apenas lemos o que a função de banco já travou.*
+        const { data: queueItems, error: fetchError } = await supabase
+            .from('email_queue')
+            .select('id, email_destino, mensagem')
+            .eq('id_thread', threadId)
+            .eq('status_fila', 'enviando');
+
+        if (fetchError) throw new Error("Erro ao buscar itens travados: " + fetchError.message);
+        
+        const batchData = (queueItems || []) as EmailQueueItem[];
+        const batchSize = batchData.length;
+        
+        if (batchSize === 0) {
+            console.log(`Thread ${threadId}: Nenhum item com status 'enviando' encontrado (pode ter sido processado?).`);
+            // Se caiu aqui, algo estranho aconteceu (lock sem itens?), mas finalizamos o ciclo por segurança.
+             await supabase.rpc('fn_email_queue_update_and_retrigger', { 
+                p_thread_id: threadId, 
+                p_lote_enviado_ids: [],
+                p_lote_falha_ids: []
+            });
+            return new Response(JSON.stringify({ success: true, message: "Lote vazio." }), { status: 200 });
+        }
+
+        const idsSuccess: string[] = [];
+        const idsFailure: string[] = [];
+        const mensagemHtml: string = batchData[0].mensagem;
+        
+        console.log(`Thread ${threadId}: Enviando ${batchSize} e-mails...`);
+
+        // 4. ENVIO PARA POWER AUTOMATE
+        for (const item of batchData) {
+            const emailId = item.id; 
+            const emailDestino = item.email_destino;
+
+            try {
+                const paRes = await fetch(POWER_AUTOMATE_URL, {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        email_destino: emailDestino,
+                        mensagem_html: mensagemHtml,
+                    }),
+                });
+                
+                if (paRes.ok) idsSuccess.push(emailId);
+                else {
+                    console.error(`Falha envio ${emailDestino}: ${paRes.status}`);
+                    idsFailure.push(emailId);
+                }
+            } catch (err) {
+                console.error(`Erro envio ${emailDestino}: ${err}`);
+                idsFailure.push(emailId);
+            }
+        }
+
+        // 5. FINALIZAÇÃO E TRIGGER DO PRÓXIMO LOTE
+        const { data: finalRes, error: updateError } = await supabase.rpc(
+            'fn_email_queue_update_and_retrigger', 
+            { 
+                p_thread_id: threadId, 
+                p_lote_enviado_ids: idsSuccess,
+                p_lote_falha_ids: idsFailure
+            }
+        );
+
+        if (updateError) throw new Error("Erro update_and_retrigger: " + updateError.message);
+        
+        console.log(`Thread ${threadId}: Lote finalizado. Próximo Status da Thread: ${finalRes.thread_status_final}`);
+
+        return new Response(JSON.stringify({ 
+            success: true, 
+            processed: idsSuccess.length,
+            failed: idsFailure.length,
+            next_status: finalRes.thread_status_final
+        }), { 
+            headers: { ...corsHeaders, "Content-Type": "application/json" }, 
+            status: 200 
+        });
+
+    } catch (err) {
+        const msg = err instanceof Error ? err.message : String(err);
+        console.error(`ERRO CRÍTICO Thread ${threadId}: ${msg}`);
+        return new Response(JSON.stringify({ error: msg }), {
+            status: 500,
+            headers: corsHeaders,
+        });
+    }
+});

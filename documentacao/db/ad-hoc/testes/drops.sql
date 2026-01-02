@@ -1,0 +1,1 @@
+DROP FUNCTION public.fn_email_queue_batch_lock;

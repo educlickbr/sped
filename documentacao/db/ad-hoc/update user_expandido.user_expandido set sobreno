@@ -1,0 +1,1 @@
+update public.user_expandido set sobrenome = 'Oliveira Vasconcelos' where id = '168d673d-c104-4f4c-b837-ce1e428e7ad0';

@@ -1,0 +1,810 @@
+[
+ {
+  "id": "7d91517f-063d-4a74-bbfb-3aaeeb0b08da",
+  "pergunta": "telefone_contato_emergencia",
+  "label": "Telefone do Contato de Emerg\u00eancia",
+  "tipo": "telefone",
+  "bloco": "responsavel_legal",
+  "ordem": 8
+ },
+ {
+  "id": "78e5931f-9f8f-4f9b-bbb0-36041c404c4e",
+  "pergunta": "midias_sociais",
+  "label": "M\u00eddias Sociais",
+  "tipo": "texto",
+  "bloco": "dados_pessoais",
+  "ordem": 1
+ },
+ {
+  "id": "e31a53ea-a7d3-49d2-8241-282ac8be7913",
+  "pergunta": "mini_bio",
+  "label": "Mini Bio: Fale um pouco da sua trajet\u00f3ria",
+  "tipo": "texto",
+  "bloco": "dados_pessoais",
+  "ordem": 2
+ },
+ {
+  "id": "8925bdc2-538a-408d-bd34-fb64b2638621",
+  "pergunta": "data_de_nascimento",
+  "label": "Data de Nascimento",
+  "tipo": "data",
+  "bloco": "dados_pessoais",
+  "ordem": 3
+ },
+ {
+  "id": "57ea34cf-27ed-460d-b27c-244f49d36d62",
+  "pergunta": "idade",
+  "label": "Idade",
+  "tipo": "n\u00famero",
+  "bloco": "dados_pessoais",
+  "ordem": 4
+ },
+ {
+  "id": "2f53dcc3-4429-457c-bcb1-6487bc3ab5af",
+  "pergunta": "telefone_fixo",
+  "label": "Telefone Fixo",
+  "tipo": "telefone",
+  "bloco": "dados_pessoais",
+  "ordem": 5
+ },
+ {
+  "id": "93642773-5a9c-4ada-8356-21e7e7bb9eda",
+  "pergunta": "telefone_celular",
+  "label": "Telefone Celular",
+  "tipo": "telefone",
+  "bloco": "dados_pessoais",
+  "ordem": 6
+ },
+ {
+  "id": "c95e476a-c4dc-4520-badd-d7392b0aeab7",
+  "pergunta": "sua_foto",
+  "label": "Sua Foto",
+  "tipo": "arquivo",
+  "bloco": "dados_pessoais",
+  "ordem": 7
+ },
+ {
+  "id": "34652bc7-2f46-49c9-beb7-77c353754662",
+  "pergunta": "email_responsavel_legal",
+  "label": "E-mail do respons\u00e1vel legal",
+  "tipo": "texto",
+  "bloco": "responsavel_legal",
+  "ordem": 2
+ },
+ {
+  "id": "79fa2e96-04eb-4bab-8d9f-5046267d4160",
+  "pergunta": "cpf_responsavel_legal",
+  "label": "CPF do respons\u00e1vel legal",
+  "tipo": "texto",
+  "bloco": "responsavel_legal",
+  "ordem": 3
+ },
+ {
+  "id": "4063e63c-7369-42aa-8744-018028d765e5",
+  "pergunta": "telefone_responsavel_legal",
+  "label": "Telefone do respons\u00e1vel legal",
+  "tipo": "telefone",
+  "bloco": "responsavel_legal",
+  "ordem": 5
+ },
+ {
+  "id": "059569cb-67c4-488e-80a4-19c6a54030e4",
+  "pergunta": "nome_contato_emergencia",
+  "label": "Nome completo do contato de Emerg\u00eancia",
+  "tipo": "texto",
+  "bloco": "responsavel_legal",
+  "ordem": 7
+ },
+ {
+  "id": "444ae763-4fba-4253-8e56-6d43dde48b89",
+  "pergunta": "profissao",
+  "label": "Profiss\u00e3o",
+  "tipo": "texto",
+  "bloco": "dados_socio_economicos",
+  "ordem": 1
+ },
+ {
+  "id": "25edf1cb-ed2f-4ae2-a85d-ef5c6f0af8ea",
+  "pergunta": "identidade_genero",
+  "label": "Identidade de g\u00eanero",
+  "tipo": "radio",
+  "bloco": "dados_socio_economicos",
+  "ordem": 2
+ },
+ {
+  "id": "32b1a387-a2a9-4f79-af30-d32026af64fe",
+  "pergunta": "nome_social",
+  "label": "Nome Social",
+  "tipo": "texto",
+  "bloco": "dados_socio_economicos",
+  "ordem": 3
+ },
+ {
+  "id": "70e46597-3dcd-4aad-aaab-5fd2693cd53c",
+  "pergunta": "formacao_escolar",
+  "label": "Forma\u00e7\u00e3o escolar",
+  "tipo": "radio",
+  "bloco": "dados_socio_economicos",
+  "ordem": 6
+ },
+ {
+  "id": "9670c817-5db6-4055-8fc9-04cc15d6cd3e",
+  "pergunta": "cor_raca",
+  "label": "Cor/ra\u00e7a",
+  "tipo": "radio",
+  "bloco": "dados_socio_economicos",
+  "ordem": 4
+ },
+ {
+  "id": "eae93308-1e4d-4c67-9c53-c9abf6a31eaf",
+  "pergunta": "pcd",
+  "label": "\u00c9 PCD?",
+  "tipo": "radio",
+  "bloco": "pcd",
+  "ordem": 1
+ },
+ {
+  "id": "142a7c41-fe7c-4dc9-9d5c-d7f407403dc9",
+  "pergunta": "naturalidade",
+  "label": "Naturalidade (cidade onde nasceu)",
+  "tipo": "texto",
+  "bloco": "endereco",
+  "ordem": 1
+ },
+ {
+  "id": "25ea2ab7-c0da-441d-8a10-bf724523c5a1",
+  "pergunta": "pcd_recursos_acessibilidade",
+  "label": "Precisa de algum recurso de acessibilidade? Em caso positivo, qual?",
+  "tipo": "texto",
+  "bloco": "pcd",
+  "ordem": 2
+ },
+ {
+  "id": "94dc7bab-65f7-441f-a49f-78b06e15894b",
+  "pergunta": "pcd_especificar",
+  "label": "Especifique",
+  "tipo": "texto",
+  "bloco": "pcd",
+  "ordem": 3
+ },
+ {
+  "id": "de76ebe6-38d2-44e1-a112-ee64ad604c4f",
+  "pergunta": "pcd_laudo_medico",
+  "label": "Se sim, por favor anexe o laudo m\u00e9dico",
+  "tipo": "arquivo",
+  "bloco": "pcd",
+  "ordem": 4
+ },
+ {
+  "id": "84f68e21-cf23-4a01-8d04-3f4c6777da11",
+  "pergunta": "nacionalidade",
+  "label": "Nacionalidade",
+  "tipo": "radio",
+  "bloco": "endereco",
+  "ordem": 2
+ },
+ {
+  "id": "62f5fd50-fabe-49a6-84a7-f2a0296a6f48",
+  "pergunta": "numero",
+  "label": "N\u00famero",
+  "tipo": "n\u00famero",
+  "bloco": "endereco",
+  "ordem": 5
+ },
+ {
+  "id": "6a2dc4d0-5994-42fb-b0bf-66f79a227c98",
+  "pergunta": "complemento",
+  "label": "Complemento",
+  "tipo": "texto",
+  "bloco": "endereco",
+  "ordem": 6
+ },
+ {
+  "id": "571ca637-9123-449d-9e04-b51d09f2836e",
+  "pergunta": "cep",
+  "label": "CEP",
+  "tipo": "texto",
+  "bloco": "endereco",
+  "ordem": 3
+ },
+ {
+  "id": "6f0e18b1-f519-46c5-98d2-7c05e6ebb135",
+  "pergunta": "endereco",
+  "label": "Endere\u00e7o",
+  "tipo": "texto",
+  "bloco": "endereco",
+  "ordem": 4
+ },
+ {
+  "id": "e1021ed4-b981-4984-afe9-52e62377c4a6",
+  "pergunta": "cidade",
+  "label": "Cidade",
+  "tipo": "texto",
+  "bloco": "endereco",
+  "ordem": 7
+ },
+ {
+  "id": "5c4bc372-867d-471b-86da-52a437146c1e",
+  "pergunta": "pais",
+  "label": "Pa\u00eds",
+  "tipo": "texto",
+  "bloco": "endereco",
+  "ordem": 9
+ },
+ {
+  "id": "95e3d2c9-7507-4c53-84da-4c71bdd8726f",
+  "pergunta": "comprovante_endereco",
+  "label": "Comprovante de Endere\u00e7o",
+  "tipo": "arquivo",
+  "bloco": "endereco",
+  "ordem": 10
+ },
+ {
+  "id": "29a21c21-b102-434e-a05b-08cc5e871de7",
+  "pergunta": "rg",
+  "label": "RG",
+  "tipo": "texto",
+  "bloco": "documentos",
+  "ordem": 1
+ },
+ {
+  "id": "538a2c3d-e45f-42b0-b899-91ce9fd751b9",
+  "pergunta": "rg_arquivo",
+  "label": "RG",
+  "tipo": "arquivo",
+  "bloco": "documentos",
+  "ordem": 3
+ },
+ {
+  "id": "07984444-cb05-4be5-a5b8-59eb9e2c5997",
+  "pergunta": "cpf_arquivo",
+  "label": "CPF",
+  "tipo": "arquivo",
+  "bloco": "documentos",
+  "ordem": 4
+ },
+ {
+  "id": "ef422879-a90c-4479-b1b5-83bfc811b2a6",
+  "pergunta": "portfolio",
+  "label": "Portf\u00f3lio",
+  "tipo": "arquivo",
+  "bloco": "documentos",
+  "ordem": 5
+ },
+ {
+  "id": "6e7ba1c1-1822-43e9-a93d-06325bce7a0b",
+  "pergunta": "comprovante_matricula_regular",
+  "label": "C\u00f3pia do comprovante de matr\u00edcula do ensino regular (para menores de 18 anos).",
+  "tipo": "arquivo",
+  "bloco": "documentos",
+  "ordem": 7
+ },
+ {
+  "id": "2385e99a-40dd-453d-ab3a-2e9a79a7656c",
+  "pergunta": "trajetoria_contato_com_danca",
+  "label": "Fale um pouco sobre a sua trajet\u00f3ria. Voc\u00ea j\u00e1 teve algum contato com a dan\u00e7a?",
+  "tipo": "texto",
+  "bloco": "sobre_curso",
+  "ordem": 7
+ },
+ {
+  "id": "a5d2bbde-2622-4914-a9e8-5e4fe16e06cf",
+  "pergunta": "motivo_participar",
+  "label": "Por que voc\u00ea deseja participar deste curso?",
+  "tipo": "texto",
+  "bloco": "sobre_curso",
+  "ordem": 2
+ },
+ {
+  "id": "0c4d2d54-2181-4e3e-a51d-19cecca746ba",
+  "pergunta": "cursos_extensao_quais",
+  "label": "Em caso positivo: qual ou quais?",
+  "tipo": "texto",
+  "bloco": "sobre_curso",
+  "ordem": 5
+ },
+ {
+  "id": "6658f790-e1a6-4fd7-bbe8-0fd6f0687c3f",
+  "pergunta": "relato_condicao_saude",
+  "label": "Relate sua condi\u00e7\u00e3o de sa\u00fade f\u00edsica ou psicol\u00f3gica que considere importante.",
+  "tipo": "texto",
+  "bloco": "prontidao",
+  "ordem": 9
+ },
+ {
+  "id": "80a168f7-f57d-4c1e-87b0-57cd758c417c",
+  "pergunta": "nome_responsavel_legal",
+  "label": "Nome do Respons\u00e1vel Legal",
+  "tipo": "texto",
+  "bloco": "responsavel_legal",
+  "ordem": 1
+ },
+ {
+  "id": "172bf4c5-7609-40d0-a805-d5291fdec84a",
+  "pergunta": "documento_responsavel_legal",
+  "label": "Documento Respons\u00e1vel Legal",
+  "tipo": "arquivo",
+  "bloco": "responsavel_legal",
+  "ordem": 4
+ },
+ {
+  "id": "20467206-19d9-4bb9-8a54-e6625f101282",
+  "pergunta": "cpf",
+  "label": "CPF",
+  "tipo": "texto",
+  "bloco": "documentos",
+  "ordem": 2
+ },
+ {
+  "id": "09bf6de0-10ef-4d54-81ba-9074a2e28535",
+  "pergunta": "carta_intencao",
+  "label": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "tipo": "arquivo",
+  "bloco": "documentos",
+  "ordem": 6
+ },
+ {
+  "id": "731fcb9a-0636-418a-bb7d-5c4fce3647aa",
+  "pergunta": "sobrenome_responsavel_legal",
+  "label": "Sobrenome do Respons\u00e1vel Legal",
+  "tipo": "texto",
+  "bloco": "responsavel_legal",
+  "ordem": 2
+ },
+ {
+  "id": "5902e39e-26bb-40a3-b117-15799c0bb231",
+  "pergunta": "curriculo",
+  "label": "Curr\u00edculo Resumido",
+  "tipo": "arquivo",
+  "bloco": "documentos",
+  "ordem": null
+ },
+ {
+  "id": "f1d674d0-f8c5-43bf-a42c-073a5de9419e",
+  "pergunta": "estado",
+  "label": "Estado",
+  "tipo": "texto",
+  "bloco": "endereco",
+  "ordem": 8
+ },
+ {
+  "id": "98d09feb-ec9a-4a30-882d-7de8099c153f",
+  "pergunta": "renda_familiar_per_capita",
+  "label": "Renda familiar per capita",
+  "tipo": "radio",
+  "bloco": "dados_socio_economicos",
+  "ordem": 7
+ },
+ {
+  "id": "14935daf-c75a-4308-a55c-5a2d1647c30e",
+  "pergunta": "responsavel_e_emergencia_sim_nao",
+  "label": "Este \u00e9 tamb\u00e9m meu contato de emerg\u00eancia",
+  "tipo": "radio",
+  "bloco": "responsavel_legal",
+  "ordem": 6
+ },
+ {
+  "id": "582f7573-c953-4fac-9bc8-97065b85f9e6",
+  "pergunta": "condicao_sem_bolsa_sim_nao",
+  "label": "Caso n\u00e3o receba bolsa, voc\u00ea ter\u00e1 condi\u00e7\u00f5es de manter os seus estudos?",
+  "tipo": "radio",
+  "bloco": "dados_socio_economicos",
+  "ordem": 5
+ },
+ {
+  "id": "0ac80dca-2ca8-4d3e-918f-c344e4d8ce28",
+  "pergunta": "receber_info_escola",
+  "label": "Deseja receber informa\u00e7\u00f5es sobre as atividades da escola?",
+  "tipo": "radio",
+  "bloco": "sobre_curso",
+  "ordem": 3
+ },
+ {
+  "id": "ba89d715-ae19-425b-9915-f0d9da22938b",
+  "pergunta": "como_soube",
+  "label": "Como voc\u00ea ficou sabendo deste curso?",
+  "tipo": "radio",
+  "bloco": "sobre_curso",
+  "ordem": 3
+ },
+ {
+  "id": "ef92aa9b-eed1-4009-adba-197719f4f0f3",
+  "pergunta": "link_video",
+  "label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "tipo": "link",
+  "bloco": "documentos",
+  "ordem": null
+ },
+ {
+  "id": "91459419-4fc8-4d10-9b27-1135ffe71c2c",
+  "pergunta": "parceria_taboao",
+  "label": "Voc\u00ea veio pela parceria com outros munic\u00edpios de S\u00e3o Paulo (fora da capital)",
+  "tipo": "radio",
+  "bloco": "sobre_curso",
+  "ordem": 1
+ },
+ {
+  "id": "2a91e319-6741-4de6-8d7e-3d152a4c4b0d",
+  "pergunta": "nome_registro",
+  "label": "Nome de Registro",
+  "tipo": "texto",
+  "bloco": "dados_pessoais",
+  "ordem": 1
+ },
+ {
+  "id": "5747a06b-2385-4920-af8a-48f8ec870518",
+  "pergunta": "nome_artistico",
+  "label": "Nome Art\u00edstico",
+  "tipo": "texto",
+  "bloco": "dados_pessoais",
+  "ordem": 2
+ },
+ {
+  "id": "d42f73a8-0a61-4f6a-acd1-767b06bd612e",
+  "pergunta": "condicao_receber_bolsa",
+  "label": "Caso n\u00e3o receba bolsa, voc\u00ea ter\u00e1 condi\u00e7\u00f5es de manter os seus estudos?",
+  "tipo": "radio",
+  "bloco": "dados_pessoais",
+  "ordem": 8
+ },
+ {
+  "id": "895e1782-ae13-4027-a356-d1800f4297e4",
+  "pergunta": "tamanho_camisa",
+  "label": "Qual o tamanho de camisa?",
+  "tipo": "radio",
+  "bloco": "dados_pessoais",
+  "ordem": 9
+ },
+ {
+  "id": "289e962e-da61-4cf3-9810-7ece9de8f19f",
+  "pergunta": "nome_contato_emergencia",
+  "label": "Nome do Contato de Emerg\u00eancia",
+  "tipo": "texto",
+  "bloco": "dados_pessoais",
+  "ordem": null
+ },
+ {
+  "id": "74545877-be62-49e1-8354-8fd004c57a61",
+  "pergunta": "telefone_contato_emergencia",
+  "label": "Telefone do Contato de Emerg\u00eancia",
+  "tipo": "texto",
+  "bloco": "dados_pessoais",
+  "ordem": 10
+ },
+ {
+  "id": "b7786736-caf8-473f-8b32-442114501486",
+  "pergunta": "empregado_desempregado",
+  "label": "Empregado ou Desempregado?",
+  "tipo": "radio",
+  "bloco": "dados_socio_economicos",
+  "ordem": null
+ },
+ {
+  "id": "5d9519b4-8e92-4b27-8a3a-a8e3c93a40d1",
+  "pergunta": "vinculo_empregaticio",
+  "label": "Possui v\u00ednculo empregat\u00edcio (CLT)?",
+  "tipo": "radio",
+  "bloco": "dados_socio_economicos",
+  "ordem": null
+ },
+ {
+  "id": "7f1c7825-b966-4902-b35b-7903fab285be",
+  "pergunta": "qtd_residentes_casa",
+  "label": "Quantas pessoas residem na casa?",
+  "tipo": "texto",
+  "bloco": "dados_socio_economicos",
+  "ordem": null
+ },
+ {
+  "id": "134b5fc5-28dc-423b-8871-a5857d522c2e",
+  "pergunta": "qtd_trabalham_casa",
+  "label": "Quantas pessoas trabalham na casa?",
+  "tipo": "texto",
+  "bloco": "dados_socio_economicos",
+  "ordem": null
+ },
+ {
+  "id": "a307197f-6c0b-4165-ad36-02e496aa3827",
+  "pergunta": "tipo_moradia",
+  "label": "A casa/apartamento em que reside \u00e9:",
+  "tipo": "radio",
+  "bloco": "dados_socio_economicos",
+  "ordem": null
+ },
+ {
+  "id": "8129d3ec-e576-4f00-882a-2ed84a48347e",
+  "pergunta": "possui_internet",
+  "label": "Possui acesso \u00e0 internet?",
+  "tipo": "radio",
+  "bloco": "dados_socio_economicos",
+  "ordem": null
+ },
+ {
+  "id": "e3d6af36-4398-43d1-a180-474fbc89fec2",
+  "pergunta": "beneficiario_inss",
+  "label": "H\u00e1 benefici\u00e1rio do INSS na casa?",
+  "tipo": "radio",
+  "bloco": "dados_socio_economicos",
+  "ordem": null
+ },
+ {
+  "id": "4ae00a0b-64ee-4906-83fd-7b8d93471306",
+  "pergunta": "beneficiario_bpc",
+  "label": "Na casa h\u00e1 benefici\u00e1rio(a) do Benef\u00edcio de Presta\u00e7\u00e3o Continuada - BPC? (LOAS)",
+  "tipo": "radio",
+  "bloco": "dados_socio_economicos",
+  "ordem": null
+ },
+ {
+  "id": "786467c9-67a6-49d6-aa21-ecac34426abf",
+  "pergunta": "renda_nucleo_familiar",
+  "label": "Renda da Composi\u00e7\u00e3o do N\u00facleo Familiar",
+  "tipo": "radio",
+  "bloco": "dados_socio_economicos",
+  "ordem": null
+ },
+ {
+  "id": "a30f87ee-10b3-4e7c-bc1f-f6624a55dad1",
+  "pergunta": "tipo_deslocamento",
+  "label": "Qual o tipo de deslocamento da sua resid\u00eancia at\u00e9 a escola? (descreva todos os transportes utilizados, caso seja mais de um).",
+  "tipo": "texto",
+  "bloco": "dados_socio_economicos",
+  "ordem": null
+ },
+ {
+  "id": "e29f1b40-adb9-4a2c-9960-a9a35d15661e",
+  "pergunta": "participa_movimentos_sociais",
+  "label": "Participa de movimentos sociais, coletivos ou manifesta\u00e7\u00f5es pol\u00edticas culturais?",
+  "tipo": "radio",
+  "bloco": "dados_socio_economicos",
+  "ordem": null
+ },
+ {
+  "id": "6ea6ce11-d132-488e-83dd-441dae4ef1d8",
+  "pergunta": "possui_pratica_religiosa",
+  "label": "Possui alguma pr\u00e1tica religiosa?",
+  "tipo": "radio",
+  "bloco": "dados_socio_economicos",
+  "ordem": null
+ },
+ {
+  "id": "cdde612d-4bfa-4ee7-abe6-45dd2f14b689",
+  "pergunta": "qual_pratica_religiosa",
+  "label": "Qual Pr\u00e1tica Religiosa possui?",
+  "tipo": "texto",
+  "bloco": "dados_socio_economicos",
+  "ordem": null
+ },
+ {
+  "id": "5bbdbbed-c1e4-4142-9f0c-8a6cadd672a4",
+  "pergunta": "inscricao_cadunico",
+  "label": "Tens inscri\u00e7\u00e3o no Cadastro \u00fanico da Assist\u00eancia Social?",
+  "tipo": "radio",
+  "bloco": "dados_socio_economicos",
+  "ordem": null
+ },
+ {
+  "id": "0b8e013f-728c-41a8-be0b-708767e99bfd",
+  "pergunta": "recebe_beneficio",
+  "label": "Recebe algum benef\u00edcio s\u00f3cio assistencial de alguma pol\u00edtica p\u00fablica?",
+  "tipo": "radio",
+  "bloco": "dados_socio_economicos",
+  "ordem": null
+ },
+ {
+  "id": "cbbd4457-2250-4c3d-ab8f-a70e31af4da4",
+  "pergunta": "qual_beneficio",
+  "label": "Qual Benef\u00edcio",
+  "tipo": "texto",
+  "bloco": "dados_socio_economicos",
+  "ordem": null
+ },
+ {
+  "id": "c0dcb43b-eca8-4d65-a670-eade83f34933",
+  "pergunta": "naturalidade_estado",
+  "label": "Naturalidade - Estado natal (Estado onde nasceu)",
+  "tipo": "texto",
+  "bloco": "endereco",
+  "ordem": null
+ },
+ {
+  "id": "99b3bd66-6d21-4600-9b30-cc65b261c40d",
+  "pergunta": "cidade_reside_atualmente",
+  "label": "Cidade onde reside atualmente",
+  "tipo": "radio",
+  "bloco": "endereco",
+  "ordem": null
+ },
+ {
+  "id": "d9d19398-eda1-45ea-81e2-0a08c128042e",
+  "pergunta": "carteira_trabalho",
+  "label": "Carteira de Trabalho",
+  "tipo": "arquivo",
+  "bloco": "documentos",
+  "ordem": null
+ },
+ {
+  "id": "5ac6e2b3-3cf9-46b9-b136-ad7b649016dd",
+  "pergunta": "qual_ou_quais_geral",
+  "label": "Em caso positivo: qual ou quais?",
+  "tipo": "texto",
+  "bloco": "sobre_curso",
+  "ordem": null
+ },
+ {
+  "id": "33579797-413a-4274-9650-8e95bed2b4f9",
+  "pergunta": "drt",
+  "label": "DRT",
+  "tipo": "texto",
+  "bloco": "documentos",
+  "ordem": null
+ },
+ {
+  "id": "031a97dc-e039-4a21-959e-d6228bc6b370",
+  "pergunta": "possui_drt",
+  "label": "Possui DRT?",
+  "tipo": "radio",
+  "bloco": "documentos",
+  "ordem": null
+ },
+ {
+  "id": "5337bfc2-2892-4481-ba96-964ff72a8b9c",
+  "pergunta": "funcao_drt",
+  "label": "Qual a Fun\u00e7\u00e3o?",
+  "tipo": "texto",
+  "bloco": "documentos",
+  "ordem": null
+ },
+ {
+  "id": "0c05fac6-6cf1-41b0-985d-931fff2a59bb",
+  "pergunta": "eixo",
+  "label": "Eixo",
+  "tipo": "texto",
+  "bloco": "sobre_curso",
+  "ordem": null
+ },
+ {
+  "id": "18ad34c5-f9f1-4f0c-82bb-062977b4800c",
+  "pergunta": "possui_aptidao_fisica",
+  "label": "Voc\u00ea possui aptid\u00e3o f\u00edsica para participar de atividades  e pr\u00e1ticas corporais, como as aulas de dan\u00e7a?\n",
+  "tipo": "radio",
+  "bloco": "prontidao",
+  "ordem": null
+ },
+ {
+  "id": "4fda0813-526b-410c-8a21-819384bf341a",
+  "pergunta": "autorizacao_contato_fisico",
+  "label": "Autoriza\u00e7\u00e3o para Contato F\u00edsico \n\nDurante as aulas de dan\u00e7a, ensaios e  atividades formativas, poder\u00e1 haver contato f\u00edsico orientado, como corre\u00e7\u00f5es de postura, condu\u00e7\u00e3o de movimentos e intera\u00e7\u00f5es coreogr\u00e1ficas. Essas pr\u00e1ticas fazem parte dos processos pedag\u00f3gicos e art\u00edsticos da escola.\n\nVoc\u00ea autoriza a participa\u00e7\u00e3o em atividades que envolvam esse tipo de contato f\u00edsico orientado, dentro do contexto pedag\u00f3gico da escola?\n",
+  "tipo": "radio",
+  "bloco": "prontidao",
+  "ordem": null
+ },
+ {
+  "id": "ad205fed-e981-45a5-af95-ad8b9ea559b6",
+  "pergunta": "ja_participou_extensao",
+  "label": "J\u00e1 participou de algum curso na Extens\u00e3o Cultural da SPED - S\u00e3o Paulo Escola de Dan\u00e7a?",
+  "tipo": "radio",
+  "bloco": "sobre_curso",
+  "ordem": 4
+ },
+ {
+  "id": "e0dee9ed-6a46-406d-8b2e-9d8f7fb70338",
+  "pergunta": "problema_cardiaco_supervisao",
+  "label": "Algum m\u00e9dico j\u00e1 disse que voc\u00ea possui algum problema de cora\u00e7\u00e3o e que s\u00f3 deveria realizar atividade f\u00edsica supervisionado por profissionais de sa\u00fade?",
+  "tipo": "radio",
+  "bloco": "prontidao",
+  "ordem": 1
+ },
+ {
+  "id": "d81baff3-a392-422f-a162-c33abddd4620",
+  "pergunta": "dor_peito_atividade",
+  "label": "Voc\u00ea sente dores no peito quando pratica atividade f\u00edsica?",
+  "tipo": "radio",
+  "bloco": "prontidao",
+  "ordem": 2
+ },
+ {
+  "id": "9ea0d6e0-04cf-4ada-9905-14966d7b6cad",
+  "pergunta": "dor_peito_ultimo_mes",
+  "label": "No \u00faltimo m\u00eas, voc\u00ea sentiu dores no peito quando praticou atividade f\u00edsica?",
+  "tipo": "radio",
+  "bloco": "prontidao",
+  "ordem": 3
+ },
+ {
+  "id": "04f974be-6f60-4c40-a9ed-dd8b8d9990fd",
+  "pergunta": "tontura_ou_perda_consciencia",
+  "label": "Voc\u00ea apresenta desequil\u00edbrio devido \u00e0 tontura e/ou perda de consci\u00eancia?",
+  "tipo": "radio",
+  "bloco": "prontidao",
+  "ordem": 4
+ },
+ {
+  "id": "15253824-2e07-48af-a2ad-b865d4c7a6b1",
+  "pergunta": "problema_osseo_articular",
+  "label": "Voc\u00ea possui algum problema \u00f3sseo ou articular que poderia ser piorado pela atividade f\u00edsica?",
+  "tipo": "radio",
+  "bloco": "prontidao",
+  "ordem": 5
+ },
+ {
+  "id": "e667d832-2104-4313-b67e-476c4bea7b32",
+  "pergunta": "medicamento_pressao_coracao",
+  "label": "Voc\u00ea toma atualmente algum medicamento para press\u00e3o arterial e/ou problema de cora\u00e7\u00e3o?",
+  "tipo": "radio",
+  "bloco": "prontidao",
+  "ordem": 6
+ },
+ {
+  "id": "48299c6b-4726-49af-88c0-914b83e78957",
+  "pergunta": "outra_razao_nao_praticar",
+  "label": "Sabe de alguma outra raz\u00e3o pela qual voc\u00ea n\u00e3o deve praticar atividade f\u00edsica?",
+  "tipo": "radio",
+  "bloco": "prontidao",
+  "ordem": 7
+ },
+ {
+  "id": "7b5d6918-85da-419a-94af-ab74dbb5bc1f",
+  "pergunta": "outra_condicao_importante",
+  "label": "Possui alguma outra condi\u00e7\u00e3o de sa\u00fade f\u00edsica ou psicol\u00f3gica que considere importante relatar?",
+  "tipo": "radio",
+  "bloco": "prontidao",
+  "ordem": 8
+ },
+ {
+  "id": "897ef74b-b061-4a8c-b7cf-feabe5fdbcef",
+  "pergunta": "toma_remedio_controlado",
+  "label": "Toma algum rem\u00e9dio controlado?",
+  "tipo": "radio",
+  "bloco": "prontidao",
+  "ordem": 10
+ },
+ {
+  "id": "9599fba1-a6d9-4859-a87e-9c188840cdf0",
+  "pergunta": "zona_territorial",
+  "label": "Zona Territorial",
+  "tipo": "radio",
+  "bloco": "endereco",
+  "ordem": null
+ },
+ {
+  "id": "ac5204a9-9bfe-413b-b6da-6a93598e7ac3",
+  "pergunta": "ja_participou_geral",
+  "label": "J\u00e1 participou de algum curso na S\u00e3o Paulo Escola de Dan\u00e7a?",
+  "tipo": "radio",
+  "bloco": "sobre_curso",
+  "ordem": null
+ },
+ {
+  "id": "3cb14a65-7c53-42e5-9ff6-f6a2bc4e9e87",
+  "pergunta": "aceite_prontidao",
+  "label": "Aceite Prontid\u00e3o",
+  "tipo": "radio",
+  "bloco": "prontidao",
+  "ordem": null
+ },
+ {
+  "id": "cc164282-0822-4ba1-9dc1-c0db537ebb77",
+  "pergunta": "aceite",
+  "label": "Ao realizar esta inscri\u00e7\u00e3o o(a) candidato(a) ou o(a) respons\u00e1vel legal do candidato(a) da pessoa com idade menor de 18 anos declara que leu e concorda com os termos do Edital para este processo seletivo, e que est\u00e1 apto(a) a realizar a prova pr\u00e1tica, acatando integralmente as regras estabelecidas, n\u00e3o cabendo qualquer recurso posterior.",
+  "tipo": "boolean",
+  "bloco": "aceite",
+  "ordem": 1
+ },
+ {
+  "id": "b19ec6b3-2299-40ec-8e71-8d89536f797a",
+  "pergunta": "email_contato_emergencia",
+  "label": "E-mail do Contato de Emerg\u00eancia",
+  "tipo": "texto",
+  "bloco": "dados_pessoais",
+  "ordem": 11
+ },
+ {
+  "id": "5efc9acc-f954-4628-ba88-3360afebd97e",
+  "pergunta": "tempo_mora_sp",
+  "label": "Quanto tempo mora em S\u00e3o Paulo?",
+  "tipo": "radio",
+  "bloco": "endereco",
+  "ordem": null
+ }
+]

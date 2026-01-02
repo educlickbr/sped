@@ -1,0 +1,494 @@
+[
+ {
+  "aluno_nome": "Julya",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Cl\u00e1ssica - Intermedi\u00e1rio",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - Intermedi\u00e1rio\", \"has_answer_here\": true, \"time_gap_seconds\": 437547.292906, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Ester",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 10853296.587378, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Mariah Eduarda",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Cl\u00e1ssica - B\u00e1sico",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"has_answer_here\": true, \"time_gap_seconds\": 11474519.617692, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Alunoteste2509",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 514362.994851, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Vit\u00f3ria Regina",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a de Sal\u00e3o",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a de Sal\u00e3o\", \"has_answer_here\": true, \"time_gap_seconds\": 1294.781653, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Meire",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Cl\u00e1ssica - B\u00e1sico",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"has_answer_here\": true, \"time_gap_seconds\": 9684740.729366, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Victor",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 3807180.226843, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Davi",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a e Performance",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"regulares\", \"turma\": \"Dan\u00e7a e Performance\", \"has_answer_here\": true, \"time_gap_seconds\": 10786453.763105, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Vanessa Yumi",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 901.592308, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Deborah",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a e Performance",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"regulares\", \"turma\": \"Dan\u00e7a e Performance\", \"has_answer_here\": true, \"time_gap_seconds\": 9139721.498465, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Allan Brasileiro",
+  "pergunta": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "ONDE ESTA (INVALIDO)": "Jogo das A\u00e7\u00f5es F\u00edsicas e Ancestralidade",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"extensao\", \"turma\": \"Jogo das A\u00e7\u00f5es F\u00edsicas e Ancestralidade\", \"has_answer_here\": true, \"time_gap_seconds\": 16593415.695027, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Alan",
+  "pergunta": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "ONDE ESTA (INVALIDO)": "Jazz Dance",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Jazz Dance\", \"has_answer_here\": true, \"time_gap_seconds\": 1640.525113, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Alessandra",
+  "pergunta": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Contempor\u00e2nea",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Jazz Dance\", \"has_answer_here\": false, \"time_gap_seconds\": 592.377318, \"requires_question\": false}, {\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"has_answer_here\": false, \"time_gap_seconds\": 646.868297, \"requires_question\": false}, {\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"has_answer_here\": true, \"time_gap_seconds\": 676.873069, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Mirela",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Contempor\u00e2nea",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"has_answer_here\": true, \"time_gap_seconds\": 12213407.169832, \"requires_question\": false}, {\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7as Urbanas\", \"has_answer_here\": false, \"time_gap_seconds\": 12216467.338431, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Valentina",
+  "pergunta": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "ONDE ESTA (INVALIDO)": "Fotografia e Dan\u00e7a: A Po\u00e9tica da Mem\u00f3ria Corporal",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"extensao\", \"turma\": \"Fotografia e Dan\u00e7a: A Po\u00e9tica da Mem\u00f3ria Corporal\", \"has_answer_here\": true, \"time_gap_seconds\": 14254824.646746, \"requires_question\": false}, {\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo\", \"has_answer_here\": false, \"time_gap_seconds\": 14822344.890181, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Renata",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 3742504.139299, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Alessandra",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Contempor\u00e2nea",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Jazz Dance\", \"has_answer_here\": false, \"time_gap_seconds\": 1648.004488, \"requires_question\": false}, {\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"has_answer_here\": false, \"time_gap_seconds\": 1702.495467, \"requires_question\": false}, {\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"has_answer_here\": true, \"time_gap_seconds\": 1732.500239, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Gabriela",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Contempor\u00e2nea",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"has_answer_here\": true, \"time_gap_seconds\": 13977009.477476, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Ana Clara",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Cl\u00e1ssica - B\u00e1sico",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - Intermedi\u00e1rio\", \"has_answer_here\": false, \"time_gap_seconds\": 14597042.904759, \"requires_question\": false}, {\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"has_answer_here\": true, \"time_gap_seconds\": 14842215.601972, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Juliana Mayra",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 10885139.411053, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Nathiele",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7as Urbanas",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7as Urbanas\", \"has_answer_here\": true, \"time_gap_seconds\": 7449246.520455, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Brian",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a e Performance",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"regulares\", \"turma\": \"Dan\u00e7a e Performance\", \"has_answer_here\": true, \"time_gap_seconds\": 1813914.376179, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Karen",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Jazz Dance",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Jazz Dance\", \"has_answer_here\": true, \"time_gap_seconds\": 13246308.380590, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Lays",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7as Urbanas",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7as Urbanas\", \"has_answer_here\": true, \"time_gap_seconds\": 14823906.206308, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Lucas",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a de Sal\u00e3o",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a de Sal\u00e3o\", \"has_answer_here\": true, \"time_gap_seconds\": 11898763.624560, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Vin\u00edcius",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Contempor\u00e2nea",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"has_answer_here\": true, \"time_gap_seconds\": 1240.513011, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Danielle Francis",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Jazz Dance",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Jazz Dance\", \"has_answer_here\": true, \"time_gap_seconds\": 11782483.065460, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Juliana",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 13983767.562505, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Gabrielly Vit\u00f3ria",
+  "pergunta": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "ONDE ESTA (INVALIDO)": "Visagismo e Caracteriza\u00e7\u00e3o",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"extensao\", \"turma\": \"Visagismo e Caracteriza\u00e7\u00e3o\", \"has_answer_here\": true, \"time_gap_seconds\": 13838097.381405, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Rebecca",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 10663128.073857, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Talita",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Jazz Dance",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Jazz Dance\", \"has_answer_here\": true, \"time_gap_seconds\": 5535422.556740, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Larissa",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Cl\u00e1ssica - Intermedi\u00e1rio",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - Intermedi\u00e1rio\", \"has_answer_here\": true, \"time_gap_seconds\": 8461238.029504, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Lara",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo\", \"has_answer_here\": true, \"time_gap_seconds\": 10632456.763597, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Evandro Mateus",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Contempor\u00e2nea",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"has_answer_here\": true, \"time_gap_seconds\": 14152454.222223, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Maravilhaa Lu\u00edsa",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo\", \"has_answer_here\": true, \"time_gap_seconds\": 10457777.128868, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Felipe",
+  "pergunta": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7as Urbanas",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7as Urbanas\", \"has_answer_here\": true, \"time_gap_seconds\": 149368.277764, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Eduardo",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Cl\u00e1ssica - B\u00e1sico",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"has_answer_here\": true, \"time_gap_seconds\": 617.438529, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Martin",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Cl\u00e1ssica - Intermedi\u00e1rio",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - Intermedi\u00e1rio\", \"has_answer_here\": true, \"time_gap_seconds\": 10942910.177693, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Christine",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Contempor\u00e2nea",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"has_answer_here\": true, \"time_gap_seconds\": 8905528.077136, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Sabrina",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Jazz Dance",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Jazz Dance\", \"has_answer_here\": true, \"time_gap_seconds\": 196266.111717, \"requires_question\": false}, {\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"has_answer_here\": false, \"time_gap_seconds\": 196317.073457, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Antonia",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a e Performance",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"regulares\", \"turma\": \"Dan\u00e7a e Performance\", \"has_answer_here\": true, \"time_gap_seconds\": 6631976.436036, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Maria Aldemira",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Jazz Dance",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a de Sal\u00e3o\", \"has_answer_here\": false, \"time_gap_seconds\": 299.098252, \"requires_question\": false}, {\"area\": \"cursos_livres\", \"turma\": \"Jazz Dance\", \"has_answer_here\": true, \"time_gap_seconds\": 371.404730, \"requires_question\": false}, {\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7as Urbanas\", \"has_answer_here\": false, \"time_gap_seconds\": 660.929255, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Barbara",
+  "pergunta": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "ONDE ESTA (INVALIDO)": "Jogo das A\u00e7\u00f5es F\u00edsicas e Ancestralidade",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"extensao\", \"turma\": \"Jogo das A\u00e7\u00f5es F\u00edsicas e Ancestralidade\", \"has_answer_here\": true, \"time_gap_seconds\": 16077100.179114, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Alanna",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a e Performance",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"regulares\", \"turma\": \"Dan\u00e7a e Performance\", \"has_answer_here\": true, \"time_gap_seconds\": 9011445.668451, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Sara",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 11457648.497648, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Isabel",
+  "pergunta": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "ONDE ESTA (INVALIDO)": "Visagismo e Caracteriza\u00e7\u00e3o",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"extensao\", \"turma\": \"Visagismo e Caracteriza\u00e7\u00e3o\", \"has_answer_here\": true, \"time_gap_seconds\": 8365908.450743, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Jos\u00e9 Lucas",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 7217607.705706, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Alan",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Jazz Dance",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Jazz Dance\", \"has_answer_here\": true, \"time_gap_seconds\": 2021.086237, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Eleonora",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Jazz Dance",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"has_answer_here\": false, \"time_gap_seconds\": 993.587730, \"requires_question\": false}, {\"area\": \"cursos_livres\", \"turma\": \"Jazz Dance\", \"has_answer_here\": true, \"time_gap_seconds\": 1100.100970, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Julia Lolla",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 4416657.135793, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Jessica",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "T\u00e9cnicas da Dan\u00e7a com \u00eanfase no Cl\u00e1ssico",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase no Cl\u00e1ssico\", \"has_answer_here\": true, \"time_gap_seconds\": 6899141.275248, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "EDESIA",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a de Sal\u00e3o",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a de Sal\u00e3o\", \"has_answer_here\": true, \"time_gap_seconds\": 433629.944950, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Renan",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 6336610.462774, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Pietro",
+  "pergunta": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "ONDE ESTA (INVALIDO)": "Visagismo e Caracteriza\u00e7\u00e3o",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": false, \"time_gap_seconds\": 11845177.883540, \"requires_question\": false}, {\"area\": \"extensao\", \"turma\": \"Fotografia e Dan\u00e7a: A Po\u00e9tica da Mem\u00f3ria Corporal\", \"has_answer_here\": false, \"time_gap_seconds\": 16499511.830604, \"requires_question\": false}, {\"area\": \"extensao\", \"turma\": \"Visagismo e Caracteriza\u00e7\u00e3o\", \"has_answer_here\": true, \"time_gap_seconds\": 16501473.879206, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Julia",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a de Sal\u00e3o",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a de Sal\u00e3o\", \"has_answer_here\": true, \"time_gap_seconds\": 11968935.028212, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Guilherme",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Contempor\u00e2nea",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"has_answer_here\": true, \"time_gap_seconds\": 13666568.152821, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Cleane",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Contempor\u00e2nea",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"has_answer_here\": true, \"time_gap_seconds\": 12413060.807475, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Gabriel",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7as Urbanas",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7as Urbanas\", \"has_answer_here\": true, \"time_gap_seconds\": 632.217106, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Leilane",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Contempor\u00e2nea",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"has_answer_here\": true, \"time_gap_seconds\": 14534143.253606, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Hens",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 12330704.616151, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Daniela",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Cl\u00e1ssica - B\u00e1sico",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"has_answer_here\": true, \"time_gap_seconds\": 1796456.968424, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Deborah",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "T\u00e9cnicas da Dan\u00e7a com \u00eanfase no Cl\u00e1ssico",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase no Cl\u00e1ssico\", \"has_answer_here\": true, \"time_gap_seconds\": 8015606.084854, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Emilly Beatriz",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo\", \"has_answer_here\": true, \"time_gap_seconds\": 10900413.938105, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Samara",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Jazz Dance",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Jazz Dance\", \"has_answer_here\": true, \"time_gap_seconds\": 8369804.596288, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Flavia",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a de Sal\u00e3o",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a de Sal\u00e3o\", \"has_answer_here\": true, \"time_gap_seconds\": 8729340.969140, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Beatriz Nauali",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 1409048.010719, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "J\u00e9ssica",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Cl\u00e1ssica - Intermedi\u00e1rio",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - Intermedi\u00e1rio\", \"has_answer_here\": true, \"time_gap_seconds\": 11942210.127451, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Aluno",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "T\u00e9cnicas da Dan\u00e7a com \u00eanfase no Cl\u00e1ssico",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase no Cl\u00e1ssico\", \"has_answer_here\": true, \"time_gap_seconds\": 5490.265964, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Flavia",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 11512478.334340, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Charlene",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a de Sal\u00e3o",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a de Sal\u00e3o\", \"has_answer_here\": true, \"time_gap_seconds\": 12635008.849174, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Maria Clara",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Contempor\u00e2nea",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"has_answer_here\": true, \"time_gap_seconds\": 12711807.878615, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Bianca",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 6745430.306942, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Vanessa",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Jazz Dance",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"has_answer_here\": false, \"time_gap_seconds\": 13116016.411249, \"requires_question\": false}, {\"area\": \"cursos_livres\", \"turma\": \"Jazz Dance\", \"has_answer_here\": true, \"time_gap_seconds\": 13116084.012336, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Alessandra",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a Cl\u00e1ssica - B\u00e1sico",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"has_answer_here\": true, \"time_gap_seconds\": 8478869.501342, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Dandara",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo\", \"has_answer_here\": true, \"time_gap_seconds\": 11141446.700845, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Lorenza",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 6009864.788621, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Zilma Maria",
+  "pergunta": "Por que voc\u00ea deseja participar deste curso?",
+  "ONDE ESTA (INVALIDO)": "Jazz Dance",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"cursos_livres\", \"turma\": \"Jazz Dance\", \"has_answer_here\": true, \"time_gap_seconds\": 7921968.611195, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Rachel",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 12832094.204197, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Fernanda",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Dan\u00e7a e Performance",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"regulares\", \"turma\": \"Dan\u00e7a e Performance\", \"has_answer_here\": true, \"time_gap_seconds\": 4750285.516112, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Lidia",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 11906459.917223, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Beatriz",
+  "pergunta": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 5331305.334151, \"requires_question\": false}]"
+ },
+ {
+  "aluno_nome": "Luiz Fernando",
+  "pergunta": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "ONDE ESTA (INVALIDO)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "ANALISE_OPCOES_ALUNO": "[{\"area\": \"Regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"has_answer_here\": true, \"time_gap_seconds\": 1154272.455921, \"requires_question\": false}]"
+ }
+]

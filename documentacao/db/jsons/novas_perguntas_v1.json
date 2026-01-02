@@ -1,0 +1,17 @@
+[
+ {
+  "id": "5094d525-8814-4b4e-bbc9-bb2af2dec187",
+  "pergunta": "drt_arquivo",
+  "label": "Documento DRT (Upload)"
+ },
+ {
+  "id": "49bba005-9d03-4ee5-8a87-a02ef1e7db94",
+  "pergunta": "referencia_atuacao_profissional",
+  "label": "Refer\u00eancia de Atua\u00e7\u00e3o Profissional (Upload)"
+ },
+ {
+  "id": "73bbbdb4-758d-4491-a728-8d41c9053a6e",
+  "pergunta": "proposta_pedagogica",
+  "label": "Proposta Pedag\u00f3gica (Upload)"
+ }
+]

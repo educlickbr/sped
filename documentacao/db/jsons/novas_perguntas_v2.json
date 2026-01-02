@@ -1,0 +1,106 @@
+[
+ {
+  "id": "1d0e680c-bd17-49b1-abda-b07c9f5f2a78",
+  "pergunta": "contratacao_ccm",
+  "label": "Prova de inscri\u00e7\u00e3o no CCM",
+  "tipo": "arquivo",
+  "bloco": "contratacao",
+  "ordem": null
+ },
+ {
+  "id": "a0c71c89-3a6b-48f1-9813-8f1a85366e20",
+  "pergunta": "contratacao_ato_constitutivo",
+  "label": "Ato constitutivo, estatuto ou contrato social atualizado, em vigor e registrado, acompanhado de documentos de elei\u00e7\u00e3o de seus diretores e ou administradores nos casos em que estes n\u00e3o constem do ato constitutivo.",
+  "tipo": "arquivo",
+  "bloco": "contratacao",
+  "ordem": null
+ },
+ {
+  "id": "a5ff8f07-b195-409b-b514-36ce731bd586",
+  "pergunta": "contratacao_cnpj",
+  "label": "Prova de inscri\u00e7\u00e3o no Cadastro Nacional de Pessoas Jur\u00eddicas (CNPJ)",
+  "tipo": "arquivo",
+  "bloco": "contratacao",
+  "ordem": null
+ },
+ {
+  "id": "ebd21767-36ba-49d9-86a1-f0b66fdf9af8",
+  "pergunta": "contratacao_comprovacao_quadro",
+  "label": "Comprova\u00e7\u00e3o de que o profissional indicado pertence ao seu quadro societ\u00e1rio, ao quadro de empregados ou \u00e9 representado pela pessoa jur\u00eddica interessada, mediante apresenta\u00e7\u00e3o de contrato social, registro em carteira profissional ou declara\u00e7\u00e3o firmada pelo representante da pessoa jur\u00eddica proponente.",
+  "tipo": "arquivo",
+  "bloco": "contratacao",
+  "ordem": null
+ },
+ {
+  "id": "5ed9c9f7-68fd-41f4-8a85-0ccc8e68c9a1",
+  "pergunta": "contratacao_tributos_federais",
+  "label": "Certid\u00e3o conjunta de d\u00e9bitos relativos a tributos federais e \u00e0 D\u00edvida Ativa da Uni\u00e3o",
+  "tipo": "arquivo",
+  "bloco": "contratacao",
+  "ordem": null
+ },
+ {
+  "id": "1fba92de-09b2-444a-8909-9bc18350aab6",
+  "pergunta": "contratacao_tributos_estaduais",
+  "label": "Certid\u00e3o de quita\u00e7\u00e3o de tributos estaduais ou certid\u00e3o de n\u00e3o contribuinte, se for o caso, expedida pelo \u00f3rg\u00e3o competente do Governo Estadual da sede ou domic\u00edlio do proponente",
+  "tipo": "arquivo",
+  "bloco": "contratacao",
+  "ordem": null
+ },
+ {
+  "id": "7791a6ab-dca1-4fab-9344-720de82ad418",
+  "pergunta": "contratacao_tipo_pessoa",
+  "label": "Tipo de Pessoa",
+  "tipo": "radio",
+  "bloco": "contratacao",
+  "ordem": null
+ },
+ {
+  "id": "8e6174cf-0551-4a49-a4bf-7aafb0981391",
+  "pergunta": "contratacao_pis_pasep",
+  "label": "C\u00f3pia do cart\u00e3o do PIS/PASEP",
+  "tipo": "arquivo",
+  "bloco": "contratacao",
+  "ordem": null
+ },
+ {
+  "id": "9bf5caab-4c00-40b5-bc43-87163c66bcae",
+  "pergunta": "contratacao_inss_retencao",
+  "label": "Carta de reten\u00e7\u00e3o do INSS",
+  "tipo": "arquivo",
+  "bloco": "contratacao",
+  "ordem": null
+ },
+ {
+  "id": "09969b04-da38-4205-824f-9c61afacc49d",
+  "pergunta": "contratacao_iss_sede",
+  "label": "Prova de inscri\u00e7\u00e3o no cadastro de contribuintes Municipal da sede ou domic\u00edlio do proponente, compat\u00edvel com o objeto dos servi\u00e7os",
+  "tipo": "arquivo",
+  "bloco": "contratacao",
+  "ordem": null
+ },
+ {
+  "id": "3de8b11c-b53c-4deb-b8bd-9dd94520a4c4",
+  "pergunta": "contratacao_regularidade_social",
+  "label": "Prova de regularidade relativa \u00e0 Seguridade Social e ao Fundo de Garantia por Tempo de Servi\u00e7o - FGTS",
+  "tipo": "arquivo",
+  "bloco": "contratacao",
+  "ordem": null
+ },
+ {
+  "id": "9a0da8fb-37ff-4af7-b6b8-d568d3051b43",
+  "pergunta": "contratacao_cndt",
+  "label": "Certid\u00e3o Negativa de D\u00e9bitos Trabalhistas (CNDT)",
+  "tipo": "arquivo",
+  "bloco": "contratacao",
+  "ordem": null
+ },
+ {
+  "id": "9ea63cb8-7244-4b5d-9e03-b732815d91b5",
+  "pergunta": "contratacao_tributos_municipais",
+  "label": "Certid\u00e3o de quita\u00e7\u00e3o de tributos municipais expedida pelo \u00f3rg\u00e3o competente da Prefeitura Municipal da sede ou domic\u00edlio do proponente",
+  "tipo": "arquivo",
+  "bloco": "contratacao",
+  "ordem": null
+ }
+]

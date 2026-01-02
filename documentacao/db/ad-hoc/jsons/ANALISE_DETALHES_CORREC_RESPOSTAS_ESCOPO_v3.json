@@ -1,0 +1,464 @@
+[
+ {
+  "aluno_nome": "Fab\u00edola",
+  "pergunta_label": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "Onde QUERIA ir (Best Match)": "T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo",
+  "Area Alvo": "regulares",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Joana",
+  "pergunta_label": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "Onde QUERIA ir (Best Match)": "T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo",
+  "Area Alvo": "regulares",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Jogo das A\u00e7\u00f5es F\u00edsicas e Ancestralidade\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"regulares\", \"turma\": \"Dan\u00e7a e Performance\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"regulares\", \"turma\": \"Dan\u00e7a e Performance\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Rafael",
+  "pergunta_label": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "Onde QUERIA ir (Best Match)": "T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo",
+  "Area Alvo": "regulares",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Jazz Dance: Processos Criativos para Composi\u00e7\u00e3o Coreogr\u00e1fica\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"regulares\", \"turma\": \"Dan\u00e7a e Performance\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Ricardo",
+  "pergunta_label": "Carta de inten\u00e7\u00e3o do(a) candidato(a), de 1000 a 2000 caracteres com espa\u00e7o, detalhando porque gostaria de participar do curso pleiteado.",
+  "Onde QUERIA ir (Best Match)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "Area Alvo": "regulares",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Teatro Musical: Canto, Dan\u00e7a e Cenas\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Alessandra",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Jazz Dance",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Jazz Dance\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Alessandra",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Contempor\u00e2nea",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Jazz Dance\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Alex",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Fotografia e Dan\u00e7a: A Po\u00e9tica da Mem\u00f3ria Corporal",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Fotografia e Dan\u00e7a: A Po\u00e9tica da Mem\u00f3ria Corporal\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Dan\u00e7as Urbanas e Musicalidade: Entre o Sentir e o Executar\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Aluno Teste",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "O Ensino de Dan\u00e7as Urbanas na Escola e Fora Dela",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"Dan\u00e7a e Performance\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"regulares\", \"turma\": \"Dan\u00e7a e Performance\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Aluno Teste",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "O Ensino de Dan\u00e7as Urbanas na Escola e Fora Dela",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"Dan\u00e7a e Performance\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"regulares\", \"turma\": \"Dan\u00e7a e Performance\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Ana Fl\u00e1via",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Contempor\u00e2nea",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Jazz Dance: Processos Criativos para Composi\u00e7\u00e3o Coreogr\u00e1fica\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Jazz Dance\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Andreia",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Jogo das A\u00e7\u00f5es F\u00edsicas e Ancestralidade",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Jogo das A\u00e7\u00f5es F\u00edsicas e Ancestralidade\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Dancehall: Ritmo, Raiz e Movimento\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Bruna",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Sonoplastia para a Dan\u00e7a",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Dire\u00e7\u00e3o para Bailarinos e Int\u00e9rpretes Criadores\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"extensao\", \"turma\": \"Visagismo e Caracteriza\u00e7\u00e3o\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Jazz Dance\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Carolina",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Teatro Musical: o Corpo na Constru\u00e7\u00e3o da Cena",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Teatro Musical: Canto, Dan\u00e7a e Cenas\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Caroline",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Contempor\u00e2nea",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Jazz Dance: Processos Criativos para Composi\u00e7\u00e3o Coreogr\u00e1fica\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Cintia",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Contempor\u00e2nea - Inter/Avan\u00e7ado",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Jazz Dance: Processos Criativos para Composi\u00e7\u00e3o Coreogr\u00e1fica\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"extensao\", \"turma\": \"Teatro Musical: Canto, Dan\u00e7a e Cenas\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Daniela",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Visagismo e Caracteriza\u00e7\u00e3o",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Teatro Musical: Canto, Dan\u00e7a e Cenas\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"extensao\", \"turma\": \"Visagismo e Caracteriza\u00e7\u00e3o\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Diogo",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Estudos de Improvisa\u00e7\u00e3o e Composi\u00e7\u00e3o Coreogr\u00e1fica na Dan\u00e7a Contempor\u00e2nea",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Dancehall: Ritmo, Raiz e Movimento\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7as Urbanas\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Dan\u00e7as Urbanas e Musicalidade: Entre o Sentir e o Executar\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Fernando",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Visagismo e Caracteriza\u00e7\u00e3o",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Visagismo e Caracteriza\u00e7\u00e3o\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Teatro Musical: Canto, Dan\u00e7a e Cenas\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"extensao\", \"turma\": \"Bal\u00e9 Cl\u00e1ssico: T\u00e9cnicas e Varia\u00e7\u00f5es de Repert\u00f3rio\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7as Urbanas\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Gabriel",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Contempor\u00e2nea - Inter/Avan\u00e7ado",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Dan\u00e7as Urbanas e Musicalidade: Entre o Sentir e o Executar\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"extensao\", \"turma\": \"Jazz Dance: Processos Criativos para Composi\u00e7\u00e3o Coreogr\u00e1fica\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Gabrielle",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7as Urbanas",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Dan\u00e7as Urbanas e Musicalidade: Entre o Sentir e o Executar\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"extensao\", \"turma\": \"Dancehall: Ritmo, Raiz e Movimento\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7as Urbanas\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Gisa",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Contempor\u00e2nea",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Dan\u00e7as Urbanas e Musicalidade: Entre o Sentir e o Executar\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Iara",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Cl\u00e1ssica - Intermedi\u00e1rio",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Bal\u00e9 Cl\u00e1ssico: T\u00e9cnicas e Varia\u00e7\u00f5es de Repert\u00f3rio\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase no Cl\u00e1ssico\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - Intermedi\u00e1rio\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Isabela",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Teatro Musical: o Corpo na Constru\u00e7\u00e3o da Cena",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Dancehall: Ritmo, Raiz e Movimento\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Isabella",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a de Sal\u00e3o",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Teatro Musical: Canto, Dan\u00e7a e Cenas\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a de Sal\u00e3o\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Jazz Dance: Processos Criativos para Composi\u00e7\u00e3o Coreogr\u00e1fica\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Isabella",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Contempor\u00e2nea",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"Dan\u00e7a e Performance\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Jazz Dance: Processos Criativos para Composi\u00e7\u00e3o Coreogr\u00e1fica\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Teatro Musical: Canto, Dan\u00e7a e Cenas\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Jazz Dance\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Izabelly",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Visagismo e Caracteriza\u00e7\u00e3o",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Teatro Musical: Canto, Dan\u00e7a e Cenas\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"extensao\", \"turma\": \"Visagismo e Caracteriza\u00e7\u00e3o\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Juliana",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Jazz Dance",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Dos Quilombos ao Samb\u00f3dromo: Ancestralidade e T\u00e9cnicas das Dan\u00e7as do Carnaval\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Jazz Dance\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Jazz Dance: Processos Criativos para Composi\u00e7\u00e3o Coreogr\u00e1fica\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Karine",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo",
+  "Area Alvo": "regulares",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Dancehall: Ritmo, Raiz e Movimento\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Lara",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Teatro Musical: o Corpo na Constru\u00e7\u00e3o da Cena",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Teatro Musical: Canto, Dan\u00e7a e Cenas\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Maria",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Jazz Dance",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Teatro Musical: Canto, Dan\u00e7a e Cenas\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"extensao\", \"turma\": \"Jazz Dance: Processos Criativos para Composi\u00e7\u00e3o Coreogr\u00e1fica\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Jazz Dance\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Mayra",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Teatro Musical: o Corpo na Constru\u00e7\u00e3o da Cena",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Jazz Dance: Processos Criativos para Composi\u00e7\u00e3o Coreogr\u00e1fica\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"extensao\", \"turma\": \"Teatro Musical: Canto, Dan\u00e7a e Cenas\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Mayra",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Performatividade BallRoom - Vogue Femme",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"Dan\u00e7a e Performance\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Dancehall: Ritmo, Raiz e Movimento\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Nicolly",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Estudos de Improvisa\u00e7\u00e3o e Composi\u00e7\u00e3o Coreogr\u00e1fica na Dan\u00e7a Contempor\u00e2nea",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Dan\u00e7as Urbanas e Musicalidade: Entre o Sentir e o Executar\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Pietro",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Sonoplastia para a Dan\u00e7a",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Visagismo e Caracteriza\u00e7\u00e3o\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Fotografia e Dan\u00e7a: A Po\u00e9tica da Mem\u00f3ria Corporal\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Rafael",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo",
+  "Area Alvo": "regulares",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Jazz Dance: Processos Criativos para Composi\u00e7\u00e3o Coreogr\u00e1fica\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"regulares\", \"turma\": \"Dan\u00e7a e Performance\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Renan",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Contempor\u00e2nea - Inter/Avan\u00e7ado",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Jogo das A\u00e7\u00f5es F\u00edsicas e Ancestralidade\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Dos Quilombos ao Samb\u00f3dromo: Ancestralidade e T\u00e9cnicas das Dan\u00e7as do Carnaval\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Ricardo",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) ",
+  "Area Alvo": "regulares",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Teatro Musical: Canto, Dan\u00e7a e Cenas\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Santi\u00ea",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Contempor\u00e2nea - Inter/Avan\u00e7ado",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Visagismo e Caracteriza\u00e7\u00e3o\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Dire\u00e7\u00e3o para Bailarinos e Int\u00e9rpretes Criadores\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Valentina",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Estudos de Improvisa\u00e7\u00e3o e Composi\u00e7\u00e3o Coreogr\u00e1fica na Dan\u00e7a Contempor\u00e2nea",
+  "Area Alvo": "extensao",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Fotografia e Dan\u00e7a: A Po\u00e9tica da Mem\u00f3ria Corporal\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "V\u00ean\u00fas Ori\u00f3n",
+  "pergunta_label": "Link para um v\u00eddeo de at\u00e9 1 minuto. ",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7as Urbanas",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Dancehall: Ritmo, Raiz e Movimento\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"extensao\", \"turma\": \"Dan\u00e7as Urbanas e Musicalidade: Entre o Sentir e o Executar\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7as Urbanas\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Alessandra",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Jazz Dance",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Jazz Dance\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Alessandra",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Contempor\u00e2nea",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Jazz Dance\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Ana Clara",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Cl\u00e1ssica - B\u00e1sico",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - Intermedi\u00e1rio\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Andressa",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Jazz Dance",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Dancehall: Ritmo, Raiz e Movimento\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Jazz Dance\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Dan\u00e7as Urbanas e Musicalidade: Entre o Sentir e o Executar\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Carolina Liz",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Contempor\u00e2nea",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7as Urbanas\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Visagismo e Caracteriza\u00e7\u00e3o\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"extensao\", \"turma\": \"Dan\u00e7as Urbanas e Musicalidade: Entre o Sentir e o Executar\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Caroline",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Contempor\u00e2nea",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Jazz Dance: Processos Criativos para Composi\u00e7\u00e3o Coreogr\u00e1fica\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Chanti",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Cl\u00e1ssica - B\u00e1sico",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Jazz Dance\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Eleonora",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Cl\u00e1ssica - B\u00e1sico",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Jazz Dance\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Gabriel ",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Contempor\u00e2nea",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7as Urbanas\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Isaac",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Jazz Dance",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Jazz Dance\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Isabella",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7as Urbanas",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Dan\u00e7as Urbanas e Musicalidade: Entre o Sentir e o Executar\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"extensao\", \"turma\": \"Dancehall: Ritmo, Raiz e Movimento\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7as Urbanas\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Jo\u00e3o Pedro",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7as Urbanas",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Dan\u00e7as Urbanas e Musicalidade: Entre o Sentir e o Executar\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Lucas",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Jazz Dance",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Teatro Musical: Canto, Dan\u00e7a e Cenas\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Maria",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Cl\u00e1ssica - B\u00e1sico",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Dancehall: Ritmo, Raiz e Movimento\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Maria Aldemira",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a de Sal\u00e3o",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7as Urbanas\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a de Sal\u00e3o\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Jazz Dance\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Mirela",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7as Urbanas",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7as Urbanas\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Nat\u00e1lia",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Contempor\u00e2nea",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"regulares\", \"turma\": \"Dan\u00e7a e Performance\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase no Cl\u00e1ssico\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase em Moderno e Contempor\u00e2neo\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Renata",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Contempor\u00e2nea",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Dos Quilombos ao Samb\u00f3dromo: Ancestralidade e T\u00e9cnicas das Dan\u00e7as do Carnaval\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Renat\u00e1",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7as Urbanas",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7as Urbanas\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Jazz Dance\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Roberta",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a de Sal\u00e3o",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a de Sal\u00e3o\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Teatro Musical: Canto, Dan\u00e7a e Cenas\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Jazz Dance\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Contempor\u00e2nea\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Sabrina",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Jazz Dance",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"cursoslivres\", \"turma\": \"Jazz Dance\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Solange",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Jazz Dance",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"regulares\", \"turma\": \"Dan\u00e7a e Performance\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Stephanie Carolyn",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Cl\u00e1ssica - Intermedi\u00e1rio",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Bal\u00e9 Cl\u00e1ssico: T\u00e9cnicas e Varia\u00e7\u00f5es de Repert\u00f3rio\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - Intermedi\u00e1rio\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "Vanessa",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Cl\u00e1ssica - B\u00e1sico",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"cursoslivres\", \"turma\": \"Jazz Dance\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7a Cl\u00e1ssica - B\u00e1sico\", \"ACEITARIA?\": \"NAO\"}]"
+ },
+ {
+  "aluno_nome": "V\u00ean\u00fas Ori\u00f3n",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7as Urbanas",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"extensao\", \"turma\": \"Dan\u00e7as Urbanas e Musicalidade: Entre o Sentir e o Executar\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"cursoslivres\", \"turma\": \"Dan\u00e7as Urbanas\", \"ACEITARIA?\": \"NAO\"}, {\"area\": \"extensao\", \"turma\": \"Dancehall: Ritmo, Raiz e Movimento\", \"ACEITARIA?\": \"SIM\"}]"
+ },
+ {
+  "aluno_nome": "Vit\u00f3ria",
+  "pergunta_label": "Por que voc\u00ea deseja participar deste curso?",
+  "Onde QUERIA ir (Best Match)": "Dan\u00e7a Cl\u00e1ssica - B\u00e1sico",
+  "Area Alvo": "cursoslivres",
+  "Analise de Outros Processos do Aluno": "[{\"area\": \"regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"regulares\", \"turma\": \"T\u00e9cnicas da Dan\u00e7a com \u00eanfase no Cl\u00e1ssico\", \"ACEITARIA?\": \"SIM\"}, {\"area\": \"regulares\", \"turma\": \"Teatro Musical (jazz dance, sapateado, canto e interpreta\u00e7\u00e3o) \", \"ACEITARIA?\": \"SIM\"}]"
+ }
+]

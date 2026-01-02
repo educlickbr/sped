@@ -1,0 +1,34 @@
+[
+ {
+  "label": "Por que voc\u00ea deseja participar deste curso?",
+  "id_pergunta": "a5d2bbde-2622-4914-a9e8-5e4fe16e06cf",
+  "escopo": "turma",
+  "id_area": "regulares",
+  "id_turma": null,
+  "area_norm_pdo": "regulares"
+ },
+ {
+  "label": "Por que voc\u00ea deseja participar deste curso?",
+  "id_pergunta": "a5d2bbde-2622-4914-a9e8-5e4fe16e06cf",
+  "escopo": "turma",
+  "id_area": "regulares",
+  "id_turma": null,
+  "area_norm_pdo": "regulares"
+ },
+ {
+  "label": "Por que voc\u00ea deseja participar deste curso?",
+  "id_pergunta": "a5d2bbde-2622-4914-a9e8-5e4fe16e06cf",
+  "escopo": "turma",
+  "id_area": "extensao",
+  "id_turma": null,
+  "area_norm_pdo": "extensao"
+ },
+ {
+  "label": "Por que voc\u00ea deseja participar deste curso?",
+  "id_pergunta": "a5d2bbde-2622-4914-a9e8-5e4fe16e06cf",
+  "escopo": "turma",
+  "id_area": "extensao",
+  "id_turma": null,
+  "area_norm_pdo": "extensao"
+ }
+]

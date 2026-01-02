@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    /* Primary */
+    --color-primary: #3571CB;
+    --color-primary-hover: #20447A;
+
+    /* Secondary */
+    --color-secondary: #6B82A7;
+    --color-secondary-hover: #40516C;
+    --color-secondary-surface: #6B82A715;
+    --color-secondary-surface-hover: #6B82A730;
+
+    /* State Colors */
+    --color-danger: #C33C54;
+    --color-danger-hover: #752432;
+
+    --color-success: #79AEA3;
+    --color-success-hover: #355951;
+
+    --color-warning: #E9D758;
+    --color-warning-hover: #E3CC2B;
+
+    /* Base Text & Background (Light) */
+    --color-text: #141616;
+    --color-background: #FFFFFF;
+
+    /* Rounding (Design Tokens) */
+    --radius-xs: 2px;
+    --radius-sm: 4px;
+    --radius-md: 6px;
+    --radius-lg: 8px;
+
+    font-family: Roboto, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[data-theme="dark"] {
+    --color-text: #E8E6E8;
+    --color-background: #16161E;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    transition: color 0.3s, background-color 0.3s;
+}

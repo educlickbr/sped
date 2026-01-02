@@ -1,0 +1,58 @@
+[
+ {
+  "nome": "Isabella",
+  "id_processo": "42bfcc5d-f691-4655-843a-8593a52ae421",
+  "nome_curso": "Dancehall: Ritmo, Raiz e Movimento",
+  "area_curso": "extensao",
+  "ano_semestre": "26Is",
+  "processo_criado_em": "2025-12-31 11:23:08.460589+00"
+ },
+ {
+  "nome": "Isabella",
+  "id_processo": "bfc24e16-5c3e-4a6b-8e8f-7d3aecd3f588",
+  "nome_curso": "Dan\u00e7as Urbanas e Musicalidade: Entre o Sentir e o Executar",
+  "area_curso": "extensao",
+  "ano_semestre": "26Is",
+  "processo_criado_em": "2025-12-31 11:19:54.860221+00"
+ },
+ {
+  "nome": "Isabella",
+  "id_processo": "3d88e1bb-eed4-4b81-99f8-eeceed0d3c4c",
+  "nome_curso": "Dan\u00e7as Urbanas",
+  "area_curso": "cursos_livres",
+  "ano_semestre": "26Is",
+  "processo_criado_em": "2025-12-31 11:06:42.647585+00"
+ },
+ {
+  "nome": "Isabella",
+  "id_processo": "5c8fd087-6455-4a9f-a2b3-49cc29ff5258",
+  "nome_curso": "Jazz Dance",
+  "area_curso": "Cursos Livres",
+  "ano_semestre": "25IIs",
+  "processo_criado_em": "2025-07-23 15:50:58.340463+00"
+ },
+ {
+  "nome": "Isabella",
+  "id_processo": "f75624aa-446a-4c24-8059-fa619deaa503",
+  "nome_curso": "Experimentos Coreogr\u00e1ficos nas Dan\u00e7as Urbanas: fundamentos e t\u00e9cnicas",
+  "area_curso": "Extens\u00e3o",
+  "ano_semestre": "25IIs",
+  "processo_criado_em": "2025-07-23 02:13:02.517226+00"
+ },
+ {
+  "nome": "Isabella",
+  "id_processo": "628816ce-8629-49e1-a8c0-6b12e860ef83",
+  "nome_curso": "Dan\u00e7a e Performance",
+  "area_curso": "Regulares",
+  "ano_semestre": "25IIs",
+  "processo_criado_em": "2025-06-03 01:17:05.242636+00"
+ },
+ {
+  "nome": "Isabella",
+  "id_processo": "df05d77d-3c7e-4c97-b4da-27305e0a6a27",
+  "nome_curso": "Soul Dances - Dan\u00e7as Sociais, Campbellock e Waacking",
+  "area_curso": "Extens\u00e3o",
+  "ano_semestre": "25IIs",
+  "processo_criado_em": "2025-06-03 00:42:01.341193+00"
+ }
+]

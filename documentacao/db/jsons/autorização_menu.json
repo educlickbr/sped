@@ -1,0 +1,141 @@
+[
+  {
+    "nome_botao": "Diário Regulares",
+        "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3", "fbae2a34-8f84-464d-8f04-11e8f65443f9", "cf96c718-633d-49bb-a448-4b591c3fb9bf"],
+    "eixos": ["1"]
+  },
+  {
+    "nome_botao": "Diário Extensão",
+        "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3", "fbae2a34-8f84-464d-8f04-11e8f65443f9", "cf96c718-633d-49bb-a448-4b591c3fb9bf"],
+    "eixos": ["2","3","2-3"]
+  },
+  {
+    "nome_botao": "Diário Cursos Livres",
+        "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3", "fbae2a34-8f84-464d-8f04-11e8f65443f9", "cf96c718-633d-49bb-a448-4b591c3fb9bf"],
+    "eixos": ["2","3","2-3"]
+  },
+  {
+    "nome_botao": "Matrículas",
+        "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3","cf96c718-633d-49bb-a448-4b591c3fb9bf"],
+    "eixos": ["1"]
+  },
+  {
+    "nome_botao": "Carômetro",
+        "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3", "fbae2a34-8f84-464d-8f04-11e8f65443f9","cf96c718-633d-49bb-a448-4b591c3fb9bf","5568548e-856c-4a2e-99f3-a2d7fe5a15e9","1ff10e30-3a2b-4a61-ba8c-0d74ba2cde6b"],
+    "eixos": ["1"]
+  },
+  {
+    "nome_botao": "Calendário de Salas",
+    "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3", "fbae2a34-8f84-464d-8f04-11e8f65443f9", "cf96c718-633d-49bb-a448-4b591c3fb9bf","5568548e-856c-4a2e-99f3-a2d7fe5a15e9"],
+    "eixos": ["1","2","3","2-3"]
+  },
+  {
+    "nome_botao": "Diários Geral",
+    "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3", "fbae2a34-8f84-464d-8f04-11e8f65443f9", "cf96c718-633d-49bb-a448-4b591c3fb9bf" ],
+    "eixos": ["1","2","3","2-3"]
+  },
+  {
+    "nome_botao": "Processo Seletivo Geral",
+    "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3", "9a33b6e1-13ae-4029-85f9-ec02fba4b5f2", "cf96c718-633d-49bb-a448-4b591c3fb9bf", "d19ba89e-9a15-4194-929a-db47695fb2be","65aae4d3-f4cd-4b47-ac2d-aaab3a301c78","d46726aa-9d99-4073-9463-9b34ad2ae95d"],
+    "eixos": ["1","2","3","2-3"]
+  },
+  {
+    "nome_botao": "Educacional Geral",
+    "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3", "fbae2a34-8f84-464d-8f04-11e8f65443f9", "cf96c718-633d-49bb-a448-4b591c3fb9bf", "1ff10e30-3a2b-4a61-ba8c-0d74ba2cde6b" ],
+    "eixos": ["1"]
+  },
+    {
+    "nome_botao": "Produção Geral",
+    "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3", "fbae2a34-8f84-464d-8f04-11e8f65443f9", "cf96c718-633d-49bb-a448-4b591c3fb9bf","5568548e-856c-4a2e-99f3-a2d7fe5a15e9","8f3d1cd3-75fd-4549-b4ea-2b2e1411c2ec"],
+    "eixos": ["1","2","3","2-3"]
+  },
+    {
+    "nome_botao": "Início Produção",
+    "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3","5568548e-856c-4a2e-99f3-a2d7fe5a15e9"],
+    "eixos": ["1","2","3","2-3"]
+  },
+  {
+    "nome_botao": "Cadastro Usuários",
+    "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3","5568548e-856c-4a2e-99f3-a2d7fe5a15e9"],
+    "eixos": ["1","2","3","2-3"]
+  },
+  {
+    "nome_botao": "Cadastro Kits",
+    "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3","5568548e-856c-4a2e-99f3-a2d7fe5a15e9"],
+    "eixos": ["1","2","3","2-3"]
+  },
+  {
+    "nome_botao": "Cadastro Salas",
+    "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3","5568548e-856c-4a2e-99f3-a2d7fe5a15e9"],
+    "eixos": ["1","2","3","2-3"]
+  },
+  {
+    "nome_botao": "Cadastro Produtos",
+    "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3","5568548e-856c-4a2e-99f3-a2d7fe5a15e9"],
+    "eixos": ["1","2","3","2-3"]
+  },
+  {
+    "nome_botao": "Estoque",
+    "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3","5568548e-856c-4a2e-99f3-a2d7fe5a15e9"],
+    "eixos": ["1","2","3","2-3"]
+  },
+  {
+    "nome_botao": "Reservas Produção",
+    "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3","5568548e-856c-4a2e-99f3-a2d7fe5a15e9"],
+    "eixos": ["1","2","3","2-3"]
+  },
+    {
+    "nome_botao": "Reservas Colaboradores",
+    "papeis": ["8f3d1cd3-75fd-4549-b4ea-2b2e1411c2ec","a29da0f6-ce00-4535-ad9e-22752960b0c3"],
+    "eixos": ["1","2","3","2-3"]
+  },
+  {
+    "nome_botao": "Cursos",
+    "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3","cf96c718-633d-49bb-a448-4b591c3fb9bf"],
+    "eixos": ["1","2","3","2-3"]
+  },
+  {
+    "nome_botao": "Turmas",
+    "papeis": ["a29da0f6-ce00-4535-ad9e-22752960b0c3","cf96c718-633d-49bb-a448-4b591c3fb9bf"],
+    "eixos": ["1","2","3","2-3"]
+  },
+  {
+    "nome_botao": "Seleção",
+    "papeis": ["cf96c718-633d-49bb-a448-4b591c3fb9bf","fbae2a34-8f84-464d-8f04-11e8f65443f9","a29da0f6-ce00-4535-ad9e-22752960b0c3","65aae4d3-f4cd-4b47-ac2d-aaab3a301c78","d46726aa-9d99-4073-9463-9b34ad2ae95d"],
+    "eixos": ["1","2","3","2-3"]
+  },
+  {
+    "nome_botao": "selecao_extensao_estudante",
+    "papeis": ["cf96c718-633d-49bb-a448-4b591c3fb9bf","fbae2a34-8f84-464d-8f04-11e8f65443f9","a29da0f6-ce00-4535-ad9e-22752960b0c3","d46726aa-9d99-4073-9463-9b34ad2ae95d","65aae4d3-f4cd-4b47-ac2d-aaab3a301c78"],
+    "eixos": ["2","3","2-3"]
+  },
+  {
+    "nome_botao": "selecao_extensao_regulares",
+    "papeis": ["cf96c718-633d-49bb-a448-4b591c3fb9bf","fbae2a34-8f84-464d-8f04-11e8f65443f9","a29da0f6-ce00-4535-ad9e-22752960b0c3","65aae4d3-f4cd-4b47-ac2d-aaab3a301c78"],
+    "eixos": ["1"]
+  },
+  {
+    "nome_botao": "adequacao_docs_regulares",
+    "papeis": ["cf96c718-633d-49bb-a448-4b591c3fb9bf", "a29da0f6-ce00-4535-ad9e-22752960b0c3"],
+    "eixos": ["1"]
+  },
+  {    "nome_botao": "adequacao_docs_extensao",
+    "papeis": ["cf96c718-633d-49bb-a448-4b591c3fb9bf", "a29da0f6-ce00-4535-ad9e-22752960b0c3"],
+    "eixos": ["2","3","2-3"]
+  },
+{
+    "nome_botao": "painel_selecao",
+    "papeis": ["cf96c718-633d-49bb-a448-4b591c3fb9bf","fbae2a34-8f84-464d-8f04-11e8f65443f9","a29da0f6-ce00-4535-ad9e-22752960b0c3"],
+    "eixos": ["1","2","3","2-3"]
+  },
+{
+    "nome_botao": "gestao_colaboradores",
+    "papeis": ["cf96c718-633d-49bb-a448-4b591c3fb9bf","8f3d1cd3-75fd-4549-b4ea-2b2e1411c2ec","a29da0f6-ce00-4535-ad9e-22752960b0c3"],
+    "eixos": ["1","2","3","2-3"]
+  },
+  {
+    "nome_botao": "aprovar_colaboradores",
+    "papeis": ["cf96c718-633d-49bb-a448-4b591c3fb9bf","8f3d1cd3-75fd-4549-b4ea-2b2e1411c2ec","a29da0f6-ce00-4535-ad9e-22752960b0c3"],
+    "eixos": ["1","2","3","2-3"]
+  }
+]
