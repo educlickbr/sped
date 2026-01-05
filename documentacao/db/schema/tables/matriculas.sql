@@ -3,12 +3,13 @@ CREATE TABLE IF NOT EXISTS public.matriculas
     id uuid NOT NULL DEFAULT gen_random_uuid(),
     id_aluno uuid NOT NULL,
     id_turma uuid NOT NULL,
-    status status_matricula NOT NULL DEFAULT 'Ativo'::status_matricula,
+    status status_matricula NOT NULL DEFAULT 'Ativa'::status_matricula,
     declaracao_matricula boolean NOT NULL DEFAULT false,
     data_envio_declaracao timestamp with time zone,
     arquivo_declaracao text COLLATE pg_catalog."default",
     criado_em timestamp with time zone NOT NULL DEFAULT now(),
     atualizado_em timestamp with time zone NOT NULL DEFAULT now(),
+    rematricula boolean DEFAULT false,
     CONSTRAINT matriculas_pkey PRIMARY KEY (id),
     CONSTRAINT matriculas_id_aluno_id_turma_key UNIQUE (id_aluno, id_turma),
     CONSTRAINT matriculas_id_aluno_fkey FOREIGN KEY (id_aluno)
@@ -41,3 +42,9 @@ CREATE INDEX IF NOT EXISTS ix_matriculas_turma_status
     ON public.matriculas USING btree
     (id_turma ASC NULLS LAST, status ASC NULLS LAST)
     TABLESPACE pg_default;
+-- Trigger: trg_gerar_ra_matricula
+CREATE OR REPLACE TRIGGER trg_gerar_ra_matricula
+    AFTER INSERT
+    ON public.matriculas
+    FOR EACH ROW
+    EXECUTE FUNCTION public.fn_gerar_ra_matricula();

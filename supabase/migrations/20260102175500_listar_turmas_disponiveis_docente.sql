@@ -98,5 +98,3 @@ order by
   c.nome_curso, t.ano_semestre, t.cod_modulo, t.cod_turma;
 $BODY$;
 
-ALTER FUNCTION public.listar_turmas_disponiveis_docente(p_data timestamp with time zone DEFAULT NULL::timestamp with time zone, p_area text DEFAULT NULL::text, p_ano_semestre text DEFAULT NULL::text)
-    OWNER TO postgres;
