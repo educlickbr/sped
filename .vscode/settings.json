@@ -22,5 +22,20 @@
     "fs",
     "http",
     "net"
+  ],
+  "sqltools.connections": [
+    {
+      "ssh": "Disabled",
+      "previewLimit": 50,
+      "server": "db.zonnvyzcstlntcfztyan.supabase.co",
+      "driver": "PostgreSQL",
+      "name": "sped",
+      "group": "sped",
+      "database": "postgres",
+      "username": "postgres",
+      "password": ".kuhHertz721.",
+      "connectionTimeout": 30,
+      "connectString": "postgresql://postgres.zonnvyzcstlntcfztyan:.kuhHertz721.@aws-0-sa-east-1.pooler.supabase.com:6543/postgres"
+    }
   ]
 }

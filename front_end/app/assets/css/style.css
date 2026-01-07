@@ -4,24 +4,24 @@
 
 :root {
     /* Primary */
-    --color-primary: #3571CB;
-    --color-primary-hover: #20447A;
+    --color-primary: #d60956;
+    --color-primary-hover: #b81151;
 
     /* Secondary */
-    --color-secondary: #6B82A7;
-    --color-secondary-hover: #40516C;
-    --color-secondary-surface: #6B82A715;
-    --color-secondary-surface-hover: #6B82A730;
+    --color-secondary: #8c878d;
+    --color-secondary-hover: #585458;
+    --color-secondary-surface: #8c878d15;
+    --color-secondary-surface-hover: #8c878d30;
 
     /* State Colors */
-    --color-danger: #C33C54;
-    --color-danger-hover: #752432;
+    --color-danger: #E7333F;
+    --color-danger-hover: #9b2028;
 
-    --color-success: #79AEA3;
-    --color-success-hover: #355951;
+    --color-success: #95C11E;
+    --color-success-hover: #6e8d18;
 
-    --color-warning: #E9D758;
-    --color-warning-hover: #E3CC2B;
+    --color-warning: #FFD753;
+    --color-warning-hover: #ccac41;
 
     /* Base Text & Background (Light) */
     --color-text: #141616;

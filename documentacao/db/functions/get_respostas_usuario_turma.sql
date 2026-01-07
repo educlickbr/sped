@@ -1,13 +1,7 @@
-CREATE OR REPLACE FUNCTION public.get_respostas_usuario_turma(
-	p_user_id uuid,
-	p_turma_id uuid,
-	p_tipo_processo tipo_processo DEFAULT NULL::tipo_processo,
-	p_tipo_candidatura tipo_candidatura DEFAULT NULL::tipo_candidatura)
-    RETURNS jsonb
-    LANGUAGE plpgsql
-    COST 100
-    VOLATILE PARALLEL UNSAFE
-AS $BODY$
+CREATE OR REPLACE FUNCTION public.get_respostas_usuario_turma(p_user_id uuid, p_turma_id uuid, p_tipo_processo tipo_processo DEFAULT NULL::tipo_processo, p_tipo_candidatura tipo_candidatura DEFAULT NULL::tipo_candidatura)
+ RETURNS jsonb
+ LANGUAGE plpgsql
+AS $function$
 DECLARE
     v_turma RECORD;
     v_curso RECORD;
@@ -161,7 +155,4 @@ BEGIN
         'perguntas', v_perguntas
     );
 END;
-$BODY$;
-
-ALTER FUNCTION public.get_respostas_usuario_turma(p_user_id uuid, p_turma_id uuid, p_tipo_processo tipo_processo DEFAULT NULL::tipo_processo, p_tipo_candidatura tipo_candidatura DEFAULT NULL::tipo_candidatura)
-    OWNER TO postgres;
+$function$

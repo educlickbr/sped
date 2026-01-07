@@ -1,215 +1,387 @@
 <script setup lang="ts">
-import { formatDate, formatDayMonth } from '@/utils/date'
+import { formatDate } from '@/utils/date'
 
 definePageMeta({
-  layout: 'landing',
-  title: 'Cursos Disponíveis'
+  // layout: 'base', // Using explicit NuxtLayout in template
+  title: 'Cursos - EduSelect'
 })
 
-// --- Tipos ---
-type FilterValue = 'estudante' | 'docente'
+// --- Tipos & Interface ---
+type FilterRole = 'estudante' | 'docente'
+type FilterCategory = 'extensao' | 'regulares' | 'cursos_livres'
 
-interface FilterOption {
-  label: string
-  value: FilterValue
-  icon: string
-}
-
+// Interface da API
 interface ApiResponse {
   items: any[]
   source: string
 }
 
-// --- Estado ---
-const tipoCandidatura = ref<FilterValue>('estudante')
-const areaSelecionada = ref<string>('extensao')
-
-// --- Opções de Filtro ---
-const filtersCandidatura: FilterOption[] = [
-  { label: 'Estudante', value: 'estudante', icon: '🎓' },
-  { label: 'Docente', value: 'docente', icon: '👨‍🏫' }
-]
-
-const filtersArea = [
-  { label: 'Extensão', value: 'extensao' },
-  { label: 'Regulares', value: 'regulares' },
-  { label: 'Cursos Livres', value: 'cursos_livres' }
-]
-
-// --- BFF Call ---
-const { data, pending, error, refresh } = await useFetch<ApiResponse>('/api/cursos/disponiveis', {
-  query: computed(() => ({
-    tipo_candidatura: tipoCandidatura.value
-  })),
-  watch: [tipoCandidatura]
-})
-
-// --- Computados ---
-const cursosFiltrados = computed(() => {
-  const items = data.value?.items || []
-  
-  if (!items.length) return []
-
-  // Filtro de Área
-  return items.filter((curso: any) => {
-    if (curso.area_curso_int) {
-        return curso.area_curso_int.toLowerCase() === areaSelecionada.value.toLowerCase()
-    }
-
-    const areaCurso = (curso.area_curso || '').toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-    const areaFiltro = areaSelecionada.value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-    
-    if (areaFiltro === 'cursos_livres' && areaCurso.includes('livre')) return true
-    
-    return areaCurso.includes(areaFiltro)
-  })
-})
-
-const handleInscricao = (curso: any) => {
-  console.log('Iniciar inscrição para:', curso)
+// Interface mapeada para o Frontend
+interface MappedCourse {
+  id: string
+  title: string
+  description: string
+  hours: number | string
+  mode: string
+  status: 'Open' | 'Closed' | 'Waitlist'
+  image: string
+  role: FilterRole
+  category: string
+  rawDates: {
+    start: string
+    end: string
+    startCourse: string
+    endCourse: string
+  }
+  weekDays: string[]
 }
 
-const formatDiasSemana = (dias: string[] | string | null): string => {
-    if (!dias) return 'Dias a definir'
-    if (Array.isArray(dias)) return dias.join(' | ')
-    return dias
+// --- Estado ---
+const selectedRole = ref<FilterRole>('estudante') // equivalente a tipoCandidatura
+const selectedCategory = ref<FilterCategory>('extensao') // equivalente a areaSelecionada
+const searchQuery = ref('')
+const router = useRouter()
+
+// --- API Call ---
+// Mantendo a lógica do legacy: filtro de candidatura via query param
+const { data, pending, error, refresh } = await useFetch<ApiResponse>('/api/cursos/disponiveis', {
+  query: computed(() => ({
+    tipo_candidatura: selectedRole.value
+  })),
+  watch: [selectedRole]
+})
+
+// --- Computed: Mapeamento e Filtragem ---
+const filteredCourses = computed<MappedCourse[]>(() => {
+    const items = data.value?.items || []
+    
+    // 1. Mapeamento
+    const mapped = items.map((curso: any, index: number) => {
+        // Determinar status baseado em datas
+        let status: MappedCourse['status'] = 'Open'
+        const today = new Date()
+        const end = new Date(curso.dt_fim_inscri)
+        if (today > end) status = 'Closed'
+        
+        // Normalização da Area para filtro interno
+        const areaNormalized = (curso.area_curso_int || '').toLowerCase()
+        
+        // Try to get array, fallback to string split or empty
+        let daysArray: string[] = []
+        if (Array.isArray(curso.dias_semana_array)) {
+            daysArray = curso.dias_semana_array
+        } else if (typeof curso.dias_semana === 'string') {
+             daysArray = [curso.dias_semana]
+        } else if (curso.dias_semana_str) {
+             daysArray = [curso.dias_semana_str]
+        }
+
+        return {
+            id: curso.id_turma || curso.id,
+            title: curso.nome_curso,
+            description: curso.descricao_resumida || curso.nome_curso, // API pode não ter descrição
+            hours: curso.qtd_horas_total || '--',
+            mode: curso.turno || 'Presencial',
+            status: status,
+            image: 'https://spedppull.b-cdn.net/site/logosp.png', // Imagem padrão
+            role: selectedRole.value,
+            category: areaNormalized,
+            rawDates: {
+                start: curso.dt_ini_inscri,
+                end: curso.dt_fim_inscri,
+                startCourse: curso.dt_ini_curso,
+                endCourse: curso.dt_fim_curso
+            },
+            weekDays: daysArray
+        }
+    })
+
+    // 2. Filtragem
+    return mapped.filter(c => {
+        // Filtro de Categoria (Area)
+        // Lógica adaptada do legacy para suportar 'cursos_livres' e matchs parciais
+        const areaCurso = c.category
+        const areaFiltro = selectedCategory.value.toLowerCase()
+
+        let categoryMatch = false
+        if (areaFiltro === 'cursos_livres' && areaCurso.includes('livre')) {
+            categoryMatch = true
+        } else if (areaCurso === areaFiltro) {
+            categoryMatch = true
+        } else if (areaCurso.includes(areaFiltro)) { // Fallback parcial
+             categoryMatch = true
+        }
+
+        if (!categoryMatch) return false
+
+        // Filtro Search
+        if (searchQuery.value && !c.title.toLowerCase().includes(searchQuery.value.toLowerCase())) return false
+        
+        return true
+    })
+})
+
+const getStatusColor = (status: string) => {
+    switch (status) {
+        case 'Open': return 'bg-success text-white'
+        case 'Closing Soon': return 'bg-warning text-white'
+        case 'Waitlist': return 'bg-secondary text-white'
+        default: return 'bg-primary text-white'
+    }
+}
+
+const handleEnroll = (id: number) => {
+    console.log('Enroll course', id)
+    // Redirecionar para página de inscrição real se houver
+    // navigateTo(`/inscricao/${id}`)
+}
+const handleInscricao = (course: MappedCourse) => {
+    if (!course.id || course.id === 'undefined') {
+        console.error('ID da turma não encontrado:', course)
+        alert('Erro: ID da turma não disponível. Por favor, tente novamente mais tarde.')
+        return
+    }
+    
+    console.log('Navegando para inscrição:', course.id)
+    navigateTo({
+        path: `/inscricao/${course.id}`,
+        query: {
+            tipo: course.role,
+            area: course.category,
+            processo: 'seletivo'
+        }
+    })
 }
 </script>
 
 <template>
-  <div class="relative min-h-full">
-    
-    <!-- Filter Bar (Sticky inside Main) -->
-    <div class="bg-div-15 backdrop-blur-md border-b border-secondary/5 py-3 px-4 lg:px-6 sticky top-0 z-30 transition-all shadow-sm">
-       <div class="flex flex-col md:flex-row items-center justify-between gap-4">
-         
-         <!-- Filter: Candidatura -->
-         <div class="flex p-1 bg-div-30 rounded-lg border border-secondary/10 shadow-inner">
-            <button 
-              v-for="opt in filtersCandidatura" 
-              :key="opt.value"
-              @click="tipoCandidatura = opt.value"
-              class="flex items-center gap-1.5 px-3 py-1.5 rounded-md text-[10px] font-bold transition-all relative"
-              :class="tipoCandidatura === opt.value ? 'bg-background text-primary shadow-sm ring-1 ring-secondary/5' : 'text-secondary hover:text-text'"
-            >
-               <span class="opacity-70 grayscale text-[12px]">{{ opt.icon }}</span>
-               <span>{{ opt.label }}</span>
-            </button>
-         </div>
-
-         <!-- Filter: Área -->
-         <div class="flex items-center gap-1 overflow-x-auto no-scrollbar max-w-full pb-1 md:pb-0">
-            <button
-               v-for="area in filtersArea"
-               :key="area.value"
-               @click="areaSelecionada = area.value"
-               class="px-3 py-1.5 text-[10px] uppercase tracking-widest font-bold transition-all border-b-2 whitespace-nowrap"
-               :class="areaSelecionada === area.value ? 'border-primary text-primary' : 'border-transparent text-secondary hover:text-text hover:bg-div-30 rounded-t'"
-            >
-               {{ area.label }}
-            </button>
-         </div>
-
-       </div>
-    </div>
-
-    <!-- Main Content -->
-    <div class="px-4 lg:px-6 py-6 flex flex-col items-start gap-6">
-      
-      <!-- Loading State -->
-      <div v-if="pending" class="w-full py-20 flex flex-col items-center justify-center opacity-50">
-           <div class="w-8 h-8 border-2 border-primary/20 border-t-primary rounded-full animate-spin mb-4" />
-           <p class="text-[10px] font-bold uppercase text-secondary tracking-widest">Carregando oportunidades...</p>
-      </div>
-
-      <!-- Error State -->
-      <div v-else-if="error" class="w-full bg-red-50 text-red-600 p-4 rounded-lg border border-red-100 flex items-center gap-3">
-           <div class="text-xl">⚠️</div>
-           <div>
-             <h3 class="font-bold text-xs">Erro ao carregar cursos</h3>
-             <p class="text-[10px] opacity-80">Não foi possível buscar as turmas disponíveis.</p>
-             <button @click="() => refresh()" class="mt-1 text-[10px] font-bold underline">Recarregar</button>
-           </div>
-      </div>
-
-      <!-- Empty State -->
-      <div v-else-if="cursosFiltrados.length === 0" class="w-full py-20 text-center">
-          <div class="inline-block p-4 rounded-full bg-div-15 mb-3 text-2xl grayscale opacity-50">📭</div>
-          <h3 class="text-sm font-bold text-text">Nenhum curso encontrado</h3>
-          <p class="text-[11px] text-secondary max-w-xs mx-auto mt-1">
-            Não encontramos turmas abertas para <strong>{{ filtersArea.find(a => a.value === areaSelecionada)?.label }}</strong>.
-          </p>
-      </div>
-
-      <!-- Grid de Cursos -->
-      <div v-else class="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-          <div 
-            v-for="curso in cursosFiltrados" 
-            :key="curso.id"
-            class="group bg-background rounded-lg border border-secondary/10 p-4 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 flex flex-col relative"
-          >
-            <!-- Header Compacto -->
-            <div class="flex justify-between items-start mb-3">
-                <span class="inline-block px-1.5 py-0.5 rounded text-[8px] font-black uppercase tracking-wider bg-div-15 text-primary border border-secondary/5">
-                    {{ curso.area_curso_int || curso.area_curso || 'Curso' }}
-                </span>
-                
-                <!-- Big Date Minimal -->
-                <div class="flex flex-col items-end leading-none text-primary/10 group-hover:text-primary/20 transition-colors select-none">
-                    <span class="text-3xl font-black -mt-2 -mr-1 tracking-tighter">{{ formatDayMonth(curso.dt_ini_curso).split(' ')[0] }}</span>
-                    <span class="text-[8px] font-bold uppercase tracking-widest">{{ formatDayMonth(curso.dt_ini_curso).split(' ')[1] }}</span>
-                </div>
+  <NuxtLayout name="base">
+    <div class="flex flex-col gap-8 pb-10">
+        
+        <!-- Hero Section #0F2027 #203A43 -->
+        <div class="relative w-full rounded-3xl overflow-hidden bg-gradient-to-r from-[#009C82] via-[#305F7E] to-[#5C267B] text-white shadow-2xl">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
+            <div class="relative z-10 px-8 py-16 md:py-24 text-center flex flex-col items-center justify-center gap-4">
+                <h1 class="text-4xl md:text-5xl font-black uppercase tracking-tight drop-shadow-lg">
+                    Processo Seletivo
+                </h1>
+                <p class="text-base md:text-lg opacity-90 max-w-2xl font-medium leading-relaxed">
+                    Navegue pelos cursos disponíveis para estudantes e docentes.
+                    Selecione o tipo de candidatura e a área e clique em Inscrever-se.
+                </p>
             </div>
+        </div>
 
-            <h3 class="text-sm font-bold text-text leading-tight group-hover:text-primary transition-colors mb-3 line-clamp-2 min-h-[2.5rem]">
-                {{ curso.nome_curso }}
-            </h3>
-
-            <!-- Info Lines -->
-            <div class="space-y-1.5 mb-4">
-                 <div class="flex items-center gap-2 text-[10px] text-secondary">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
-                    <span class="font-medium truncate">{{ curso.turno || '---' }}</span>
-                    <span class="text-secondary/30">|</span>
-                    <span class="font-medium">{{ curso.qtd_horas_total || '--' }}h</span>
-                 </div>
-                 <div class="flex items-center gap-2 text-[10px] text-secondary">
-                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-70"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                     <span class="font-medium uppercase tracking-tight truncate max-w-[180px]" :title="formatDiasSemana(curso.dias_semana_array || curso.dias_semana)">
-                        {{ formatDiasSemana(curso.dias_semana_array || curso.dias_semana) }}
-                     </span>
-                 </div>
-            </div>
-
-            <!-- Footer: Dates & Button -->
-            <div class="mt-auto pt-3 border-t border-secondary/5 flex items-center justify-between gap-3">
-                <div class="flex flex-col">
-                    <span class="text-[8px] font-bold text-secondary/50 uppercase tracking-wider mb-0.5">Inscrições</span>
-                    <span class="text-[10px] font-bold text-text bg-div-15 px-1.5 py-0.5 rounded border border-secondary/5">
-                        {{ formatDate(curso.dt_ini_inscri, 'dd/MM') }} - {{ formatDate(curso.dt_fim_inscri, 'dd/MM') }}
-                    </span>
-                </div>
-
+        <!-- Role Toggle -->
+        <div class="flex justify-center -mt-4">
+            <div class="bg-div-15 p-1.5 rounded-xl shadow-lg border border-secondary/10 flex items-center gap-2">
                 <button 
-                  @click="handleInscricao(curso)"
-                  class="bg-primary text-white font-bold px-4 py-2 rounded-md text-[10px] uppercase tracking-wider hover:bg-primary/90 hover:shadow-md hover:shadow-primary/10 transition-all active:scale-[0.98]"
-               >
-                 Inscrever
-               </button>
+                    @click="selectedRole = 'estudante'"
+                    class="px-8 py-2.5 rounded-lg text-sm font-bold transition-all duration-300"
+                    :class="selectedRole === 'estudante' ? 'bg-primary text-white shadow-md' : 'text-secondary hover:bg-div-30'"
+                >
+                    Estudante
+                </button>
+                <button 
+                    @click="selectedRole = 'docente'"
+                    class="px-8 py-2.5 rounded-lg text-sm font-bold transition-all duration-300"
+                    :class="selectedRole === 'docente' ? 'bg-primary text-white shadow-md' : 'text-secondary hover:bg-div-30'"
+                >
+                    Docente
+                </button>
             </div>
-          </div>
-      </div>
+        </div>
+
+        <!-- Filter Bar & Search -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 px-2">
+            <!-- Tabs -->
+            <div class="flex items-center gap-6 border-b border-secondary/10 w-full md:w-auto pb-1">
+                <button 
+                    v-for="cat in [
+                        { label: 'Extensão', value: 'extensao' },
+                        { label: 'Regulares', value: 'regulares' },
+                        { label: 'Cursos Livres', value: 'cursos_livres' }
+                    ]" 
+                    :key="cat.value"
+                    @click="selectedCategory = cat.value as FilterCategory"
+                    class="text-sm font-bold pb-2 relative transition-colors capitalize text-secondary hover:text-primary"
+                    :class="{ 'text-primary': selectedCategory === cat.value }"
+                >
+                    {{ cat.label }}
+                    <span v-if="selectedCategory === cat.value" class="absolute bottom-[-1px] left-0 w-full h-0.5 bg-primary rounded-full"></span>
+                </button>
+            </div>
+
+            <!-- Search -->
+            <div class="relative w-full md:w-80">
+                <input 
+                    v-model="searchQuery"
+                    type="text" 
+                    placeholder="Buscar cursos..."
+                    class="w-full bg-div-15 border border-secondary/10 rounded-full px-5 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-secondary/40"
+                />
+                <div class="absolute right-4 top-2.5 text-secondary/40">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Course Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+            <div v-for="course in filteredCourses" :key="course.id" class="bg-background rounded-3xl shadow-sm border border-secondary/10 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col">
+                
+                <!-- Image Header - Clean & Narrow -->
+                <div class="relative h-32 overflow-hidden flex items-center justify-center p-4 bg-[#D60956]">
+                    <!-- Background Gradient Overlay -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#D60956] to-[#C40E53] z-0"></div>
+                    
+                    <!-- Logo (Centered & White) -->
+                    <div class="relative z-10 flex flex-col items-center justify-center">
+                        <img :src="course.image" :alt="course.title" class="h-16 w-auto object-contain drop-shadow-md brightness-0 invert" />
+                        <!-- Se a imagem for o logo SPED, ele fica branco com brightness-0 invert. Se for foto, talvez remover essa classe? Assumindo logo SPED padrão. -->
+                    </div>
+                    
+                    <div class="absolute top-3 right-3 text-[9px] font-black uppercase tracking-wider px-3 py-1 bg-[#95C11E] text-white rounded-md shadow-sm z-20">
+                        {{ course.status === 'Open' ? 'Aberto' : 'Encerrado' }}
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div class="p-6 flex flex-col flex-1 gap-5">
+                    
+                    <!-- Title -->
+                    <h3 class="text-lg font-black text-text leading-tight group-hover:text-primary transition-colors line-clamp-2 min-h-[3.5rem]">
+                        {{ course.title }}
+                    </h3>
+
+                    <!-- Info Blocks -->
+                    <div class="bg-div-15/50 border border-secondary/5 rounded-2xl p-5 space-y-4">
+                        
+                        <!-- Inscricao -->
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            </div>
+                            <div class="w-full">
+                                <p class="text-[10px] uppercase font-black tracking-wider text-secondary/60 mb-0.5">Período de Inscrição</p>
+                                <p class="text-sm font-bold text-text bg-background border border-secondary/5 px-2 py-1 rounded-md inline-block">
+                                    {{ formatDate(course.rawDates.start, 'dd/MM') }} a {{ formatDate(course.rawDates.end, 'dd/MM/yy') }}
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Período do Curso -->
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-secondary/10 flex items-center justify-center shrink-0">
+                                <svg class="w-4 h-4 text-secondary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                            </div>
+                            <div class="w-full">
+                                <p class="text-[10px] uppercase font-black tracking-wider text-secondary/60 mb-0.5">Período do Curso</p>
+                                <p class="text-sm font-bold text-secondary bg-background border border-secondary/5 px-2 py-1 rounded-md inline-block">
+                                    {{ course.rawDates.startCourse ? formatDate(course.rawDates.startCourse, 'dd/MM') : '--' }} 
+                                    a 
+                                    {{ course.rawDates.endCourse ? formatDate(course.rawDates.endCourse, 'dd/MM/yy') : '--' }}
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Separator -->
+                        <div class="h-px bg-secondary/10 w-full"></div>
+
+                        <!-- Aulas (Dias) -->
+                        <div class="flex items-start gap-3">
+                            <div class="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
+                            <svg class="w-4 h-4 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+                            </div>
+                            <div class="w-full">
+                                <p class="text-[10px] uppercase font-black tracking-wider text-secondary/60 mb-1">Dias de Aula</p>
+                                
+                                <!-- Week Days Pills -->
+                                <div class="flex flex-wrap gap-1">
+                                    <span 
+                                        v-for="day in course.weekDays" 
+                                        :key="day" 
+                                        class="text-[10px] font-bold text-secondary bg-background border border-secondary/10 px-2 py-1 rounded shadow-sm uppercase"
+                                    >
+                                        {{ day }}
+                                    </span>
+                                    <span v-if="course.weekDays.length === 0" class="text-[10px] text-secondary italic">A definir</span>
+                                </div>
+                            </div>
+                    </div>
+
+                    </div>
+
+                    <!-- Footer Stats -->
+                    <div class="flex items-center gap-3 mt-auto">
+                        <div class="flex-1 flex items-center justify-center gap-2 bg-div-15 rounded-xl py-3 text-xs font-bold text-secondary border border-secondary/5">
+                            <svg class="w-4 h-4 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            {{ course.hours }} Horas
+                        </div>
+                        <div class="flex-1 flex items-center justify-center gap-2 bg-div-15 rounded-xl py-3 text-xs font-bold text-secondary border border-secondary/5">
+                            <svg class="w-4 h-4 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s-8-4.5-8-11.8A8 8 0 0 1 12 2a8 8 0 0 1 8 8.2c0 7.3-8 11.8-8 11.8z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            {{ course.mode }}
+                        </div>
+                    </div>
+
+                    <!-- CTA Button -->
+                    <button 
+                    @click="handleInscricao(course)"
+                    class="w-full bg-primary text-white font-black py-4 rounded-xl text-sm uppercase tracking-widest shadow-lg shadow-primary/20 hover:bg-[#b81151] hover:shadow-primary/30 hover:-translate-y-0.5 transition-all active:scale-[0.98] flex items-center justify-center gap-2 group-hover:animate-pulse"
+                    >
+                        Inscrever-se
+                        <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </button>
+
+                </div>
+            </div>
+        </div>
 
     </div>
-  </div>
-</template>
 
-<style>
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-</style>
+    <template #sidebar>
+        <!-- Widget: Instructions -->
+        <div>
+            <h4 class="text-[9px] font-black text-primary uppercase tracking-[0.2em] mb-4 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                Instruções
+            </h4>
+            <p class="text-[11px] text-secondary font-medium leading-relaxed mb-4">
+                Para se inscrever, sigas os passos abaixo
+            </p>
+            <div class="space-y-2">
+                <div class="flex items-center gap-3 text-[10px] font-bold text-text/80 bg-background px-3 py-2 rounded-md border border-secondary/5">
+                    <span class="text-primary font-black">1.</span> Escolha o tipo de candidatura
+                </div>
+                <div class="flex items-center gap-3 text-[10px] font-bold text-text/80 bg-background px-3 py-2 rounded-md border border-secondary/5">
+                    <span class="text-primary font-black">2.</span> Escolha a área de interesse
+                </div>
+                <div class="flex items-center gap-3 text-[10px] font-bold text-text/80 bg-background px-3 py-2 rounded-md border border-secondary/5">
+                    <span class="text-primary font-black">3.</span> Clique em "Inscrever-se"
+                </div>
+                <div class="flex items-center gap-3 text-[10px] font-bold text-text/80 bg-background px-3 py-2 rounded-md border border-secondary/5">
+                    <span class="text-primary font-black">4.</span> Preencha os dados
+                </div>
+                <div class="flex items-center gap-3 text-[10px] font-bold text-text/80 bg-background px-3 py-2 rounded-md border border-secondary/5">
+                    <span class="text-primary font-black">5.</span> Clique em "Enviar"
+                </div>
+                <div class="flex items-center gap-3 text-[10px] font-bold text-text/80 bg-background px-3 py-2 rounded-md border border-secondary/5">
+                    <span class="text-primary font-black">6.</span> Acompanhe seu processo em /meus_processos
+                </div>
+            </div>
+        </div>
+        
+        <div class="w-full h-[1px] bg-secondary/10 my-6"></div>
+
+        <!-- Widget: Links -->
+        <div>
+            <h4 class="text-[9px] font-black text-secondary uppercase tracking-[0.2em] mb-3">Links Úteis</h4>
+            <nav class="flex flex-col gap-1.5">
+                <a href="https://spescoladedanca.org.br/" target="_blank" rel="noopener noreferrer" class="text-[11px] font-bold text-secondary hover:text-primary transition-colors flex items-center gap-1 group">
+                    <span class="group-hover:translate-x-1 transition-transform duration-200">→</span> Site São Paulo Escola de Dança
+                </a>
+            </nav>
+        </div>
+    </template>
+  </NuxtLayout>
+</template>
