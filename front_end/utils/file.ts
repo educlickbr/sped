@@ -17,11 +17,12 @@ export const fileToBase64 = (file: File): Promise<string> => {
         reader.readAsDataURL(file);
         reader.onload = () => {
             if (typeof reader.result === "string") {
-                // Remove prefix (e.g. "data:image/png;base64,") if present,
-                // but usually APIs handle it or expect strictly the content.
-                // The provided Edge Function uses `atob` which expects just the base64 part.
                 const base64 = reader.result.split(",")[1];
-                resolve(base64);
+                if (base64) {
+                    resolve(base64);
+                } else {
+                    reject(new Error("Base64 conversion failed"));
+                }
             } else {
                 reject(new Error("Failed to convert file to base64"));
             }
@@ -52,9 +53,10 @@ export const validateFile = (
 
     if (!typesToCheck.includes(file.type)) {
         // Create a user-friendly message
-        const extensions = typesToCheck.map((t) =>
-            t.split("/")[1].toUpperCase()
-        ).join(", ");
+        const extensions = typesToCheck.map((t) => {
+            const parts = t.split("/");
+            return parts[1] ? parts[1].toUpperCase() : "";
+        }).join(", ");
         return {
             valid: false,
             error: `Tipo de arquivo inválido. Permitido: ${extensions}.`,

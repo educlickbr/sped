@@ -8,6 +8,9 @@ const appStore = useAppStore()
 const courseId = route.params.id
 const queryRole = route.query.tipo
 const queryProcesso = route.query.processo
+import { useToast } from '../../../composables/useToast'
+const supabase = useSupabaseClient()
+const router = useRouter()
 
 // --- Data Fetching ---
 // We call it formData to maintain compatibility with the existing template
@@ -27,6 +30,7 @@ interface Pergunta {
     tipo: string
     bloco: string
     ordem: number
+    ordem_bloco?: number
     obrigatorio: boolean
     largura: number
     altura: number
@@ -59,23 +63,33 @@ const processedBlocks = computed(() => {
         blocks[q.bloco]!.push(q)
     })
 
+    // 2. Sort by ordem within each block
+    Object.keys(blocks).forEach(key => {
+        blocks[key]!.sort((a, b) => a.ordem - b.ordem)
+    })
+
     return blocks
 })
 
 // Dynamic block order based on API response
+// Prefer `ordem_bloco` when provided by the API; fallback to question `ordem`.
 const activeBlocks = computed<string[]>(() => {
     const p = formData.value?.perguntas
     if (!p || p.length === 0) return []
-    
-    // Maintain the order of blocks as they appear in the sorted questions
-    const blocksOrder: string[] = []
+
+    const blockOrderMap: Record<string, number> = {}
+
     p.forEach((q: Pergunta) => {
-        if (!blocksOrder.includes(q.bloco)) {
-            blocksOrder.push(q.bloco)
+        const ord = (q as any).ordem_bloco ?? q.ordem ?? 0
+        const existing = blockOrderMap[q.bloco]
+        if (existing === undefined || ord < existing) {
+            blockOrderMap[q.bloco] = ord
         }
     })
-    
-    return blocksOrder
+
+    return Object.entries(blockOrderMap)
+        .sort((a, b) => (a[1] as number) - (b[1] as number))
+        .map(([k]) => k)
 })
 
 // State for active tab
@@ -94,7 +108,12 @@ watch(formData, (newData) => {
         newData.perguntas.forEach((q: Pergunta) => {
             // Priority 1: Answer from database
             if (q.resposta !== undefined && q.resposta !== null) {
-                answers.value[q.id_pergunta] = q.resposta
+                if (q.tipo === 'boolean') {
+                    // backend may return string 'true' or boolean true
+                    answers.value[q.id_pergunta] = (q.resposta === true || String(q.resposta) === 'true')
+                } else {
+                    answers.value[q.id_pergunta] = q.resposta
+                }
             } 
             // Priority 2: Artificial fields from AppStore
             else if (q.artificial) {
@@ -135,13 +154,153 @@ const getInputType = (tipo: string) => {
     }
 }
 
+const { showToast } = useToast()
+
 // Navigation Handlers
 const handleNext = () => {
     const currentIndex = activeBlocks.value.indexOf(activeTab.value)
     if (currentIndex < activeBlocks.value.length - 1) {
+        // Validate current block before advancing
+        const valid = validateBlock(activeTab.value)
+        if (!valid) {
+            showToast('Existem respostas obrigatórias neste bloco. Role até o campo destacado para responder.', { type: 'error', duration: 6000 })
+            return
+        }
         activeTab.value = activeBlocks.value[currentIndex + 1] as string
     }
 }
+
+const isSubmitting = ref(false)
+
+const handleSubmit = async () => {
+    // 1. Validate current block
+    const valid = validateBlock(activeTab.value)
+    if (!valid) {
+         showToast('Existem respostas obrigatórias neste bloco. Role até o campo destacado para responder.', { type: 'error', duration: 6000 })
+         return
+    }
+
+    if (confirm('Tem certeza que deseja enviar sua inscrição? Essa ação não poderá ser desfeita.')) {
+        isSubmitting.value = true
+        try {
+            // 2. Refresh Session
+            const { error: sessionError } = await supabase.auth.getSession()
+            if (sessionError) {
+                throw new Error('Sessão expirada. Recarregue a página e tente novamente.')
+            }
+
+            // 3. Submit
+            const result: any = await $fetch('/api/inscricao/submit', {
+                method: 'POST',
+                body: {
+                    id_turma: courseId,
+                    tipo_candidatura: queryRole || 'estudante',
+                    tipo_processo: queryProcesso || 'seletivo'
+                }
+            })
+
+            if (result && result.ok) {
+                showToast('Inscrição enviada com sucesso!', { type: 'info', duration: 6000 })
+                // Optional: Redirect or show success state
+                // router.push('/dashboard') 
+                // For now just alert or keep toast
+            } else if (result && result.acao === 'ignorado') {
+                 showToast(`Aviso: ${result.mensagem}`, { type: 'info', duration: 6000 })
+            } else {
+                throw new Error('Erro desconhecido ao enviar.')
+            }
+
+        } catch (err: any) {
+            console.error('Submit Error:', err)
+            showToast(err.message || 'Erro ao enviar inscrição. Tente novamente.', { type: 'error', duration: 6000 })
+        } finally {
+            isSubmitting.value = false
+        }
+    }
+}
+
+// Validation: track missing required fields per question
+const requiredMissing = ref<Record<string, boolean>>({})
+
+// Logic to check dependencies
+const shouldShowQuestion = (question: Pergunta) => {
+    // 1. If not dependent, show
+    if (!question.depende) return true
+
+    // 2. If config missing, show (fail-safe)
+    if (!question.depende_de || !question.valor_depende) return true
+
+    // 3. Get answer of the parent question from local state
+    const parentAnswer = answers.value[question.depende_de]
+    
+    // Convert to string to robustly match against allowed values (which are usually strings in JSON)
+    const parentValStr = (parentAnswer === undefined || parentAnswer === null) ? '' : String(parentAnswer)
+
+    // 4. Check if parent answer is in allowed values
+    const allowedValues = Array.isArray(question.valor_depende) 
+        ? question.valor_depende.map(v => String(v)) 
+        : [String(question.valor_depende)]
+        
+    return allowedValues.includes(parentValStr)
+}
+
+const validateBlock = (blockKey: string) => {
+    const block = processedBlocks.value[blockKey]
+    if (!block || block.length === 0) return true
+
+    let hasMissing = false
+    block.forEach((q: Pergunta) => {
+        // Skip validation if question is hidden by dependency
+        if (!shouldShowQuestion(q)) {
+            // Also ensure we clear any previous error state for hidden fields
+            if (requiredMissing.value[q.id_pergunta]) {
+                 requiredMissing.value[q.id_pergunta] = false
+            }
+            return
+        }
+
+        if (q.obrigatorio) {
+            const val = answers.value[q.id_pergunta]
+            const empty = val === undefined || val === null || String(val).trim() === ''
+            if (empty) {
+                requiredMissing.value[q.id_pergunta] = true
+                hasMissing = true
+            } else {
+                requiredMissing.value[q.id_pergunta] = false
+            }
+        }
+    })
+
+    return !hasMissing
+}
+
+// Navigate to tab with forward validation
+const goToTab = (blockKey: string) => {
+    const currentIndex = activeBlocks.value.indexOf(activeTab.value)
+    const targetIndex = activeBlocks.value.indexOf(blockKey)
+    if (targetIndex === -1) return
+
+    // Moving forward: validate current block
+    if (targetIndex > currentIndex) {
+        const ok = validateBlock(activeTab.value)
+        if (!ok) {
+            showToast('Existem respostas obrigatórias neste bloco. Role até o campo destacado para responder.', { type: 'error', duration: 6000 })
+            return
+        }
+    }
+
+    activeTab.value = blockKey
+}
+
+// Clear missing flags when answers change
+watch(answers, (newA) => {
+    Object.keys(newA).forEach((k) => {
+        const v = newA[k]
+        if (v !== undefined && v !== null && String(v).trim() !== '') {
+            if (requiredMissing.value[k]) requiredMissing.value[k] = false
+        }
+    })
+}, { deep: true })
 
 const isLastBlock = computed(() => {
     if (activeBlocks.value.length === 0) return false
@@ -156,6 +315,9 @@ const saveTimeouts: Record<string, any> = {} // Store timeouts for debounce
 const saveAnswer = (question: Pergunta) => {
     const value = answers.value[question.id_pergunta]
     
+    // Bypass saving for locked (read-only) fields
+    if (lockedFields.value[question.id_pergunta]) return
+
     // Don't save if empty
     if (value === undefined || value === null || String(value).trim() === '') return
 
@@ -168,9 +330,12 @@ const saveAnswer = (question: Pergunta) => {
     }
 
     // Set new debounce timeout (500ms)
+    // Backup current value in case we need to revert
+    const previous = value
+
     saveTimeouts[question.id_pergunta] = setTimeout(async () => {
         try {
-            await $fetch('/api/inscricao/save', {
+            const res: any = await $fetch('/api/inscricao/save', {
                 method: 'POST',
                 body: {
                     p_id_turma: courseId,
@@ -178,9 +343,22 @@ const saveAnswer = (question: Pergunta) => {
                     p_resposta: value
                 }
             })
-            lastSaved.value[question.id_pergunta] = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
-        } catch (err) {
+
+            // Some BFF RPC endpoints return an envelope like { success: true, data: { sucesso: true } }
+            const savedOk = (res && (res.success === true || res.data?.sucesso === true))
+
+            if (!savedOk) {
+                // Revert value and inform user
+                answers.value[question.id_pergunta] = null
+                showToast('Erro de sincronização: resposta não foi salva. Tente novamente.', { type: 'error', duration: 6000 })
+            } else {
+                lastSaved.value[question.id_pergunta] = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
+            }
+        } catch (err: any) {
             console.error('Erro ao salvar resposta:', err)
+            // Revert value and inform user
+            answers.value[question.id_pergunta] = null
+            showToast('Erro de sincronização: resposta não foi salva. Tente novamente.', { type: 'error', duration: 6000 })
         } finally {
             isSaving.value[question.id_pergunta] = false
             delete saveTimeouts[question.id_pergunta]
@@ -264,7 +442,7 @@ const handleFileChange = async (event: Event, question: Pergunta) => {
 
         } catch (err) {
             console.error('Upload Error:', err)
-            alert('Falha no upload. Tente novamente.')
+            showToast('Falha no upload. Tente novamente. (sincronização falhou)', { type: 'error', duration: 6000 })
             // Revert state
             fileNames.value[question.id_pergunta] = ''
             files.value[question.id_pergunta] = null
@@ -280,30 +458,42 @@ const triggerFileUpload = (questionId: string) => {
     const el = document.getElementById(`file-${questionId}`)
     if (el) el.click()
 }
-// ... existing delete handler ...
-const handleDeleteFile = async (question: Pergunta) => {
-    if (!confirm('Tem certeza que deseja remover este arquivo?')) return
 
+// Inline confirmation state for file deletions (per-question)
+const confirmDeletes = ref<Record<string, boolean>>({})
+
+const showConfirmDelete = (question: Pergunta) => {
+    confirmDeletes.value[question.id_pergunta] = true
+}
+
+const cancelConfirmDelete = (question: Pergunta) => {
+    confirmDeletes.value[question.id_pergunta] = false
+}
+
+const performDeleteFile = async (question: Pergunta) => {
     question.deleting = true
     try {
         // 1. Delete via BFF
         await $fetch('/api/inscricao/delete-file', {
             method: 'POST',
             body: {
-                id_turma: courseId, 
-                id_pergunta: question.id_pergunta, // Renamed from id_question
-                fileName: answers.value[question.id_pergunta] // Send UUID
+                id_turma: courseId,
+                id_pergunta: question.id_pergunta,
+                fileName: answers.value[question.id_pergunta]
             }
         })
 
         // 2. Clear Local State
         files.value[question.id_pergunta] = null
         fileNames.value[question.id_pergunta] = ''
-        answers.value[question.id_pergunta] = null // Clear the answer
-        
+        answers.value[question.id_pergunta] = null
+
         // Reset input
         const el = document.getElementById(`file-${question.id_pergunta}`) as HTMLInputElement
         if (el) el.value = ''
+
+        // Hide the confirmation UI
+        confirmDeletes.value[question.id_pergunta] = false
 
     } catch (err) {
         console.error('Delete Error:', err)
@@ -325,6 +515,16 @@ const handleDeleteFile = async (question: Pergunta) => {
 // CEP Logic
 const loadingCep = ref(false)
 const lockedFields = ref<Record<string, boolean>>({})
+
+// Make artificial identity fields read-only (nome, sobrenome, email)
+watch(formData, (newData) => {
+    if (!newData?.perguntas) return
+    newData.perguntas.forEach((q: Pergunta) => {
+        if (q.artificial && ['nome', 'sobrenome', 'email'].includes(q.pergunta)) {
+            lockedFields.value[q.id_pergunta] = true
+        }
+    })
+}, { immediate: true })
 
 const findQuestionBySlug = (slug: string) => {
     if (!formData.value?.perguntas) return null
@@ -434,6 +634,10 @@ const handleCepBlur = async (question: Pergunta) => {
                             <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                             {{ formData.semestre }}
                         </div>
+                        <div v-if="formData.turno" class="flex items-center gap-2">
+                            <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            {{ formData.turno }}
+                        </div>
                     </div>
                 </div>
                 <!-- Skeleton for Header while loading -->
@@ -455,7 +659,7 @@ const handleCepBlur = async (question: Pergunta) => {
                         <button 
                             v-for="blockKey in activeBlocks" 
                             :key="blockKey"
-                            @click="activeTab = blockKey"
+                            @click="goToTab(blockKey)"
                             class="whitespace-nowrap px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 border"
                             :class="activeTab === blockKey 
                                 ? 'bg-primary text-white border-primary shadow-md' 
@@ -488,18 +692,19 @@ const handleCepBlur = async (question: Pergunta) => {
                         class="bg-background border border-secondary/10 rounded-3xl p-6 md:p-8 shadow-sm transition-all duration-300"
                     >
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <div 
-                                v-for="question in processedBlocks[activeTab]" 
-                                :key="question.id_pergunta" 
-                                :class="[
-                                    'flex flex-col gap-2',
-                                    question.largura === 2 ? 'md:col-span-2' : 'md:col-span-1'
-                                ]"
-                            >
+                            <template v-for="question in processedBlocks[activeTab]" :key="question.id_pergunta">
+                                <div 
+                                    v-if="shouldShowQuestion(question)"
+                                    :class="[
+                                        'flex flex-col gap-2',
+                                        question.largura === 2 ? 'md:col-span-2' : 'md:col-span-1'
+                                    ]"
+                                >
                                 <label :for="question.id_pergunta" class="text-sm font-bold text-secondary">
                                     {{ question.label }}
                                     <span v-if="question.obrigatorio" class="text-primary">*</span>
                                 </label>
+                                <p v-if="requiredMissing[question.id_pergunta]" class="text-xs text-red-500 font-bold mt-1">Resposta obrigatória</p>
 
                                 <!-- 1. Textarea (Height >= 120) -->
                                 <div v-if="question.tipo === 'texto' && question.altura >= 120" class="group/field relative">
@@ -507,8 +712,9 @@ const handleCepBlur = async (question: Pergunta) => {
                                         :id="question.id_pergunta"
                                         v-model="answers[question.id_pergunta]"
                                         :placeholder="question.label"
+                                        :readonly="lockedFields[question.id_pergunta]"
                                         :style="{ height: question.altura + 'px' }"
-                                        @blur="saveAnswer(question)"
+                                        @blur="!lockedFields[question.id_pergunta] && saveAnswer(question)"
                                         class="w-full bg-div-15 border border-secondary/10 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-secondary/30 resize-none"
                                     ></textarea>
                                     <div class="absolute right-3 bottom-3 flex items-center gap-1.5 opacity-0 group-focus-within/field:opacity-100 transition-opacity">
@@ -530,7 +736,8 @@ const handleCepBlur = async (question: Pergunta) => {
                                                 :name="question.id_pergunta" 
                                                 :value="typeof option === 'object' ? (option.label || option.value) : option"
                                                 v-model="answers[question.id_pergunta]"
-                                                @change="saveAnswer(question)"
+                                                @change="!lockedFields[question.id_pergunta] && saveAnswer(question)"
+                                                :disabled="lockedFields[question.id_pergunta]"
                                                 class="w-4 h-4 text-primary border-secondary/30 focus:ring-primary bg-background"
                                             />
                                             <span class="text-sm font-bold text-secondary group-hover:text-text transition-colors">
@@ -568,24 +775,68 @@ const handleCepBlur = async (question: Pergunta) => {
                                             </p>
                                         </div>
 
-                                        <div v-else class="flex flex-col items-center gap-2 py-2">
-                                            <div class="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center mb-1">
-                                                <svg class="w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                                        <div v-else class="flex flex-col items-center gap-2 py-2 w-full">
+                                            <div v-if="!confirmDeletes[question.id_pergunta]" class="w-full flex flex-col items-center gap-2">
+                                                <div class="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center mb-1">
+                                                    <svg class="w-6 h-6 text-green-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                                                </div>
+                                                <p class="text-xs font-bold text-text truncate max-w-full px-4">{{ fileNames[question.id_pergunta] }}</p>
+                                                <button 
+                                                    type="button" 
+                                                    class="text-[10px] font-black uppercase tracking-widest text-primary hover:underline mt-1"
+                                                    @click.stop="showConfirmDelete(question)"
+                                                    :disabled="question.deleting"
+                                                >
+                                                    {{ question.deleting ? 'Removendo...' : 'Remover arquivo' }}
+                                                </button>
                                             </div>
-                                            <p class="text-xs font-bold text-text truncate max-w-full px-4">{{ fileNames[question.id_pergunta] }}</p>
-                                            <button 
-                                                type="button" 
-                                                class="text-[10px] font-black uppercase tracking-widest text-primary hover:underline mt-1"
-                                                @click.stop="handleDeleteFile(question)"
-                                                :disabled="question.deleting"
-                                            >
-                                                {{ question.deleting ? 'Removendo...' : 'Remover arquivo' }}
-                                            </button>
+
+                                            <div v-else class="w-full bg-div-15 border border-secondary/10 rounded-xl p-4 flex flex-col items-center gap-3">
+                                                <p class="text-sm font-bold text-text">Tem certeza que deseja remover este arquivo?</p>
+                                                <div class="flex gap-3">
+                                                    <button 
+                                                        type="button"
+                                                        class="bg-danger text-white font-bold py-2 px-4 rounded-lg text-xs"
+                                                        @click.stop="performDeleteFile(question)"
+                                                        :disabled="question.deleting"
+                                                    >
+                                                        {{ question.deleting ? 'Removendo...' : 'Sim, remover' }}
+                                                    </button>
+                                                    <button 
+                                                        type="button"
+                                                        class="bg-background border border-secondary/10 text-secondary font-bold py-2 px-4 rounded-lg text-xs"
+                                                        @click.stop="cancelConfirmDelete(question)"
+                                                        :disabled="question.deleting"
+                                                    >
+                                                        Cancelar
+                                                    </button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- 4. Generic Input (Fallback) -->
+                                <!-- 4. Boolean Toggle -->
+                                <div v-else-if="question.tipo === 'boolean'" class="group/field relative">
+                                    <div class="flex items-center gap-3">
+                                        <label :for="'bool-' + question.id_pergunta" class="inline-flex items-center cursor-pointer">
+                                            <input
+                                                :id="'bool-' + question.id_pergunta"
+                                                type="checkbox"
+                                                class="sr-only"
+                                                v-model="answers[question.id_pergunta]"
+                                                @change="!lockedFields[question.id_pergunta] && saveAnswer(question)"
+                                                :disabled="lockedFields[question.id_pergunta]"
+                                            />
+                                            <div :class="answers[question.id_pergunta] ? 'bg-primary' : 'bg-div-15'" class="w-12 h-6 rounded-full relative transition-colors">
+                                                <span :class="answers[question.id_pergunta] ? 'translate-x-6' : 'translate-x-0'" class="absolute left-0 top-0.5 w-5 h-5 bg-white rounded-full shadow transform transition-transform"></span>
+                                            </div>
+                                        </label>
+                                        <span class="text-sm font-bold text-secondary">{{ answers[question.id_pergunta] ? 'Sim' : 'Não' }}</span>
+                                    </div>
+                                </div>
+
+                                <!-- 5. Generic Input (Fallback) -->
                                 <div v-else class="group/field relative">
                                     <div class="relative">
                                         <input 
@@ -595,7 +846,7 @@ const handleCepBlur = async (question: Pergunta) => {
                                             :placeholder="question.label"
                                             :style="{ height: question.altura + 'px' }"
                                             :readonly="lockedFields[question.id_pergunta]"
-                                            @blur="question.pergunta === 'cep' ? handleCepBlur(question) : saveAnswer(question)"
+                                            @blur="!lockedFields[question.id_pergunta] && (question.pergunta === 'cep' ? handleCepBlur(question) : saveAnswer(question))"
                                             class="w-full bg-div-15 border border-secondary/10 rounded-xl px-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-secondary/30 disabled:opacity-50 disabled:cursor-not-allowed"
                                             :class="{'pr-10': question.pergunta === 'cep' || lockedFields[question.id_pergunta]}"
                                         />
@@ -621,6 +872,7 @@ const handleCepBlur = async (question: Pergunta) => {
                                 </div>
 
                             </div>
+                            </template>
                         </div>
 
                         <!-- Action Buttons -->
@@ -641,13 +893,16 @@ const handleCepBlur = async (question: Pergunta) => {
                                     <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
                                 </button>
 
-                                <!-- Submit Button (Only on Aceite) -->
+                                <!-- Submit Button (Last Block) -->
                                 <button 
-                                    v-if="isLastBlock"
+                                    v-else
                                     type="button" 
-                                    class="bg-primary text-white font-black py-4 px-12 rounded-xl text-sm uppercase tracking-widest shadow-lg shadow-primary/20 hover:bg-[#b81151] hover:shadow-primary/30 hover:-translate-y-0.5 transition-all animate-pulse"
+                                    @click="handleSubmit"
+                                    :disabled="isSubmitting"
+                                    class="bg-primary text-white font-bold py-3 px-8 rounded-xl text-xs uppercase tracking-wider shadow-md hover:bg-primary/90 hover:-translate-y-0.5 transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
-                                    Enviar Inscrição
+                                    <svg v-if="isSubmitting" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                                    {{ isSubmitting ? 'Enviando...' : 'Enviar Inscrição' }}
                                 </button>
                             </div>
                         </div>

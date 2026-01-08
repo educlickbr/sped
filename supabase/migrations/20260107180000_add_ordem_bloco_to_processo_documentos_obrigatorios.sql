@@ -1,0 +1,3 @@
+-- Superseded migration: function replacement moved to
+-- 20260107180200_fix_nxt_get_respostas_ordem_bloco.sql
+-- This file kept for history but no longer contains executable SQL.
