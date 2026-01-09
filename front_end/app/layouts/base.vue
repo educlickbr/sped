@@ -1,5 +1,6 @@
 <script setup>
 const store = useAppStore()
+const isMenuOpen = useState('menu-open', () => false)
 
 onMounted(() => {
    store.initTheme()
@@ -10,6 +11,9 @@ onMounted(() => {
 <template>
   <div class="h-screen bg-background flex flex-col md:flex-row gap-4 p-5 overflow-hidden font-sans text-text transition-colors duration-300">
     
+    <!-- Full Page Menu Overlay -->
+    <FullPageMenu :isOpen="isMenuOpen" @close="isMenuOpen = false" />
+
     <!-- Main Content Panel (Contains Header + Content) -->
     <main class="flex-1 flex flex-col gap-4 h-full overflow-hidden relative">
       
@@ -18,17 +22,29 @@ onMounted(() => {
         
         <!-- Brand -->
         <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded bg-primary/10 text-primary flex items-center justify-center font-bold text-sm shadow-sm border border-primary/10">
-            S
-          </div>
-          <div class="flex flex-col leading-none">
-             <h1 class="text-xs font-black text-primary uppercase tracking-[0.2em]">Processo Seletivo</h1>
-             <p class="text-[10px] text-secondary font-bold opacity-80">São Paulo Escola de Dança</p>
-          </div>
+            <div class="w-8 h-8 rounded bg-primary/10 text-primary flex items-center justify-center font-bold text-sm shadow-sm border border-primary/10">
+                S
+            </div>
+            <div class="flex flex-col leading-none">
+                <h1 class="text-xs font-black text-primary uppercase tracking-[0.2em]">Processo Seletivo</h1>
+                <p class="text-[10px] text-secondary font-bold opacity-80">São Paulo Escola de Dança</p>
+            </div>
         </div>
 
         <!-- Right Controls -->
         <div class="flex items-center gap-3">
+           
+           <!-- Logout Button (Left of Theme) -->
+           <button 
+              v-if="store.user"
+              @click="store.logout()" 
+              class="w-8 h-8 flex items-center justify-center rounded text-secondary hover:text-danger hover:bg-danger/10 transition-all group"
+              title="Sair"
+           >
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
+           </button>
+
+           <!-- Theme Toggle -->
            <button @click="store.toggleTheme()" class="w-8 h-8 flex items-center justify-center rounded text-secondary hover:text-primary hover:bg-div-30 transition-all font-bold">
               <svg v-if="store.isDark" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
               <svg v-else xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
@@ -38,6 +54,7 @@ onMounted(() => {
 
            <!-- Auth State Buttons -->
            <div v-if="store.user" class="flex items-center gap-4">
+               
                <!-- User Profile Info -->
                <div class="flex items-center gap-2 pr-2 border-r border-secondary/10">
                    <div class="w-8 h-8 rounded-full border border-secondary/20 overflow-hidden bg-div-30 shadow-inner flex items-center justify-center">
@@ -51,13 +68,15 @@ onMounted(() => {
                    </div>
                </div>
 
-               <!-- Logout Button -->
+               <!-- Menu Trigger (Far Right) -->
                <button 
-                  @click="store.logout()" 
-                  class="w-8 h-8 flex items-center justify-center rounded text-secondary hover:text-primary hover:bg-div-30 transition-all group"
-                  title="Sair"
+                  @click="isMenuOpen = true"
+                  class="w-10 h-10 flex flex-col items-center justify-center gap-1.5 rounded-lg text-secondary hover:text-primary hover:bg-div-30 transition-all group"
+                  title="Menu"
                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
+                  <span class="w-5 h-0.5 bg-current rounded-full transition-all group-hover:w-6"></span>
+                  <span class="w-5 h-0.5 bg-current rounded-full transition-all group-hover:w-4"></span>
+                  <span class="w-5 h-0.5 bg-current rounded-full transition-all group-hover:w-6"></span>
                </button>
            </div>
 

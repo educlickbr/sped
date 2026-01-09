@@ -23,9 +23,9 @@
     --color-warning: #FFD753;
     --color-warning-hover: #ccac41;
 
-    /* Base Text & Background (Light) */
-    --color-text: #141616;
-    --color-background: #FFFFFF;
+    /* Base Text & Background (Default to Dark to avoid flash) */
+    --color-text: #E8E6E8;
+    --color-background: #0a0a0c;
 
     /* Rounding (Design Tokens) */
     --radius-xs: 2px;

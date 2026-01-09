@@ -1,5 +1,12 @@
 export default defineNuxtConfig({
   // 1. Registro de Módulos (A tríade sagrada)
+  app: {
+    head: {
+      style: [
+        { innerHTML: 'html, body { background-color: #0a0a0c !important; color: white; }' }
+      ]
+    }
+  },
   modules: [
     "@nuxtjs/tailwindcss",
     "@pinia/nuxt",
@@ -14,7 +21,7 @@ export default defineNuxtConfig({
     redirectOptions: {
       login: "/login", // Onde mandar o usuário se não estiver logado
       callback: "/confirm", // Para onde o Supabase volta após login social
-      exclude: ["/", "/teste-tailwind", "/cursos", "/inscricao/*"], // Páginas públicas (ex: Landing Page)
+      exclude: ["/", "/teste-tailwind", "/processo_seletivo", "/processo_seletivo/*", "/recuperar_senha", "/trocar_senha", "/mensagem"], // Páginas públicas
     },
   },
 

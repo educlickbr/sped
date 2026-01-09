@@ -25,7 +25,7 @@ const handleLogin = async () => {
             // Initialize main session (All data now comes from BFF /api/me in one call)
             await store.initSession()
             
-            router.push('/cursos')
+            router.push('/')
         }
     } catch (err: any) {
         errorMsg.value = err.message || 'Erro ao realizar login'
@@ -84,7 +84,7 @@ const handleLogin = async () => {
                 <div class="space-y-2">
                     <div class="flex items-center justify-between px-1">
                         <label for="password" class="text-[10px] font-black uppercase tracking-widest text-secondary/60">Senha</label>
-                        <a href="#" class="text-[10px] font-black uppercase tracking-widest text-primary hover:text-white transition-colors">Esqueceu?</a>
+                        <NuxtLink to="/recuperar_senha" class="text-[10px] font-black uppercase tracking-widest text-primary hover:text-white transition-colors">Esqueceu?</NuxtLink>
                     </div>
                     <div class="relative group">
                         <input 

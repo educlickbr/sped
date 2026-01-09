@@ -83,7 +83,7 @@ const handleSignup = async () => {
         // Aguardar um pouco e redirecionar se necessário
         setTimeout(() => {
             // Por enquanto fica na página, depois você pode redirecionar
-            // router.push('/cursos')
+            // router.push('/')
         }, 2000)
 
     } catch (err: any) {

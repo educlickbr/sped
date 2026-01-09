@@ -27,6 +27,13 @@ export const useAppStore = defineStore("app", {
         isLoading: false,
         isMenuOpen: false,
         isDark: false,
+        statusMessage: {
+            title: null as string | null,
+            message: null as string | null,
+            type: 'info' as 'success' | 'error' | 'info' | null,
+            actionLabel: null as string | null,
+            actionPath: null as string | null
+        }
     }),
     actions: {
         async initSession() {
@@ -107,5 +114,14 @@ export const useAppStore = defineStore("app", {
                 } else document.documentElement.removeAttribute("data-theme");
             }
         },
+        setStatusMessage(payload: { title?: string, message?: string, type?: 'success' | 'error' | 'info', actionLabel?: string, actionPath?: string }) {
+            this.statusMessage = {
+                title: payload.title || null,
+                message: payload.message || null,
+                type: payload.type || 'info',
+                actionLabel: payload.actionLabel || null,
+                actionPath: payload.actionPath || null
+            }
+        }
     },
 });

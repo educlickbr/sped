@@ -3,8 +3,13 @@ import { formatDate } from '@/utils/date'
 
 definePageMeta({
   // layout: 'base', // Using explicit NuxtLayout in template
-  title: 'Cursos - EduSelect'
+  title: 'Processo Seletivo - EduSelect'
 })
+
+const user = useSupabaseUser()
+// Define cookie type explicitly to allow object
+const redirectCookie = useCookie<any>('redirect_after_login')
+
 
 // --- Tipos & Interface ---
 type FilterRole = 'estudante' | 'docente'
@@ -141,17 +146,35 @@ const handleInscricao = (course: MappedCourse) => {
         alert('Erro: ID da turma não disponível. Por favor, tente novamente mais tarde.')
         return
     }
-    
-    console.log('Navegando para inscrição:', course.id)
-    navigateTo({
-        path: `/inscricao/${course.id}`,
-        query: {
-            tipo: course.role,
-            area: course.category,
-            processo: 'seletivo'
+
+    const targetPath = `/inscricao/${course.id}`
+    const targetQuery = {
+        tipo: course.role,
+        area: course.category,
+        processo: 'seletivo'
+    }
+
+    if (user.value) {
+        // Logged in: go directly
+        console.log('User logged in. Navigating to:', targetPath)
+        navigateTo({
+            path: targetPath,
+            query: targetQuery
+        })
+    } else {
+        // Not logged in: save intent and go to login
+        console.log('User NOT logged in. Saving intent and redirecting to login.')
+        
+        redirectCookie.value = {
+            path: targetPath,
+            query: targetQuery,
+            procedencia_form: true
         }
-    })
+
+        navigateTo('/login')
+    }
 }
+
 </script>
 
 <template>
