@@ -244,7 +244,7 @@ const formatLabel = (txt: string) => {
                                 <div class="text-6xl font-black text-white mb-2">
                                      {{ dashboardData.demographics.pcd.find((i:any) => i.label === 'true' || i.label === true)?.qtd || 0 }}
                                 </div>
-                                <p class="text-sm text-secondary font-bold uppercase tracking-wider">Pessoas com Deficiência</p> 
+                                <p class="text-sm text-secondary font-bold uppercase tracking-wider">PCD</p> 
                                  <p class="text-xs text-secondary/50 mt-4">
                                     Total Inscritos: {{ getRealTotal(dashboardData.demographics.pcd) }}
                                  </p>
