@@ -90,14 +90,24 @@ const userInitial = computed(() => {
               <svg class="ml-auto text-secondary/20 group-hover:text-primary/60 transition-colors" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </button>
 
-            <!-- Seleção Candidatos -->
-            <button @click="handleNavigation('/selecao')" class="menu-item group border-t border-secondary/5">
+            <button @click="handleNavigation('/selecao/estudante')" class="menu-item group border-t border-secondary/5">
               <div class="menu-icon bg-secondary/10 text-secondary">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
               </div>
               <div class="flex flex-col text-left">
-                <span class="text-sm font-bold text-text group-hover:text-primary transition-colors">Seleção de Candidatos</span>
-                <span class="text-[10px] text-secondary font-medium">Gerenciamento de inscritos</span>
+                <span class="text-sm font-bold text-text group-hover:text-primary transition-colors">Seleção Estudantes</span>
+                <span class="text-[10px] text-secondary font-medium">Candidatos a cursos</span>
+              </div>
+            </button>
+
+            <!-- Seleção Docentes -->
+            <button @click="handleNavigation('/selecao/docente')" class="menu-item group border-t border-secondary/5">
+              <div class="menu-icon bg-secondary/10 text-secondary">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 0 1 .665 6.479A11.952 11.952 0 0 0 12 20.055a11.952 11.952 0 0 0-6.824-2.998 12.078 12.078 0 0 1 .665-6.479L12 14z"></path><path d="M12 14v7"></path><path d="M12 14v7"></path></svg>
+              </div>
+              <div class="flex flex-col text-left">
+                <span class="text-sm font-bold text-text group-hover:text-primary transition-colors">Seleção Docentes</span>
+                <span class="text-[10px] text-secondary font-medium">Candidatos a vagas docentes</span>
               </div>
             </button>
 
@@ -124,13 +134,13 @@ const userInitial = computed(() => {
             </button>
 
              <!-- Painel Seleção -->
-             <button class="menu-item group border-t border-secondary/5 cursor-not-allowed opacity-60">
+             <button @click="handleNavigation('/selecao/painel')" class="menu-item group border-t border-secondary/5">
               <div class="menu-icon bg-secondary/10 text-secondary">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
               </div>
               <div class="flex flex-col text-left">
                 <span class="text-sm font-bold text-text group-hover:text-primary transition-colors">Painel de Seleção</span>
-                <span class="text-[10px] text-secondary font-medium">Dashboard administrativo (Em breve)</span>
+                <span class="text-[10px] text-secondary font-medium">Dashboard administrativo</span>
               </div>
             </button>
           </div>

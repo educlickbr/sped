@@ -3,7 +3,7 @@ export default defineNitroPlugin((nitroApp) => {
     // Definimos o HTML e CSS do loader crítico aqui
     // Nota: Usamos styles inline e IDs únicos para garantir que nada dependa de arquivos externos no início
     const loaderHtml = `
-<div id="nitro-initial-loader" style="position: fixed; inset: 0; z-index: 999999; background-color: #0c0c0c; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.5s ease; color: white;">
+<div id="nitro-initial-loader" style="position: fixed; inset: 0; z-index: 999999; background-color: #0c0c0c; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.2s ease; color: white;">
     <style>
         @keyframes nitro-spin { to { transform: rotate(360deg); } }
         @keyframes nitro-spin-reverse { to { transform: rotate(-360deg); } }

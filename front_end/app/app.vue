@@ -5,8 +5,8 @@ const isLoading = ref(true)
 const nuxtApp = useNuxtApp()
 const router = useRouter()
 
-// Min wait time for smooth UX (as requested "um pouco de aguarde")
-const MIN_LOADING_TIME = 500
+// Min wait time for smooth UX (reduced for performance feel)
+const MIN_LOADING_TIME = 50
 
 let loadStartTime = Date.now()
 let safetyTimeout: any
@@ -60,11 +60,11 @@ onMounted(() => {
     const nitroLoader = document.getElementById('nitro-initial-loader')
     if (nitroLoader) {
         nitroLoader.style.opacity = '0'
-        setTimeout(() => nitroLoader.remove(), 500)
+        setTimeout(() => nitroLoader.remove(), 200)
     }
 
     // Force finish Vue loader
-    setTimeout(finishLoading, 200)
+    setTimeout(finishLoading, 50)
     document.body.classList.add('hydrated')
 })
 </script>

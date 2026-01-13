@@ -14,6 +14,12 @@ const currentArea = ref('Extensão');
 const isLoading = ref(false);
 const limit = 20;
 
+const route = useRoute();
+const tipoCandidatura = computed(() => {
+    const tipo = route.params.tipo as string;
+    return (tipo === 'docente' || tipo === 'estudante') ? tipo : 'estudante'; // Default fallback
+});
+
 // Map display names to database values
 const areaMap: Record<string, string> = {
     'Extensão': 'extensao',
@@ -56,7 +62,7 @@ const confirmModal = ref({
 
 const handleEnrollTrigger = (candidato: any) => {
     const turma = turmas.value.find((t: any) => t.id_turma === selectedTurmaId.value);
-    const cursoNome = turma ? `${turma.nome} (${turma.turno || 'Turno Indefinido'})` : 'Curso Selecionado';
+    const cursoNome = turma ? turma.nome_curso_turno : 'Curso Selecionado';
 
     confirmModal.value = {
         isOpen: true,
@@ -163,7 +169,7 @@ const fetchCandidatos = async (page = 1) => {
             p_id_turma: selectedTurmaId.value,
             p_pagina: page,
             p_limite: limit,
-            p_tipo_candidatura: 'estudante',
+            p_tipo_candidatura: tipoCandidatura.value,
             p_busca: searchQuery.value.trim() || null,
             p_filtros: [],
             p_pcd: null,
@@ -467,7 +473,7 @@ const nextPage = async () => {
         :candidato="selectedCandidateForData"
         :area="areaMap[currentArea] || ''"
         :tipoProcesso="'seletivo'"
-        :tipoCandidatura="currentArea.includes('docente') ? 'docente' : 'estudante'"
+        :tipoCandidatura="tipoCandidatura"
         :mode="modalMode"
         @close="showDataModal = false"
         @update-candidate="handleCandidateUpdate"
