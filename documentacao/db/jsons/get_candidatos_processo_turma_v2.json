@@ -1,0 +1,1367 @@
+{
+    "itens": [
+        {
+            "pcd": "Sim",
+            "raca": "Parda(o)",
+            "email": "vinisnif@gmail.com",
+            "idade": null,
+            "renda": "Até 1 salário-mínimo",
+            "turno": "Matutino",
+            "genero": "Homem Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-11-24T18:34:55.760637+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "b20adaa8-fcf4-4567-a6f1-22710ef0d977",
+            "imagem_user": "f35c22c4-3a64-44a1-8a9a-5c3894369c6f.jpeg",
+            "nome_social": null,
+            "laudo_enviado": true,
+            "nome_completo": "Alan Vinicius Dos Santos",
+            "nome_artistico": "Vini Snif",
+            "status_processo": "Recusado",
+            "id_user_expandido": "a6b05414-3f09-44e5-88ab-20d5bcdcabaf",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Preta(o)",
+            "email": "alessndr561@gmail.com",
+            "idade": null,
+            "renda": "Até meio salário-mínimo",
+            "turno": "Matutino",
+            "genero": "Homem Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-11-18T12:13:12.700485+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "d8124c25-637a-4b97-a03b-3e393cc71fc1",
+            "imagem_user": "1823ff35-4e78-42fa-aa1a-84b43b3b20ca.jpg",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "Alessandro Rafael",
+            "nome_artistico": "Alessandro Rodrigues ",
+            "status_processo": "Recusado",
+            "id_user_expandido": "41ff30ad-2319-4aca-9be1-c1bd11e4a136",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Branca(o)",
+            "email": "aluno2509@teste.com.br",
+            "idade": null,
+            "renda": "De 2 a 5 salários-mínimos",
+            "turno": "Matutino",
+            "genero": "Homem Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-10-01T19:59:31.781642+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "bd339f46-996c-49ab-b672-64c2d9226d55",
+            "imagem_user": "d034e39d-b83d-4bf5-a2cc-7fb1b7431109.png",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "Alunoteste2509 2509",
+            "nome_artistico": "Martin",
+            "status_processo": "Recusado",
+            "id_user_expandido": "695a71b2-5fce-4b93-b0cb-9b46fc0a4d82",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Parda(o)",
+            "email": "anacarolinacarvalho97@gmail.com",
+            "idade": null,
+            "renda": "De 5 a 10 salários-mínimos",
+            "turno": "Matutino",
+            "genero": "Mulher Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-11-11T19:09:08.773632+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "e8663a89-f27a-44d0-af28-c3805b1779fa",
+            "imagem_user": "b4f96dc7-9436-4aad-b33a-dae178666728.JPG",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "Ana Carolina Carvalho Dos Santos",
+            "nome_artistico": "Ana Carol Carvalho",
+            "status_processo": "Recusado",
+            "id_user_expandido": "20742768-dcf8-4cb4-beda-920cf7e402c6",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Branca(o)",
+            "email": "anagarbeni7@gmail.com",
+            "idade": null,
+            "renda": "De 2 a 5 salários-mínimos",
+            "turno": "Matutino",
+            "genero": "Mulher Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-10-09T17:59:53.186917+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "850b1e66-3edd-4458-b900-bd3b28ccf33c",
+            "imagem_user": "822f5b99-132a-44c2-ac3c-6ae8e457d84c.jpg",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "Ana Carolina Garcia Beni",
+            "nome_artistico": "Ana Garbeni",
+            "status_processo": "Recusado",
+            "id_user_expandido": "66470751-79bc-4cd2-8e4e-59f8e633fb30",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Branca(o)",
+            "email": "a.anadabreu@gmail.com",
+            "idade": null,
+            "renda": "Até 1 salário-mínimo",
+            "turno": "Matutino",
+            "genero": "Mulher Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-10-06T16:28:01.429507+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "eec6a7e0-57be-49f4-a7e5-09352be05e73",
+            "imagem_user": "a28b0798-8e5d-49ba-8763-c36b0b5e733e.jpeg",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "Ana D’Abreu",
+            "nome_artistico": "Ana D’Abreu ",
+            "status_processo": "Recusado",
+            "id_user_expandido": "e4938894-eb70-49fb-8aef-3c8470903965",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Branca(o)",
+            "email": "loboanahelena.work@gmail.com",
+            "idade": null,
+            "renda": "De 1 a 2 salários-mínimos",
+            "turno": "Matutino",
+            "genero": "Mulher Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Aprovar",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Aprovar",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-11-12T02:10:37.141973+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "73ede2ea-30f9-49ae-b6a4-f3f0ebe81240",
+            "imagem_user": "2bdd1c40-9b41-49a5-a360-7f2e91a11c4a.jpg",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "Ana Helena Dos Santos",
+            "nome_artistico": "Ana Helena Lobo ",
+            "status_processo": "Matriculado",
+            "id_user_expandido": "36e263dc-0a40-4793-a313-d5104d04df4d",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Preta(o)",
+            "email": "ana.caroltl@hotmail.com",
+            "idade": null,
+            "renda": "De 2 a 5 salários-mínimos",
+            "turno": "Matutino",
+            "genero": "Mulher Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-11-26T23:25:18.017973+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "89810242-565e-4723-b0c4-c9f2f3dd99bc",
+            "imagem_user": "a910f584-3038-4e3a-a793-1e79bfda203c.jpeg",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "Ana Jesus",
+            "nome_artistico": "Ana Jesus",
+            "status_processo": "Recusado",
+            "id_user_expandido": "b4a5b357-fee4-4166-b3dd-786c60b30777",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Branca(o)",
+            "email": "anapetersen40@gmail.com",
+            "idade": null,
+            "renda": "De 2 a 5 salários-mínimos",
+            "turno": "Matutino",
+            "genero": "Mulher Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Aprovar",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Aprovar",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-10-13T15:18:06.391091+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "466d3454-837a-4415-8d0f-4f8fc9b9dff7",
+            "imagem_user": "610dbfa8-1d34-41e3-ad8a-839bc1c686b8.jpeg",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "Ana Laura Petersen Soares",
+            "nome_artistico": "Ana Petersen ",
+            "status_processo": "Matriculado",
+            "id_user_expandido": "ffb7187c-c5aa-41e1-8b85-05a7b66c3b35",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Branca(o)",
+            "email": "anandatorteli@gmail.com",
+            "idade": null,
+            "renda": "Até 1 salário-mínimo",
+            "turno": "Matutino",
+            "genero": "Mulher Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-10-12T18:32:16.954792+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "919f0274-891f-4f8d-a79f-5e8a36f54bec",
+            "imagem_user": "7ca79e92-f2a3-4e9a-9782-a29ed966e390.jpg",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "Ananda Lydia Albuquerque Torteli Faria",
+            "nome_artistico": "Ananda Coelho",
+            "status_processo": null,
+            "id_user_expandido": "f904c1f9-506a-4c64-8573-f2fddeaac15e",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Preta(o)",
+            "email": "anavitoriaborges933@gmail.com",
+            "idade": null,
+            "renda": "Até 1 salário-mínimo",
+            "turno": "Matutino",
+            "genero": "Mulher Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-10-29T05:42:05.477312+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "e27ecd44-db20-42bc-96fe-c5bd86d077a3",
+            "imagem_user": "57b271ec-0ce6-42a0-8629-caba1e5cc84a.jpeg",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "Ana Vitória Borges",
+            "nome_artistico": "Ana Vitória",
+            "status_processo": "Recusado",
+            "id_user_expandido": "9c2cd572-c25a-4515-b73d-d1d7b4be8a9d",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Amarela(o)",
+            "email": "andresasaki33@gmail.com",
+            "idade": null,
+            "renda": "De 2 a 5 salários-mínimos",
+            "turno": "Matutino",
+            "genero": "Homem Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Aprovar",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Aprovar",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-11-04T14:23:57.399503+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "d082d1e0-626a-4de6-b5a4-8928f299b03c",
+            "imagem_user": "c55a6a58-298f-46b6-a415-3b669271a2fd.jpg",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "André Sasaki",
+            "nome_artistico": "André Sasaki",
+            "status_processo": "Recusado",
+            "id_user_expandido": "2fdb7040-402f-45d9-9ca3-d3f3c674d1b7",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Branca(o)",
+            "email": "giraoangela3@gmail.com",
+            "idade": null,
+            "renda": "De 1 a 2 salários-mínimos",
+            "turno": "Matutino",
+            "genero": "Mulher Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-10-23T04:41:40.840962+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "193a0616-f021-4bf7-baec-2826e7b75d55",
+            "imagem_user": "cd20d678-1ad1-4b17-ae71-64cc7c4db3b6.jpeg",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "Angela Maria Oliveira Girao",
+            "nome_artistico": "Ângela Girão ",
+            "status_processo": "Recusado",
+            "id_user_expandido": "a11a4736-6dd7-4d78-babc-ff6597752ad6",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Branca(o)",
+            "email": "annacuba2021@gmail.com",
+            "idade": null,
+            "renda": "De 1 a 2 salários-mínimos",
+            "turno": "Matutino",
+            "genero": "Mulher Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-11-07T01:50:16.979882+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "b4c475dc-79cc-47ea-ad8b-ccf9716ed96a",
+            "imagem_user": "3c502a7e-7732-473f-b6e6-60c7e66f7786.jpeg",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "Anna Luiza Cuba Da Silva Ferdinando Moreira",
+            "nome_artistico": "Anna Luiza Cuba",
+            "status_processo": "Recusado",
+            "id_user_expandido": "4333d984-2563-4dd0-a30a-49228c9bdbce",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Parda(o)",
+            "email": "annabnonato@gmail.com",
+            "idade": null,
+            "renda": "Até 1 salário-mínimo",
+            "turno": "Matutino",
+            "genero": "Mulher Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Reprovar",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Reprovar",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-11-26T21:46:52.620738+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "394685c9-ebd5-4ec6-99b6-6779d161dcb2",
+            "imagem_user": "08866f83-bccb-4c34-ba5f-17c2e25b2fa5.jpeg",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "Anna Nonato",
+            "nome_artistico": "Anna Nonato",
+            "status_processo": "Recusado",
+            "id_user_expandido": "c1234e7a-ee91-4d62-ac23-957aad0b7b1b",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Parda(o)",
+            "email": "arthurduduify@gmail.com",
+            "idade": null,
+            "renda": "De 1 a 2 salários-mínimos",
+            "turno": "Matutino",
+            "genero": "Homem Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-10-28T16:32:12.014757+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "6998f31c-d5ce-40ef-ac66-94c07cfabaa2",
+            "imagem_user": "2f2bbec9-3ad6-4459-8ae4-0de7c906982e.jpg",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "Arthur Oliveira",
+            "nome_artistico": "Art Oliveira ",
+            "status_processo": "Recusado",
+            "id_user_expandido": "d220bca2-d30d-4a45-b479-d8cf798d7612",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Branca(o)",
+            "email": "arturnascimentom@gmail.com",
+            "idade": null,
+            "renda": "De 1 a 2 salários-mínimos",
+            "turno": "Matutino",
+            "genero": "Homem Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-10-20T10:48:43.107357+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "801baade-2f7e-418a-a78e-ad729c260552",
+            "imagem_user": "c91a7271-93bd-4bf5-988e-3d0c032afafe.jpg",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "Artur Nascimento",
+            "nome_artistico": "Artur Nascimento ",
+            "status_processo": "Recusado",
+            "id_user_expandido": "8c51e478-33bc-4b43-9271-50487752022b",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Preta(o)",
+            "email": "aruanalvarenga@gmail.com",
+            "idade": null,
+            "renda": "Até 1 salário-mínimo",
+            "turno": "Matutino",
+            "genero": "Homem Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Reprovar",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Reprovar",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-10-23T11:09:52.655797+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "c1d361cd-1615-46e4-a1cb-d9f7161268f1",
+            "imagem_user": "94486fa0-2bd2-412c-bb34-52e9aecd6c1b.jpeg",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "Aruan Alvarenga",
+            "nome_artistico": "Aruan Alvarenga",
+            "status_processo": "Recusado",
+            "id_user_expandido": "d2594cb7-eaee-42fd-8397-688ac2cc5561",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Preta(o)",
+            "email": "astroelyosouza@gmail.com",
+            "idade": null,
+            "renda": "De 1 a 2 salários-mínimos",
+            "turno": "Matutino",
+            "genero": "Homem Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Aguardando",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-10-01T22:21:13.958575+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "b40aad5f-fa9b-45e6-8038-4ed80d2e2a73",
+            "imagem_user": "578126fd-40b0-49c7-9c23-82d8b70a0ff6.jpeg",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "Astroelio Souza",
+            "nome_artistico": "Astroelio",
+            "status_processo": "Recusado",
+            "id_user_expandido": "e6bc1237-9bac-45d2-8194-a592c74f5256",
+            "nota_total_processo": null
+        },
+        {
+            "pcd": "Não",
+            "raca": "Branca(o)",
+            "email": "biaanjinho@uol.com.br",
+            "idade": null,
+            "renda": "De 2 a 5 salários-mínimos",
+            "turno": "Matutino",
+            "genero": "Mulher Cis",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "avaliacao": [
+                {
+                    "tipo": "opcao",
+                    "ordem": 1,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Inscrição Deferida",
+                        "Inscrição Indeferida",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Deferimento Inscrição",
+                    "resposta": "Inscrição Deferida",
+                    "id_pergunta": "518e1943-1a84-4017-b283-67b3914e46e2",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 2,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Redação",
+                    "resposta": "Reprovar",
+                    "id_pergunta": "d96a080f-fce2-4d23-8d2f-3f0778ae7482",
+                    "opcao_default": "Aguardando"
+                },
+                {
+                    "tipo": "opcao",
+                    "ordem": 3,
+                    "escopo": "area",
+                    "opcoes": [
+                        "Aprovar",
+                        "Reprovar",
+                        "Desistente",
+                        "Aguardando"
+                    ],
+                    "pergunta": "Resultado da Prova Prática",
+                    "resposta": "Reprovar",
+                    "id_pergunta": "1e35dc23-ba9d-4104-b427-598345c41436",
+                    "opcao_default": "Aguardando"
+                }
+            ],
+            "criado_em": "2025-10-20T16:39:37.185047+00:00",
+            "nome_curso": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "nome_turma": "Teatro Musical (jazz dance, sapateado, canto e interpretação) ",
+            "id_processo": "94428f43-6ff0-4162-bb91-1c00de90501c",
+            "imagem_user": "846ebda9-16c5-435b-a769-3bce34899480.jpeg",
+            "nome_social": null,
+            "laudo_enviado": false,
+            "nome_completo": "Beatriz Britto Anjinho",
+            "nome_artistico": "Beatriz Anjinho",
+            "status_processo": "Recusado",
+            "id_user_expandido": "bf11816d-17d5-401e-8492-e576220369af",
+            "nota_total_processo": null
+        }
+    ],
+    "qtd_total": 148,
+    "qtd_paginas": 8,
+    "pagina_atual": 1
+}

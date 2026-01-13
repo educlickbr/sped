@@ -31,24 +31,8 @@ onMounted(() => {
             </div>
         </div>
 
-        <!-- Right Controls -->
-        <div class="flex items-center gap-3">
-           
-           <!-- Logout Button (Left of Theme) -->
-           <button 
-              v-if="store.user"
-              @click="store.logout()" 
-              class="w-8 h-8 flex items-center justify-center rounded text-secondary hover:text-danger hover:bg-danger/10 transition-all group"
-              title="Sair"
-           >
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18.36 6.64a9 9 0 1 1-12.73 0"></path><line x1="12" y1="2" x2="12" y2="12"></line></svg>
-           </button>
-
-           <!-- Theme Toggle -->
-           <button @click="store.toggleTheme()" class="w-8 h-8 flex items-center justify-center rounded text-secondary hover:text-primary hover:bg-div-30 transition-all font-bold">
-              <svg v-if="store.isDark" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-              <svg v-else xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-           </button>
+        <!-- Right Controls: Only Menu Button -->
+        <div class="flex items-center">
 
            <div class="w-[1px] h-4 bg-secondary/10"></div>
 

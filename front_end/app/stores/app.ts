@@ -122,6 +122,28 @@ export const useAppStore = defineStore("app", {
                 actionLabel: payload.actionLabel || null,
                 actionPath: payload.actionPath || null
             }
+        },
+        /**
+         * 🔄 Renova APENAS a hash do Bunny.net
+         * Útil quando a hash expira (5 min) mas não queremos refazer todo o /api/me
+         * Muito mais leve: só 1 chamada (hash_app) vs 2 (hash_app + get_user_expandido)
+         */
+        async refreshHash() {
+            try {
+                const data = await $fetch("/api/refresh-hash") as any;
+                
+                if (data.hash_base) {
+                    this.hash_base = data.hash_base;
+                    console.log('✅ Hash renovada:', data.refreshed_at);
+                } else {
+                    console.warn('⚠️ Falha ao renovar hash:', data.error);
+                }
+                
+                return data.hash_base;
+            } catch (err) {
+                console.error("Erro ao renovar hash:", err);
+                return null;
+            }
         }
     },
 });

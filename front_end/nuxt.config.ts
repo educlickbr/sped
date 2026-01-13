@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       style: [
-        { innerHTML: 'html, body { background-color: #0a0a0c !important; color: white; }' }
+        { innerHTML: 'html, body { background-color: #0a0a0c !important; color: white; margin: 0; padding: 0; } #__nuxt { display: none; }' }
       ]
     }
   },

@@ -1,0 +1,71 @@
+{
+    "encerrados": [],
+    "em_andamento": [
+        {
+            "area": "Regulares",
+            "id_turma": "3834456a-97ac-4858-9738-8a4d3e5991c7",
+            "ano_semestre": "26Is",
+            "nome_curso_turno": "Teatro Musical (jazz dance, sapateado, canto e interpretação)  - Matutino"
+        },
+        {
+            "area": "Regulares",
+            "id_turma": "86527f89-9a1c-4864-800e-dc745b93a69d",
+            "ano_semestre": "26Is",
+            "nome_curso_turno": "Técnicas da Dança (Clássica, Moderna e Contemporânea) - Vespertino"
+        },
+        {
+            "area": "Regulares",
+            "id_turma": "7d315b47-e313-4238-ad4b-20fcb2e94f9f",
+            "ano_semestre": "26Is",
+            "nome_curso_turno": "Dança e Performance - Matutino"
+        },
+        {
+            "area": "Regulares",
+            "id_turma": "b5401afa-5424-434a-8ecd-bcf38b6a4b94",
+            "ano_semestre": "26Is",
+            "nome_curso_turno": "Produção e Gestão Cultural para Dança - Noturno"
+        },
+        {
+            "area": "Regulares",
+            "id_turma": "13870493-3bd8-434f-bcf9-37f2d4d95fb6",
+            "ano_semestre": "26Is",
+            "nome_curso_turno": "Coreografia (Dramaturgia e Direção) - Matutino"
+        },
+        {
+            "area": "Regulares",
+            "id_turma": "c7fedfa3-06b9-44cf-9bf9-7832ed8f4abe",
+            "ano_semestre": "26Is",
+            "nome_curso_turno": "Técnicas da Dança (Clássica, Moderna e Contemporânea) - Matutino"
+        },
+        {
+            "area": "Regulares",
+            "id_turma": "c5697c99-286b-4012-ac72-14272ea6fcb5",
+            "ano_semestre": "26Is",
+            "nome_curso_turno": "Técnicas da Dança com ênfase no Clássico - Vespertino"
+        },
+        {
+            "area": "Regulares",
+            "id_turma": "52d2bb1a-a0cb-4598-997e-f182aa221237",
+            "ano_semestre": "26Is",
+            "nome_curso_turno": "Teatro Musical (jazz dance, sapateado, canto e interpretação)  - Vespertino"
+        },
+        {
+            "area": "Regulares",
+            "id_turma": "5bdf215c-16a6-48cc-8529-5c7d2f427235",
+            "ano_semestre": "26Is",
+            "nome_curso_turno": "Técnicas da Dança com ênfase em Moderno e Contemporâneo - Matutino"
+        },
+        {
+            "area": "Regulares",
+            "id_turma": "91f688b0-5fc5-4291-893d-55e5257b0013",
+            "ano_semestre": "26Is",
+            "nome_curso_turno": "Dança e Performance - Vespertino"
+        },
+        {
+            "area": "Regulares",
+            "id_turma": "4a3a0f68-9811-4269-9675-eda6789331f8",
+            "ano_semestre": "26Is",
+            "nome_curso_turno": "Técnicas da Dança com ênfase em Moderno e Contemporâneo - Vespertino"
+        }
+    ]
+}
