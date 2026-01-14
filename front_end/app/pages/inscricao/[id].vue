@@ -618,18 +618,18 @@ const handleCepBlur = async (question: Pergunta) => {
     <NuxtLayout name="base">
         <div class="flex flex-col gap-8 pb-10">
             <!-- Header Section -->
-            <div class="bg-div-15 rounded-3xl p-8 border border-secondary/10 shadow-sm relative overflow-hidden">
+            <div class="bg-div-15 rounded-xl p-4 md:p-8 border border-secondary/10 shadow-sm relative overflow-hidden">
                 <div class="absolute top-0 right-0 p-32 bg-primary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
                 
                 <div v-if="formData" class="relative z-10">
-                    <div class="mb-2">
+                    <div class="mb-1.5 md:mb-2">
                         <span class="text-[10px] font-black uppercase tracking-wider text-primary bg-primary/10 px-2 py-1 rounded">
                             {{ formData.area }}
                         </span>
                     </div>
-                    <h1 class="text-3xl font-black text-text mb-4 leading-tight">{{ formData.curso }}</h1>
+                    <h1 class="text-xl md:text-3xl font-black text-text mb-2 md:mb-4 leading-tight">{{ formData.curso }}</h1>
                     
-                    <div class="flex flex-wrap gap-4 text-sm font-bold text-secondary">
+                    <div class="flex flex-wrap gap-3 md:gap-4 text-xs md:text-sm font-bold text-secondary">
                         <div class="flex items-center gap-2">
                             <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
                             {{ formData.semestre }}
@@ -660,7 +660,7 @@ const handleCepBlur = async (question: Pergunta) => {
                             v-for="blockKey in activeBlocks" 
                             :key="blockKey"
                             @click="goToTab(blockKey)"
-                            class="whitespace-nowrap px-4 py-2 rounded-full text-sm font-bold transition-all duration-300 border"
+                            class="whitespace-nowrap px-4 py-2 rounded-lg text-sm font-bold transition-all duration-300 border"
                             :class="activeTab === blockKey 
                                 ? 'bg-primary text-white border-primary shadow-md' 
                                 : 'bg-background text-secondary border-secondary/10 hover:bg-div-15'"
@@ -678,7 +678,7 @@ const handleCepBlur = async (question: Pergunta) => {
 
                 <form class="space-y-8" @submit.prevent>
                     <!-- Skeleton Loader for Form Body -->
-                    <div v-if="pending" class="bg-background border border-secondary/10 rounded-3xl p-8 shadow-sm space-y-8">
+                    <div v-if="pending" class="bg-background border border-secondary/10 rounded-xl p-8 shadow-sm space-y-8">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div v-for="i in 4" :key="i" class="space-y-3">
                                 <div class="h-4 w-24 bg-div-15 animate-pulse rounded"></div>
@@ -689,7 +689,7 @@ const handleCepBlur = async (question: Pergunta) => {
 
                     <div 
                         v-else-if="processedBlocks[activeTab]" 
-                        class="bg-background border border-secondary/10 rounded-3xl p-6 md:p-8 shadow-sm transition-all duration-300"
+                        class="bg-background border border-secondary/10 rounded-xl p-6 md:p-8 shadow-sm transition-all duration-300"
                     >
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <template v-for="question in processedBlocks[activeTab]" :key="question.id_pergunta">
@@ -715,7 +715,7 @@ const handleCepBlur = async (question: Pergunta) => {
                                         :readonly="lockedFields[question.id_pergunta]"
                                         :style="{ height: question.altura + 'px' }"
                                         @blur="!lockedFields[question.id_pergunta] && saveAnswer(question)"
-                                        class="w-full bg-div-15 border border-secondary/10 rounded-xl px-4 py-3 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-secondary/30 resize-none"
+                                        class="w-full bg-div-15 border border-secondary/10 rounded-lg px-4 py-3 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-secondary/30 resize-none"
                                     ></textarea>
                                     <div class="absolute right-3 bottom-3 flex items-center gap-1.5 opacity-0 group-focus-within/field:opacity-100 transition-opacity">
                                         <span v-if="isSaving[question.id_pergunta]" class="text-[10px] text-primary animate-pulse font-bold">Salvando...</span>
@@ -729,7 +729,7 @@ const handleCepBlur = async (question: Pergunta) => {
                                         <label 
                                             v-for="(option, idx) in getOptions(question)" 
                                             :key="idx"
-                                            class="flex items-center gap-3 p-3 rounded-xl border border-secondary/10 bg-div-15 cursor-pointer hover:bg-div-30 transition-colors group"
+                                            class="flex items-center gap-3 p-3 rounded-lg border border-secondary/10 bg-div-15 cursor-pointer hover:bg-div-30 transition-colors group"
                                         >
                                             <input 
                                                 type="radio" 
@@ -754,7 +754,7 @@ const handleCepBlur = async (question: Pergunta) => {
                                 <!-- 3. Premium File Uploader -->
                                 <div v-else-if="question.tipo === 'arquivo'">
                                     <div 
-                                        class="relative border-2 border-dashed border-secondary/20 rounded-2xl p-6 transition-all hover:border-primary/40 hover:bg-primary/5 group text-center cursor-pointer"
+                                        class="relative border-2 border-dashed border-secondary/20 rounded-xl p-6 transition-all hover:border-primary/40 hover:bg-primary/5 group text-center cursor-pointer"
                                         @click="triggerFileUpload(question.id_pergunta)"
                                     >
                                         <input 
@@ -791,7 +791,7 @@ const handleCepBlur = async (question: Pergunta) => {
                                                 </button>
                                             </div>
 
-                                            <div v-else class="w-full bg-div-15 border border-secondary/10 rounded-xl p-4 flex flex-col items-center gap-3">
+                                            <div v-else class="w-full bg-div-15 border border-secondary/10 rounded-lg p-4 flex flex-col items-center gap-3">
                                                 <p class="text-sm font-bold text-text">Tem certeza que deseja remover este arquivo?</p>
                                                 <div class="flex gap-3">
                                                     <button 
@@ -847,7 +847,7 @@ const handleCepBlur = async (question: Pergunta) => {
                                             :style="{ height: question.altura + 'px' }"
                                             :readonly="lockedFields[question.id_pergunta]"
                                             @blur="!lockedFields[question.id_pergunta] && (question.pergunta === 'cep' ? handleCepBlur(question) : saveAnswer(question))"
-                                            class="w-full bg-div-15 border border-secondary/10 rounded-xl px-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-secondary/30 disabled:opacity-50 disabled:cursor-not-allowed"
+                                            class="w-full bg-div-15 border border-secondary/10 rounded-lg px-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-secondary/30 disabled:opacity-50 disabled:cursor-not-allowed"
                                             :class="{'pr-10': question.pergunta === 'cep' || lockedFields[question.id_pergunta]}"
                                         />
                                         
@@ -887,7 +887,7 @@ const handleCepBlur = async (question: Pergunta) => {
                                     v-if="!isLastBlock"
                                     type="button" 
                                     @click="handleNext"
-                                    class="bg-secondary text-white font-bold py-3 px-8 rounded-xl text-xs uppercase tracking-wider shadow-md hover:bg-secondary/90 hover:-translate-y-0.5 transition-all flex items-center gap-2"
+                                    class="bg-secondary text-white font-bold py-3 px-8 rounded-lg text-xs uppercase tracking-wider shadow-md hover:bg-secondary/90 hover:-translate-y-0.5 transition-all flex items-center gap-2"
                                 >
                                     Avançar
                                     <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
@@ -899,7 +899,7 @@ const handleCepBlur = async (question: Pergunta) => {
                                     type="button" 
                                     @click="handleSubmit"
                                     :disabled="isSubmitting"
-                                    class="bg-primary text-white font-bold py-3 px-8 rounded-xl text-xs uppercase tracking-wider shadow-md hover:bg-primary/90 hover:-translate-y-0.5 transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                                    class="bg-primary text-white font-bold py-3 px-8 rounded-lg text-xs uppercase tracking-wider shadow-md hover:bg-primary/90 hover:-translate-y-0.5 transition-all flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
                                 >
                                     <svg v-if="isSubmitting" class="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
                                     {{ isSubmitting ? 'Enviando...' : 'Enviar Inscrição' }}

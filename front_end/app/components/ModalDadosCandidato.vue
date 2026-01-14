@@ -417,7 +417,7 @@ const performDeleteFile = async (question: any) => {
     <div class="fixed inset-0 z-10 overflow-y-auto">
       <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
         <!-- Modal Panel -->
-        <div class="relative transform overflow-hidden rounded-2xl bg-[#16161E] border border-white/10 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-4xl p-6" @click.stop>
+        <div class="relative transform overflow-hidden rounded-xl bg-[#16161E] border border-white/10 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-4xl p-6" @click.stop>
             
             <!-- Header -->
             <div class="flex items-center justify-between mb-6 border-b border-white/10 pb-4">
@@ -442,7 +442,7 @@ const performDeleteFile = async (question: any) => {
                         v-for="blockKey in activeBlocks" 
                         :key="blockKey"
                         @click="activeTab = blockKey"
-                        class="whitespace-nowrap px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 border"
+                        class="whitespace-nowrap px-4 py-2 rounded-lg text-xs font-bold transition-all duration-300 border"
                         :class="activeTab === blockKey 
                             ? 'bg-primary/20 text-primary border-primary/50' 
                             : 'bg-white/5 text-secondary-400 border-white/5 hover:bg-white/10'"
@@ -507,7 +507,7 @@ const performDeleteFile = async (question: any) => {
                                         <!-- File Upload (Premium Style) -->
                                         <div v-else-if="question.tipo === 'arquivo'">
                                             <div 
-                                                class="relative border-2 border-dashed border-white/10 rounded-2xl p-6 transition-all hover:border-primary/40 hover:bg-primary/5 group text-center cursor-pointer"
+                                                class="relative border-2 border-dashed border-white/10 rounded-xl p-6 transition-all hover:border-primary/40 hover:bg-primary/5 group text-center cursor-pointer"
                                                 @click="triggerFileUpload(question.id_pergunta)"
                                             >
                                                 <input 

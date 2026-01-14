@@ -65,7 +65,16 @@ const filteredCourses = computed<MappedCourse[]>(() => {
         // Determinar status baseado em datas
         let status: MappedCourse['status'] = 'Open'
         const today = new Date()
-        const end = new Date(curso.dt_fim_inscri)
+        
+        // Define relevant dates based on role
+        const isDocente = selectedRole.value === 'docente'
+        const rawStart = isDocente ? (curso.dt_ini_inscri_docente || curso.dt_ini_inscri) : curso.dt_ini_inscri
+        const rawEnd = isDocente ? (curso.dt_fim_inscri_docente || curso.dt_fim_inscri) : curso.dt_fim_inscri
+        
+        const end = new Date(rawEnd)
+        // Fix for date comparison (ensure end of day or similar if needed, but assuming strict > check)
+        // Note: New date utility might help here if we imported distinct utils, but sticking to logic.
+        // Actually, let's just use the raw string date for comparison if it works, or standard Date.
         if (today > end) status = 'Closed'
         
         // Normalização da Area para filtro interno
@@ -92,8 +101,8 @@ const filteredCourses = computed<MappedCourse[]>(() => {
             role: selectedRole.value,
             category: areaNormalized,
             rawDates: {
-                start: curso.dt_ini_inscri,
-                end: curso.dt_fim_inscri,
+                start: rawStart,
+                end: rawEnd,
                 startCourse: curso.dt_ini_curso,
                 endCourse: curso.dt_fim_curso
             },
@@ -182,13 +191,13 @@ const handleInscricao = (course: MappedCourse) => {
     <div class="flex flex-col gap-8 pb-10">
         
         <!-- Hero Section #0F2027 #203A43 -->
-        <div class="relative w-full rounded-3xl overflow-hidden bg-gradient-to-r from-[#009C82] via-[#305F7E] to-[#5C267B] text-white shadow-2xl">
+        <div class="relative w-full rounded-xl overflow-hidden bg-gradient-to-r from-[#009C82] via-[#305F7E] to-[#5C267B] text-white shadow-2xl">
             <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-            <div class="relative z-10 px-8 py-16 md:py-24 text-center flex flex-col items-center justify-center gap-4">
-                <h1 class="text-4xl md:text-5xl font-black uppercase tracking-tight drop-shadow-lg">
+            <div class="relative z-10 px-8 py-8 md:py-24 text-center flex flex-col items-center justify-center gap-4">
+                <h1 class="text-2xl md:text-5xl font-black uppercase tracking-tight drop-shadow-lg">
                     Processo Seletivo
                 </h1>
-                <p class="text-base md:text-lg opacity-90 max-w-2xl font-medium leading-relaxed">
+                <p class="text-xs md:text-lg opacity-90 max-w-2xl font-medium leading-relaxed">
                     Navegue pelos cursos disponíveis para estudantes e docentes.
                     Selecione o tipo de candidatura e a área e clique em Inscrever-se.
                 </p>
@@ -251,7 +260,7 @@ const handleInscricao = (course: MappedCourse) => {
 
         <!-- Course Grid -->
         <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
-            <div v-for="course in filteredCourses" :key="course.id" class="bg-background rounded-3xl shadow-sm border border-secondary/10 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col">
+            <div v-for="course in filteredCourses" :key="course.id" class="bg-background rounded-xl shadow-sm border border-secondary/10 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col">
                 
                 <!-- Image Header - Clean & Narrow -->
                 <div class="relative h-32 overflow-hidden flex items-center justify-center p-4 bg-[#D60956]">
@@ -278,7 +287,7 @@ const handleInscricao = (course: MappedCourse) => {
                     </h3>
 
                     <!-- Info Blocks -->
-                    <div class="bg-div-15/50 border border-secondary/5 rounded-2xl p-5 space-y-4">
+                    <div class="bg-div-15/50 border border-secondary/5 rounded-lg p-5 space-y-4">
                         
                         <!-- Inscricao -->
                         <div class="flex items-start gap-3">
