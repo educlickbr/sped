@@ -7,7 +7,7 @@ front_end/.cache
 front_end/dist
 
 # Node dependencies
-front_end/node_modules
+node_modules
 
 # Logs
 front_end/logs

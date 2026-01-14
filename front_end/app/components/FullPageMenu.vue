@@ -9,6 +9,12 @@ const props = defineProps({
 const emit = defineEmits(["close"])
 const router = useRouter()
 const store = useAppStore() // Assuming useAppStore has auth info
+const route = useRoute()
+
+// Active Route Helper
+const isActive = (path) => {
+    return route.path === path || route.path.startsWith(path + '/')
+}
 
 // Navigation Helper
 const handleNavigation = (path) => {
@@ -46,7 +52,7 @@ const userInitial = computed(() => {
        - Padding Horizontal (Left/Right): px-2 (Mobile) | md:px-4 (Desktop)
        - Background: bg-transparent (Mobile) | md:bg-div-15 (Desktop)
     -->
-    <header class="bg-transparent md:bg-div-15 px-2 py-2 md:px-4 md:py-3 rounded-lg flex items-center justify-between shadow-none md:shadow-sm border-0 md:border border-secondary/5 shrink-0">
+    <header class="bg-transparent md:bg-div-15 px-1 py-2 md:px-4 md:py-3 rounded-lg flex items-center justify-between shadow-none md:shadow-sm border-0 md:border border-secondary/5 shrink-0">
       <div class="flex items-center gap-3">
         <div class="hidden md:flex w-8 h-8 rounded bg-primary/10 text-primary items-center justify-center font-bold text-sm border border-primary/10 shadow-sm overflow-hidden relative">
            <img 
@@ -63,10 +69,10 @@ const userInitial = computed(() => {
              - Título Tamanho: text-[10px] (Mobile) | md:text-xs (Desktop)
              - Subtítulo Tamanho: text-[9px] (Mobile) | md:text-[10px] (Desktop)
           -->
-          <h2 class="text-[10px] md:text-xs font-black text-text uppercase tracking-[0.2em] leading-none">
+          <h2 class="text-[12px] md:text-xs font-black text-text uppercase tracking-[0.2em] leading-none">
             Olá, {{ userName.split(' ')[0] }}
           </h2>
-          <p class="text-[9px] md:text-[10px] text-secondary font-bold opacity-80 leading-none">Menu Principal</p>
+          <p class="text-[10px] md:text-[10px] text-secondary font-bold opacity-80 leading-none">Menu Principal</p>
         </div>
       </div>
 
@@ -94,36 +100,36 @@ const userInitial = computed(() => {
              <h3 class="text-xs font-black text-secondary tracking-[0.2em] uppercase">Processo Seletivo</h3>
           </div>
           
-          <div class="bg-div-15 border border-secondary/10 rounded-2xl overflow-hidden shadow-sm">
+          <div class="bg-div-15 border border-secondary/10 rounded-xl overflow-hidden shadow-sm">
             <!-- Processos Abertos -->
             <button @click="handleNavigation('/processo_seletivo')" class="menu-item group">
-              <div class="menu-icon bg-primary/10 text-primary">
+              <div class="menu-icon" :class="isActive('/processo_seletivo') ? 'bg-primary/10 text-primary' : 'bg-secondary/10 text-secondary'">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
               </div>
               <div class="flex flex-col text-left">
-                <span class="text-sm font-bold text-text group-hover:text-primary transition-colors">Processos Abertos</span>
+                <span class="text-sm font-bold transition-colors" :class="isActive('/processo_seletivo') ? 'text-primary' : 'text-text group-hover:text-primary'">Processos Abertos</span>
                 <span class="text-[10px] text-secondary font-medium">Inscreva-se em cursos</span>
               </div>
-              <svg class="ml-auto text-secondary/20 group-hover:text-primary/60 transition-colors" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
             </button>
 
+            <!-- Seleção Estudantes -->
             <button @click="handleNavigation('/selecao/estudante')" class="menu-item group border-t border-secondary/5">
-              <div class="menu-icon bg-secondary/10 text-secondary">
+              <div class="menu-icon" :class="isActive('/selecao/estudante') ? 'bg-primary/10 text-primary' : 'bg-secondary/10 text-secondary'">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
               </div>
               <div class="flex flex-col text-left">
-                <span class="text-sm font-bold text-text group-hover:text-primary transition-colors">Seleção Estudantes</span>
+                <span class="text-sm font-bold transition-colors" :class="isActive('/selecao/estudante') ? 'text-primary' : 'text-text group-hover:text-primary'">Seleção Estudantes</span>
                 <span class="text-[10px] text-secondary font-medium">Candidatos a cursos</span>
               </div>
             </button>
 
             <!-- Seleção Docentes -->
             <button @click="handleNavigation('/selecao/docente')" class="menu-item group border-t border-secondary/5">
-              <div class="menu-icon bg-secondary/10 text-secondary">
+              <div class="menu-icon" :class="isActive('/selecao/docente') ? 'bg-primary/10 text-primary' : 'bg-secondary/10 text-secondary'">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 14l9-5-9-5-9 5 9 5z"></path><path d="M12 14l6.16-3.422a12.083 12.083 0 0 1 .665 6.479A11.952 11.952 0 0 0 12 20.055a11.952 11.952 0 0 0-6.824-2.998 12.078 12.078 0 0 1 .665-6.479L12 14z"></path><path d="M12 14v7"></path><path d="M12 14v7"></path></svg>
               </div>
               <div class="flex flex-col text-left">
-                <span class="text-sm font-bold text-text group-hover:text-primary transition-colors">Seleção Docentes</span>
+                <span class="text-sm font-bold transition-colors" :class="isActive('/selecao/docente') ? 'text-primary' : 'text-text group-hover:text-primary'">Seleção Docentes</span>
                 <span class="text-[10px] text-secondary font-medium">Candidatos a vagas docentes</span>
               </div>
             </button>
@@ -139,24 +145,15 @@ const userInitial = computed(() => {
               </div>
             </button>
 
-             <!-- Adequação Documentos -->
-            <button class="menu-item group border-t border-secondary/5 cursor-not-allowed opacity-60">
-              <div class="menu-icon bg-secondary/10 text-secondary">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path><line x1="12" y1="11" x2="12" y2="17"></line><line x1="9" y1="14" x2="15" y2="14"></line></svg>
-              </div>
-              <div class="flex flex-col text-left">
-                <span class="text-sm font-bold text-text group-hover:text-primary transition-colors">Adequação de Documentos</span>
-                <span class="text-[10px] text-secondary font-medium">Envio de pendências (Em breve)</span>
-              </div>
-            </button>
+
 
              <!-- Painel Seleção -->
              <button @click="handleNavigation('/selecao/painel')" class="menu-item group border-t border-secondary/5">
-              <div class="menu-icon bg-secondary/10 text-secondary">
+              <div class="menu-icon" :class="isActive('/selecao/painel') ? 'bg-primary/10 text-primary' : 'bg-secondary/10 text-secondary'">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
               </div>
               <div class="flex flex-col text-left">
-                <span class="text-sm font-bold text-text group-hover:text-primary transition-colors">Painel de Seleção</span>
+                <span class="text-sm font-bold transition-colors" :class="isActive('/selecao/painel') ? 'text-primary' : 'text-text group-hover:text-primary'">Painel de Seleção</span>
                 <span class="text-[10px] text-secondary font-medium">Dashboard administrativo</span>
               </div>
             </button>
@@ -170,7 +167,7 @@ const userInitial = computed(() => {
              <h3 class="text-xs font-black text-secondary tracking-[0.2em] uppercase">Educacional</h3>
           </div>
           
-          <div class="bg-div-15 border border-secondary/10 rounded-2xl overflow-hidden shadow-sm">
+          <div class="bg-div-15 border border-secondary/10 rounded-xl overflow-hidden shadow-sm">
             <!-- Matrículas -->
             <button class="menu-item group cursor-not-allowed opacity-60">
               <div class="menu-icon bg-orange-500/10 text-orange-500">

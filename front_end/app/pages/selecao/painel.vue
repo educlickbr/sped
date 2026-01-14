@@ -129,29 +129,32 @@ const formatLabel = (txt: string) => {
     <NuxtLayout name="base">
         <!-- Main Container -->
         <div class="bg-transparent md:bg-div-15 rounded-none md:rounded-xl p-0 md:p-8">
-            <!-- TABS -->
-            <div class="border-b border-secondary/10 mb-6">
-                <div class="flex items-center gap-8">
+            <!-- TABS & CONTROLS WRAPPER -->
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-6">
+                
+                <!-- TABS -->
+                <div class="flex items-center gap-6 border-b border-secondary/10 w-full md:w-auto pb-1 overflow-x-auto no-scrollbar">
                     <button 
                         v-for="(val, label) in areaMap" 
                         :key="val"
                         @click="currentArea = label as string"
-                        class="text-sm font-bold pb-4 relative transition-colors whitespace-nowrap"
-                        :class="currentArea === label ? 'text-primary' : 'text-secondary hover:text-white'"
+                        class="text-sm font-bold pb-2 relative transition-colors whitespace-nowrap capitalize text-secondary hover:text-primary"
+                        :class="currentArea === label ? 'text-primary' : 'text-secondary'"
                     >
                         {{ label }}
-                        <span v-if="currentArea === label" class="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full"></span>
+                        <span v-if="currentArea === label" class="absolute bottom-[-1px] left-0 w-full h-0.5 bg-primary rounded-full"></span>
                     </button>
                 </div>
-            </div>
 
-            <!-- CONTROLS -->
-            <div class="flex justify-end mb-8">
-                <select v-model="anoSemestre" class="bg-[#16161E] border border-white/5 text-white text-xs rounded-lg focus:ring-1 focus:ring-primary focus:border-primary p-2.5 pr-8 outline-none cursor-pointer w-40 appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%236B7280%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22M6%208l4%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.25rem_1.25rem] bg-no-repeat bg-[right_0.5rem_center]">
-                    <option :value="getAnoSemestre(undefined, -1)">{{ getAnoSemestre(undefined, -1) }}</option>
-                    <option :value="getAnoSemestre()">{{ getAnoSemestre() }} (Atual)</option>
-                    <option :value="getAnoSemestre(undefined, 1)">{{ getAnoSemestre(undefined, 1) }}</option>
-                </select>
+                <!-- CONTROLS -->
+                <div class="relative w-full md:w-48">
+                    <select v-model="anoSemestre" class="w-full bg-[#16161E] border border-secondary/10 text-white text-xs rounded-lg focus:ring-1 focus:ring-primary focus:border-primary p-2.5 pr-8 outline-none cursor-pointer appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20fill%3D%22none%22%20viewBox%3D%220%200%2020%2020%22%3E%3Cpath%20stroke%3D%22%236B7280%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%20stroke-width%3D%221.5%22%20d%3D%22M6%208l4%204%204-4%22%2F%3E%3C%2Fsvg%3E')] bg-[length:1.25rem_1.25rem] bg-no-repeat bg-[right_0.5rem_center]">
+                        <option :value="getAnoSemestre(undefined, -1)">{{ getAnoSemestre(undefined, -1) }}</option>
+                        <option :value="getAnoSemestre()">{{ getAnoSemestre() }} (Atual)</option>
+                        <option :value="getAnoSemestre(undefined, 1)">{{ getAnoSemestre(undefined, 1) }}</option>
+                    </select>
+                </div>
+
             </div>
 
             <!-- LOADING -->
