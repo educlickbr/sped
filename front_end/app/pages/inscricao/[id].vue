@@ -844,12 +844,23 @@ const handleCepBlur = async (question: Pergunta) => {
                                             :id="question.id_pergunta"
                                             v-model="answers[question.id_pergunta]"
                                             :placeholder="question.label"
-                                            :style="{ height: question.altura + 'px' }"
+                                            :style="[
+                                                { height: question.altura + 'px' },
+                                                question.tipo === 'data' ? { colorScheme: 'dark' } : {}
+                                            ]"
                                             :readonly="lockedFields[question.id_pergunta]"
                                             @blur="!lockedFields[question.id_pergunta] && (question.pergunta === 'cep' ? handleCepBlur(question) : saveAnswer(question))"
                                             class="w-full bg-div-15 border border-secondary/10 rounded-lg px-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-secondary/30 disabled:opacity-50 disabled:cursor-not-allowed"
-                                            :class="{'pr-10': question.pergunta === 'cep' || lockedFields[question.id_pergunta]}"
+                                            :class="{
+                                                'pr-10': question.pergunta === 'cep' || lockedFields[question.id_pergunta] || question.tipo === 'data',
+                                                '[&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-0 [&::-webkit-calendar-picker-indicator]:top-0 [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full [&::-webkit-calendar-picker-indicator]:cursor-pointer': question.tipo === 'data'
+                                            }"
                                         />
+                                        
+                                        <!-- Custom Calendar Icon -->
+                                        <div v-if="question.tipo === 'data'" class="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none text-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                        </div>
                                         
                                         <!-- CEP Loading Indicator -->
                                         <div v-if="question.pergunta === 'cep' && loadingCep" class="absolute right-3 top-1/2 -translate-y-1/2">
