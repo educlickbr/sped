@@ -89,6 +89,20 @@ const sortedIncome = computed(() => {
     });
 });
 
+// Imports from Utils
+import { getPcdCount, calculateAgeDistribution } from '~/utils/demographics';
+
+// Age Distribution Computed (Client-Side)
+const ageDistribution = computed(() => {
+    // If we have legacy data, use it (fallback)
+    if (dashboardData.value?.demographics?.idade && dashboardData.value.demographics.idade.length > 0) {
+        return dashboardData.value.demographics.idade;
+    }
+
+    const birthdates = dashboardData.value?.demographics?.nascimentos;
+    return calculateAgeDistribution(birthdates);
+});
+
 const sortedGender = computed(() => {
     if (!dashboardData.value?.demographics?.genero) return [];
     // Sort by Quantity Descending
@@ -114,7 +128,7 @@ const formatLabel = (txt: string) => {
 <template>
     <NuxtLayout name="base">
         <!-- Main Container -->
-        <div class="bg-div-15 rounded-xl p-6 md:p-8">
+        <div class="bg-transparent md:bg-div-15 rounded-none md:rounded-xl p-0 md:p-8">
             <!-- TABS -->
             <div class="border-b border-secondary/10 mb-6">
                 <div class="flex items-center gap-8">
@@ -217,17 +231,17 @@ const formatLabel = (txt: string) => {
                         </div>
 
                         <!-- FAIXA ETÁRIA -->
-                        <div class="bg-[#16161E] border border-white/5 rounded-xl p-5 flex flex-col h-full min-h-[250px]">
+                        <div class="bg-[#16161E] border border-white/5 rounded-xl p-5 flex flex-col h-full min-h-[250px] lg:col-span-2">
                             <h4 class="text-sm font-bold text-white mb-4">Faixa Etária</h4>
-                            <div v-if="dashboardData.demographics.idade && dashboardData.demographics.idade.length > 0" class="space-y-4 flex-1">
-                                <div v-for="(item, idx) in dashboardData.demographics.idade" :key="idx">
+                            <div v-if="ageDistribution && ageDistribution.length > 0" class="space-y-4 flex-1">
+                                <div v-for="(item, idx) in ageDistribution" :key="idx">
                                     <div class="flex justify-between text-xs mb-1">
                                         <span class="text-secondary-300">{{ item.faixa }}</span>
                                         <span class="text-white font-bold">{{ item.qtd }}</span>
                                     </div>
                                      <div class="w-full h-2 bg-white/5 rounded-full overflow-hidden">
                                         <div class="h-full bg-purple-500 rounded-full" 
-                                             :style="{ width: `${(item.qtd / getTotal(dashboardData.demographics.idade)) * 100}%` }">
+                                             :style="{ width: `${(item.qtd / getTotal(ageDistribution)) * 100}%` }">
                                         </div>
                                     </div>
                                 </div>
@@ -238,11 +252,11 @@ const formatLabel = (txt: string) => {
                         </div>
 
                         <!-- PCD -->
-                         <div class="bg-[#16161E] border border-white/5 rounded-xl p-5 flex flex-col justify-center h-full min-h-[250px]">
+                         <div class="bg-[#16161E] border border-white/5 rounded-xl p-5 flex flex-col justify-center h-full min-h-[250px] relative">
                             <h4 class="text-sm font-bold text-white mb-4 absolute top-5 left-5">PCD</h4>
                             <div v-if="getRealTotal(dashboardData.demographics.pcd) > 0" class="flex flex-col items-center justify-center flex-1">
                                 <div class="text-6xl font-black text-white mb-2">
-                                     {{ dashboardData.demographics.pcd.find((i:any) => i.label === 'true' || i.label === true)?.qtd || 0 }}
+                                     {{ getPcdCount(dashboardData.demographics.pcd) }}
                                 </div>
                                 <p class="text-sm text-secondary font-bold uppercase tracking-wider">PCD</p> 
                                  <p class="text-xs text-secondary/50 mt-4">

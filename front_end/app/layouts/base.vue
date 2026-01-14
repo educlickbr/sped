@@ -9,7 +9,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="h-screen bg-background flex flex-col md:flex-row gap-4 p-5 overflow-hidden font-sans text-text transition-colors duration-300">
+  <div class="h-screen bg-background flex flex-col md:flex-row gap-4 p-2 md:p-5 overflow-hidden font-sans text-text transition-colors duration-300">
     
     <!-- Full Page Menu Overlay -->
     <FullPageMenu :isOpen="isMenuOpen" @close="isMenuOpen = false" />
@@ -18,40 +18,31 @@ onMounted(() => {
     <main class="flex-1 flex flex-col gap-4 h-full overflow-hidden relative">
       
       <!-- Detached Header (Inside Main) -->
-      <header class="bg-div-15 px-4 py-3 rounded-lg shrink-0 flex items-center justify-between shadow-sm border border-secondary/5 transition-all">
+      <header class="bg-transparent md:bg-div-15 px-2 py-2 md:px-4 md:py-3 rounded-lg shrink-0 flex items-center justify-between shadow-none md:shadow-sm border-0 md:border border-secondary/5 transition-all">
         
-        <!-- Brand -->
+        <!-- Brand / User Avatar -->
         <div class="flex items-center gap-3">
-            <div class="w-8 h-8 rounded bg-primary/10 text-primary flex items-center justify-center font-bold text-sm shadow-sm border border-primary/10">
-                S
+            <div class="hidden md:flex w-8 h-8 rounded bg-primary/10 text-primary items-center justify-center font-bold text-sm shadow-sm border border-primary/10 overflow-hidden relative">
+                <img 
+                   v-if="store.user && store.imagem_user && store.hash_base" 
+                   :src="store.hash_base + store.imagem_user" 
+                   class="w-full h-full object-cover absolute inset-0"
+                   alt="Foto"
+                />
+                <span v-else>S</span>
             </div>
-            <div class="flex flex-col leading-none">
-                <h1 class="text-xs font-black text-primary uppercase tracking-[0.2em]">Processo Seletivo</h1>
-                <p class="text-[10px] text-secondary font-bold opacity-80">São Paulo Escola de Dança</p>
+            <div class="flex flex-col leading-none gap-0.5">
+                <h1 class="text-[10px] md:text-xs font-black text-primary uppercase tracking-[0.2em]">Processo Seletivo</h1>
+                <p class="text-[9px] md:text-[10px] text-secondary font-bold opacity-80">São Paulo Escola de Dança</p>
             </div>
         </div>
 
         <!-- Right Controls: Only Menu Button -->
         <div class="flex items-center">
 
-           <div class="w-[1px] h-4 bg-secondary/10"></div>
-
            <!-- Auth State Buttons -->
            <div v-if="store.user" class="flex items-center gap-4">
                
-               <!-- User Profile Info -->
-               <div class="flex items-center gap-2 pr-2 border-r border-secondary/10">
-                   <div class="w-8 h-8 rounded-full border border-secondary/20 overflow-hidden bg-div-30 shadow-inner flex items-center justify-center">
-                       <img 
-                           v-if="store.imagem_user && store.hash_base" 
-                           :src="store.hash_base + store.imagem_user" 
-                           class="w-full h-full object-cover"
-                           alt="Foto do Usuário"
-                       />
-                       <span v-else class="text-[10px] font-black text-secondary">{{ store.nome?.charAt(0) || 'U' }}</span>
-                   </div>
-               </div>
-
                <!-- Menu Trigger (Far Right) -->
                <button 
                   @click="isMenuOpen = true"
@@ -71,7 +62,7 @@ onMounted(() => {
       </header>
 
       <!-- Main Scrollable Content -->
-      <div class="flex-1 overflow-y-auto rounded-lg custom-scrollbar flex flex-col gap-4 pr-1">
+      <div class="flex-1 overflow-y-auto rounded-lg custom-scrollbar flex flex-col gap-4 px-1">
          <slot />
          
          <footer class="py-6 text-center text-[9px] uppercase tracking-widest text-secondary/30 font-bold border-t border-secondary/5 mt-auto">

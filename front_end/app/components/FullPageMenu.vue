@@ -40,16 +40,22 @@ const userInitial = computed(() => {
     :class="isOpen ? 'translate-x-0' : 'translate-x-[102%]'"
   >
     <!-- 1. Header -->
-    <header class="bg-div-15 border border-secondary/20 rounded-xl px-4 py-3 flex items-center justify-between shadow-sm shrink-0">
+    <header class="bg-transparent md:bg-div-15 px-2 py-2 md:px-4 md:py-3 rounded-lg flex items-center justify-between shadow-none md:shadow-sm border-0 md:border border-secondary/5 shrink-0">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-full bg-primary/10 text-primary flex items-center justify-center font-bold text-lg border border-primary/20">
-           {{ userInitial }}
+        <div class="hidden md:flex w-8 h-8 rounded bg-primary/10 text-primary items-center justify-center font-bold text-sm border border-primary/10 shadow-sm overflow-hidden relative">
+           <img 
+              v-if="store.imagem_user && store.hash_base" 
+              :src="store.hash_base + store.imagem_user" 
+              class="w-full h-full object-cover absolute inset-0"
+              alt="Foto"
+           />
+           <span v-else>{{ userInitial }}</span>
         </div>
-        <div>
-          <h2 class="text-sm font-black text-text leading-tight">
+        <div class="flex flex-col leading-none gap-0.5">
+          <h2 class="text-[10px] md:text-xs font-black text-text uppercase tracking-[0.2em] leading-none">
             Olá, {{ userName.split(' ')[0] }}
           </h2>
-          <p class="text-[10px] text-secondary font-bold uppercase tracking-wider">Menu Principal</p>
+          <p class="text-[9px] md:text-[10px] text-secondary font-bold opacity-80 leading-none">Menu Principal</p>
         </div>
       </div>
 
