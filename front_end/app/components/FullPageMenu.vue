@@ -40,6 +40,12 @@ const userInitial = computed(() => {
     :class="isOpen ? 'translate-x-0' : 'translate-x-[102%]'"
   >
     <!-- 1. Header -->
+    <!-- 
+       LAYOUT HEADER (MOBILE VS DESKTOP):
+       - Padding Vertical (Top/Bottom): py-2 (Mobile) | md:py-3 (Desktop)
+       - Padding Horizontal (Left/Right): px-2 (Mobile) | md:px-4 (Desktop)
+       - Background: bg-transparent (Mobile) | md:bg-div-15 (Desktop)
+    -->
     <header class="bg-transparent md:bg-div-15 px-2 py-2 md:px-4 md:py-3 rounded-lg flex items-center justify-between shadow-none md:shadow-sm border-0 md:border border-secondary/5 shrink-0">
       <div class="flex items-center gap-3">
         <div class="hidden md:flex w-8 h-8 rounded bg-primary/10 text-primary items-center justify-center font-bold text-sm border border-primary/10 shadow-sm overflow-hidden relative">
@@ -52,6 +58,11 @@ const userInitial = computed(() => {
            <span v-else>{{ userInitial }}</span>
         </div>
         <div class="flex flex-col leading-none gap-0.5">
+          <!-- 
+             FONTS & TEXT (MOBILE VS DESKTOP):
+             - Título Tamanho: text-[10px] (Mobile) | md:text-xs (Desktop)
+             - Subtítulo Tamanho: text-[9px] (Mobile) | md:text-[10px] (Desktop)
+          -->
           <h2 class="text-[10px] md:text-xs font-black text-text uppercase tracking-[0.2em] leading-none">
             Olá, {{ userName.split(' ')[0] }}
           </h2>

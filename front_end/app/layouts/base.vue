@@ -17,25 +17,37 @@ onMounted(() => {
     <!-- Main Content Panel (Contains Header + Content) -->
     <main class="flex-1 flex flex-col gap-4 h-full overflow-hidden relative">
       
-      <!-- Detached Header (Inside Main) -->
-      <header class="bg-transparent md:bg-div-15 px-2 py-2 md:px-4 md:py-3 rounded-lg shrink-0 flex items-center justify-between shadow-none md:shadow-sm border-0 md:border border-secondary/5 transition-all">
-        
-        <!-- Brand / User Avatar -->
-        <div class="flex items-center gap-3">
-            <div class="hidden md:flex w-8 h-8 rounded bg-primary/10 text-primary items-center justify-center font-bold text-sm shadow-sm border border-primary/10 overflow-hidden relative">
-                <img 
-                   v-if="store.user && store.imagem_user && store.hash_base" 
-                   :src="store.hash_base + store.imagem_user" 
-                   class="w-full h-full object-cover absolute inset-0"
-                   alt="Foto"
-                />
-                <span v-else>S</span>
-            </div>
-            <div class="flex flex-col leading-none gap-0.5">
-                <h1 class="text-[10px] md:text-xs font-black text-primary uppercase tracking-[0.2em]">Processo Seletivo</h1>
-                <p class="text-[9px] md:text-[10px] text-secondary font-bold opacity-80">São Paulo Escola de Dança</p>
-            </div>
-        </div>
+         <!-- Detached Header (Inside Main) -->
+         <!-- 
+            LAYOUT HEADER (MOBILE VS DESKTOP):
+            - Padding Vertical (Top/Bottom): py-2 (Mobile) | md:py-3 (Desktop)
+            - Padding Horizontal (Left/Right): px-2 (Mobile) | md:px-4 (Desktop)
+            - Background: bg-transparent (Mobile) | md:bg-div-15 (Desktop)
+            - Border: border-0 (Mobile) | md:border (Desktop)
+         -->
+         <header class="bg-transparent md:bg-div-15 px-2 py-1 md:px-4 md:py-3 rounded-lg shrink-0 flex items-center justify-between shadow-none md:shadow-sm border-0 md:border border-secondary/5 transition-all">
+         
+         <!-- Brand / User Avatar -->
+         <div class="flex items-center gap-3">
+               <div class="hidden md:flex w-8 h-8 rounded bg-primary/10 text-primary items-center justify-center font-bold text-sm shadow-sm border border-primary/10 overflow-hidden relative">
+                  <img 
+                     v-if="store.user && store.imagem_user && store.hash_base" 
+                     :src="store.hash_base + store.imagem_user" 
+                     class="w-full h-full object-cover absolute inset-0"
+                     alt="Foto"
+                  />
+                  <span v-else>S</span>
+               </div>
+               <div class="flex flex-col leading-none gap-0.5">
+                  <!-- 
+                     FONTS & TEXT (MOBILE VS DESKTOP):
+                     - Título Tamanho: text-[10px] (Mobile) | md:text-xs (Desktop)
+                     - Subtítulo Tamanho: text-[9px] (Mobile) | md:text-[10px] (Desktop)
+                  -->
+                  <h1 class="text-[12px] md:text-xs font-black text-primary uppercase tracking-[0.2em]">Processo Seletivo</h1>
+                  <p class="text-[10px] md:text-[10px] text-secondary font-bold opacity-80">São Paulo Escola de Dança</p>
+               </div>
+         </div>
 
         <!-- Right Controls: Only Menu Button -->
         <div class="flex items-center">

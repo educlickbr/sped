@@ -1,6 +1,5 @@
 {
-  "dependencies": {
-    "@types/formidable": "^3.4.6",
-    "formidable": "^3.5.4"
+  "devDependencies": {
+    "supabase": "^2.15.8"
   }
 }
