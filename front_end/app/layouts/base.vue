@@ -6,6 +6,12 @@ onMounted(() => {
    store.initTheme()
    store.initSession() // Single BFF call for everything
 })
+
+const route = useRoute()
+const pageTitle = computed(() => {
+   if (route.path.includes('/meus-processos')) return 'Meus Processos'
+   return 'Processo Seletivo'
+})
 </script>
 
 <template>
@@ -44,7 +50,7 @@ onMounted(() => {
                      - Título Tamanho: text-[10px] (Mobile) | md:text-xs (Desktop)
                      - Subtítulo Tamanho: text-[9px] (Mobile) | md:text-[10px] (Desktop)
                   -->
-                  <h1 class="text-[12px] md:text-xs font-black text-primary uppercase tracking-[0.2em]">Processo Seletivo</h1>
+                  <h1 class="text-[12px] md:text-xs font-black text-primary uppercase tracking-[0.2em]">{{ pageTitle }}</h1>
                   <p class="text-[10px] md:text-[10px] text-secondary font-bold opacity-80">São Paulo Escola de Dança</p>
                </div>
          </div>

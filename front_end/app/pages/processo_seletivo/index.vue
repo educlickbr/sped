@@ -259,7 +259,7 @@ const handleInscricao = (course: MappedCourse) => {
         </div>
 
         <!-- Course Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-[1400px] mx-auto">
             <div v-for="course in filteredCourses" :key="course.id" class="bg-background rounded-xl shadow-sm border border-secondary/10 overflow-hidden hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group flex flex-col">
                 
                 <!-- Image Header - Clean & Narrow -->

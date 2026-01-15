@@ -53,10 +53,32 @@
           </div>
         </div>
       </div>
+      <!-- Seção de Navegação -->
+       <div class="col-span-1 md:col-span-2 bg-div-15 p-6 rounded-lg shadow-lg border border-div-30">
+        <h2 class="text-2xl font-semibold mb-4">Navegação & Testes</h2>
+        <button 
+            @click="testMessage"
+            class="px-6 py-3 rounded-lg bg-indigo-600 text-white font-bold hover:bg-indigo-700 transition"
+        >
+            Testar Página de Mensagem
+        </button>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-// Sem lógica por enquanto, apenas visual
+const store = useAppStore()
+const router = useRouter()
+
+const testMessage = () => {
+    store.statusMessage = {
+        title: 'Inscrição enviada com sucesso!',
+        message: 'Inscrição enviada com sucesso! Confira suas inscrições e os documentos enviados em Meus Processos, basta clicar no botão abaixo.',
+        type: 'success',
+        actionLabel: 'Meus Processos',
+        actionPath: '/meus-processos'
+    }
+    router.push('/mensagem')
+}
 </script>

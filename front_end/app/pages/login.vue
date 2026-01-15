@@ -48,7 +48,7 @@ const handleLogin = async () => {
     <div class="w-full max-w-md relative z-10">
         
         <!-- Login Card -->
-        <div class="bg-div-15 backdrop-blur-2xl border border-white/5 rounded-[2.5rem] p-8 md:p-12 shadow-2xl">
+        <div class="bg-div-15 backdrop-blur-2xl border border-white/5 rounded-xl p-8 md:p-12 shadow-2xl">
             
             <!-- Logo Inside Card -->
             <div class="flex flex-col items-center mb-10">
@@ -72,7 +72,7 @@ const handleLogin = async () => {
                             id="email"
                             required
                             placeholder="seu@email.com"
-                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-sm font-bold text-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all placeholder:text-white/10 group-hover:border-white/20"
+                            class="w-full bg-white/5 border border-white/10 rounded-lg px-5 py-4 text-sm font-bold text-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all placeholder:text-white/10 group-hover:border-white/20"
                         />
                         <div class="absolute right-5 top-1/2 -translate-y-1/2 text-white/10 group-focus-within:text-primary transition-colors">
                             <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
@@ -93,7 +93,7 @@ const handleLogin = async () => {
                             id="password"
                             required
                             placeholder="••••••••"
-                            class="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-4 text-sm font-bold text-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all placeholder:text-white/10 group-hover:border-white/20"
+                            class="w-full bg-white/5 border border-white/10 rounded-lg px-5 py-4 text-sm font-bold text-white focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/40 transition-all placeholder:text-white/10 group-hover:border-white/20"
                         />
                         <button 
                             type="button"
@@ -117,7 +117,7 @@ const handleLogin = async () => {
                 <button 
                     type="submit" 
                     :disabled="loading"
-                    class="w-full bg-primary text-white font-black py-5 rounded-2xl text-sm uppercase tracking-[0.2em] shadow-lg shadow-primary/20 hover:bg-[#b81151] hover:shadow-primary/40 hover:-translate-y-0.5 transition-all active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-50 disabled:pointer-events-none"
+                    class="w-full bg-primary text-white font-black py-5 rounded-lg text-sm uppercase tracking-[0.2em] shadow-lg shadow-primary/20 hover:bg-[#b81151] hover:shadow-primary/40 hover:-translate-y-0.5 transition-all active:scale-[0.98] flex items-center justify-center gap-3 disabled:opacity-50 disabled:pointer-events-none"
                 >
                     <span v-if="loading" class="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
                     {{ loading ? 'Sincronizando...' : 'Entrar' }}
@@ -130,7 +130,7 @@ const handleLogin = async () => {
                 <p class="text-[10px] font-bold text-secondary/40 uppercase tracking-widest">
                     Ainda não tem uma conta?
                 </p>
-                <NuxtLink to="/inscricao/estudante" class="inline-block text-[10px] font-black uppercase tracking-widest text-white/80 bg-white/5 border border-white/10 px-8 py-4 rounded-full hover:bg-white/10 hover:text-white transition-all">
+                <NuxtLink to="/inscricao/estudante" class="inline-block text-[10px] font-black uppercase tracking-widest text-white/80 bg-white/5 border border-white/10 px-8 py-4 rounded-lg hover:bg-white/10 hover:text-white transition-all">
                     Criar conta / Inscrever-se
                 </NuxtLink>
             </div>

@@ -204,10 +204,14 @@ const handleSubmit = async () => {
             })
 
             if (result && result.ok) {
-                showToast('Inscrição enviada com sucesso!', { type: 'info', duration: 6000 })
-                // Optional: Redirect or show success state
-                // router.push('/dashboard') 
-                // For now just alert or keep toast
+                appStore.statusMessage = {
+                    title: 'Inscrição enviada com sucesso!',
+                    message: 'Inscrição enviada com sucesso! Confira suas inscrições e os documentos enviados em Meus Processos, basta clicar no botão abaixo.',
+                    type: 'success',
+                    actionLabel: 'Meus Processos',
+                    actionPath: '/meus-processos'
+                }
+                router.push('/mensagem')
             } else if (result && result.acao === 'ignorado') {
                  showToast(`Aviso: ${result.mensagem}`, { type: 'info', duration: 6000 })
             } else {

@@ -415,15 +415,15 @@ const performDeleteFile = async (question: any) => {
     <div class="fixed inset-0 bg-black/80 backdrop-blur-sm transition-opacity" @click="$emit('close')"></div>
 
     <div class="fixed inset-0 z-10 overflow-y-auto">
-      <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+      <div class="flex min-h-full items-center justify-center p-0 text-center sm:p-0">
         <!-- Modal Panel -->
-        <div class="relative transform overflow-hidden rounded-xl bg-[#16161E] border border-white/10 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-4xl p-6" @click.stop>
+        <div class="relative transform overflow-hidden rounded-none md:rounded-xl bg-[#16161E] border-x-0 border-y-0 md:border md:border-white/10 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-4xl p-4 md:p-6" @click.stop>
             
             <!-- Header -->
-            <div class="flex items-center justify-between mb-6 border-b border-white/10 pb-4">
-                <h3 class="text-xl font-bold text-white">
+            <div class="flex items-center justify-between mb-4 md:mb-6 border-b border-white/10 pb-4">
+                <h3 class="text-lg md:text-xl font-bold text-white">
                     Dados do Candidato
-                    <span class="block text-sm text-secondary-500 font-normal mt-1">{{ candidato?.nome_completo }}</span>
+                    <span class="block text-xs md:text-sm text-secondary-500 font-normal mt-1">{{ candidato?.nome_completo }}</span>
                 </h3>
                 <button @click="$emit('close')" class="text-secondary-400 hover:text-white transition-colors">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -437,7 +437,8 @@ const performDeleteFile = async (question: any) => {
 
             <div v-else>
                 <!-- Tabs -->
-                <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-6 scrollbar-hide border-b border-white/5">
+                <!-- Tabs -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-4 mb-4 md:mb-6 scrollbar-hide border-b border-white/5">
                     <button 
                         v-for="blockKey in activeBlocks" 
                         :key="blockKey"
@@ -452,8 +453,9 @@ const performDeleteFile = async (question: any) => {
                 </div>
 
                 <!-- Content -->
-                <div v-if="!isAvaliarMode && processedBlocks[activeTab]" class="space-y-6 max-h-[60vh] overflow-y-auto pr-2 custom-scrollbar">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Content -->
+                <div v-if="!isAvaliarMode && processedBlocks[activeTab]" class="space-y-4 md:space-y-6 max-h-[80vh] overflow-y-auto pr-2 custom-scrollbar">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                         <template v-for="question in processedBlocks[activeTab]" :key="question.id_pergunta">
                             <div 
                                 v-if="shouldShowQuestion(question)"
@@ -467,7 +469,7 @@ const performDeleteFile = async (question: any) => {
                                     <span v-if="question.obrigatorio" class="text-primary">*</span>
                                 </label>
 
-                                <div class="flex gap-2 items-start">
+                                <div class="flex gap-2" :class="(question.tipo === 'texto' && (!question.altura || question.altura < 80)) || (!['texto', 'radio', 'arquivo'].includes(question.tipo)) ? 'items-center' : 'items-start'">
                                     <!-- Field Wrapper -->
                                     <div class="flex-grow">
                                         <!-- Texto / Textarea -->
@@ -599,11 +601,11 @@ const performDeleteFile = async (question: any) => {
                                         v-if="question.tipo !== 'arquivo'"
                                         @click="handleSave(question)"
                                         :disabled="isSaving[question.id_pergunta]"
-                                        class="mt-1 p-2 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 transition-all flex-shrink-0 disabled:opacity-50"
+                                        class="p-3 rounded-lg bg-primary/10 hover:bg-primary/20 text-primary transition-all flex-shrink-0 disabled:opacity-50"
                                         title="Salvar alteração"
                                     >
-                                        <svg v-if="isSaving[question.id_pergunta]" class="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                                        <svg v-else class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                        <svg v-if="isSaving[question.id_pergunta]" class="w-7 h-7 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                                        <svg v-else class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
                                             <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
                                             <polyline points="17 21 17 13 7 13 7 21"></polyline>
                                             <polyline points="7 3 7 8 15 8"></polyline>
@@ -616,7 +618,7 @@ const performDeleteFile = async (question: any) => {
                 </div>
 
                 <!-- AVALIACAO Content -->
-                <div v-else-if="isAvaliarMode" class="space-y-6 max-h-[70vh] overflow-y-auto pr-2 custom-scrollbar">
+                <div v-else-if="isAvaliarMode" class="space-y-6 max-h-[80vh] overflow-y-auto pr-2 custom-scrollbar">
                      <div class="flex flex-col gap-6">
                         <!-- Opcoes -->
                         <div v-for="question in avaliacaoQuestions.opcoes" :key="question.id_pergunta" class="bg-white/5 rounded-xl p-4 border border-white/5">
@@ -636,10 +638,10 @@ const performDeleteFile = async (question: any) => {
                                 <button 
                                     @click="handleSave(question)"
                                     :disabled="isSaving[question.id_pergunta]"
-                                    class="p-2 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-500 border border-emerald-500/30 transition-all flex-shrink-0 disabled:opacity-50"
+                                    class="p-3 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-500 transition-all flex-shrink-0 disabled:opacity-50"
                                 >
-                                    <svg v-if="isSaving[question.id_pergunta]" class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                                    <svg v-else class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                    <svg v-if="isSaving[question.id_pergunta]" class="w-7 h-7 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                                    <svg v-else class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
                                         <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
                                         <polyline points="17 21 17 13 7 13 7 21"></polyline>
                                         <polyline points="7 3 7 8 15 8"></polyline>
@@ -666,10 +668,10 @@ const performDeleteFile = async (question: any) => {
                                     <button 
                                         @click="handleSave(question)"
                                         :disabled="isSaving[question.id_pergunta]"
-                                        class="p-2 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-500 border border-emerald-500/30 transition-all flex-shrink-0 disabled:opacity-50"
+                                        class="p-3 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-500 transition-all flex-shrink-0 disabled:opacity-50"
                                     >
-                                        <svg v-if="isSaving[question.id_pergunta]" class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                                        <svg v-else class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+                                        <svg v-if="isSaving[question.id_pergunta]" class="w-7 h-7 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                                        <svg v-else class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
                                         <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path>
                                         <polyline points="17 21 17 13 7 13 7 21"></polyline>
                                         <polyline points="7 3 7 8 15 8"></polyline>
