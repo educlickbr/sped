@@ -111,6 +111,10 @@ watch(formData, (newData) => {
                 if (q.tipo === 'boolean') {
                     // backend may return string 'true' or boolean true
                     answers.value[q.id_pergunta] = (q.resposta === true || String(q.resposta) === 'true')
+                } else if (q.tipo === 'data' && typeof q.resposta === 'string') {
+                    // input[type="date"] expects YYYY-MM-DD. 
+                    // Incoming might be ISO with time: "1988-01-07T16:01:00-02:00"
+                    answers.value[q.id_pergunta] = q.resposta.split('T')[0]
                 } else {
                     answers.value[q.id_pergunta] = q.resposta
                 }
