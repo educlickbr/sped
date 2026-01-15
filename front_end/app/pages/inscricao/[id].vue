@@ -846,14 +846,17 @@ const handleCepBlur = async (question: Pergunta) => {
                                             :placeholder="question.label"
                                             :style="[
                                                 { height: question.altura + 'px' },
-                                                question.tipo === 'data' ? { colorScheme: 'dark' } : {}
+                                                question.tipo === 'data' ? { 
+                                                    colorScheme: 'dark', 
+                                                    accentColor: '#d60956'
+                                                } : {}
                                             ]"
                                             :readonly="lockedFields[question.id_pergunta]"
                                             @blur="!lockedFields[question.id_pergunta] && (question.pergunta === 'cep' ? handleCepBlur(question) : saveAnswer(question))"
-                                            class="w-full bg-div-15 border border-secondary/10 rounded-lg px-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-secondary/30 disabled:opacity-50 disabled:cursor-not-allowed"
+                                            class="w-full bg-div-15 border border-secondary/10 rounded-lg px-4 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all placeholder:text-secondary/30 disabled:opacity-50 disabled:cursor-not-allowed appearance-none"
                                             :class="{
                                                 'pr-10': question.pergunta === 'cep' || lockedFields[question.id_pergunta] || question.tipo === 'data',
-                                                '[&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-0 [&::-webkit-calendar-picker-indicator]:top-0 [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full [&::-webkit-calendar-picker-indicator]:cursor-pointer': question.tipo === 'data'
+                                                '[&::-webkit-calendar-picker-indicator]:opacity-0 [&::-webkit-calendar-picker-indicator]:absolute [&::-webkit-calendar-picker-indicator]:right-0 [&::-webkit-calendar-picker-indicator]:top-0 [&::-webkit-calendar-picker-indicator]:w-full [&::-webkit-calendar-picker-indicator]:h-full [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-inner-spin-button]:appearance-none': question.tipo === 'data'
                                             }"
                                         />
                                         
