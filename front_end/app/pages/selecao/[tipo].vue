@@ -165,22 +165,22 @@ const fetchCandidatos = async (page = 1) => {
 
     isLoading.value = true;
     try {
-        const { data, error } = await (client.rpc as any)('nxt_get_candidatos_processo_turma_v2', {
-            p_id_turma: selectedTurmaId.value,
-            p_pagina: page,
-            p_limite: limit,
-            p_tipo_candidatura: tipoCandidatura.value,
-            p_busca: searchQuery.value.trim() || null,
-            p_filtros: [],
-            p_pcd: null,
-            p_laudo: null,
-            p_ordenar_por: sortBy.value,
-            p_ordenar_como: sortDirection.value
+        const response: any = await $fetch('/api/selecao/candidatos', {
+            params: {
+                id_turma: selectedTurmaId.value,
+                pagina: page,
+                limite: limit,
+                tipo_candidatura: tipoCandidatura.value,
+                busca: searchQuery.value.trim() || null,
+                filtros: '[]', // Passing default empty JSON array string
+                pcd: null,
+                laudo: null,
+                ordenar_por: sortBy.value,
+                ordenar_como: sortDirection.value
+            }
         });
 
-        if (error) throw error;
-
-        const result = data as any;
+        const result = response as any;
         candidatos.value = result.itens || [];
         pagination.value = {
             pagina_atual: result.pagina_atual,

@@ -9,13 +9,14 @@ interface Candidato {
   criado_em: string;
   genero?: string;
   raca?: string;
-  idade?: number;
+  data_nascimento?: string;
   imagem_user?: string;
   status_processo: string;
   // Badges logic
   pcd?: string;
   laudo_enviado?: boolean;
   nota_total_processo?: number;
+  deferimento?: string;
 }
 
 const props = defineProps<{
@@ -49,17 +50,51 @@ const isPcd = computed(() => {
 });
 
 const statusColor = computed(() => {
-    switch (props.candidato.status_processo) {
-        case 'aprovado': return 'text-green-400 border-green-400/30 bg-green-400/10';
-        case 'reprovado': return 'text-red-400 border-red-400/30 bg-red-400/10';
-        case 'aguardando': return 'text-yellow-400 border-yellow-400/30 bg-yellow-400/10';
-        default: return 'text-gray-400 border-gray-400/30 bg-gray-400/10';
+    const s = (props.candidato.status_processo || '').toLowerCase();
+    switch (s) {
+        case 'aprovado': return 'text-emerald-400 border-emerald-400/30 bg-emerald-400/10'; // SUCCESS
+        case 'recusado': return 'text-red-400 border-red-400/30 bg-red-400/10'; // DANGER
+        case 'suplente': return 'text-purple-400 border-purple-400/30 bg-purple-400/10'; // PRIMARY
+        case 'aguardando': 
+        default: return 'text-gray-400 border-gray-400/30 bg-gray-400/10'; // PENDENTE (Gray)
     }
+});
+
+const deferimentoColor = computed(() => {
+    const d = (props.candidato.deferimento || '').toLowerCase();
+    if (d.includes('indeferida')) return 'text-red-400 border-red-400/30 bg-red-400/10';
+    if (d.includes('deferida')) return 'text-green-400 border-green-400/30 bg-green-400/10';
+    return 'text-gray-400 border-gray-400/30 bg-gray-400/10';
 });
 
 const formattedScore = computed(() => {
     if (!props.candidato.nota_total_processo) return null;
     return (props.candidato.nota_total_processo / 100).toFixed(1);
+});
+
+const age = computed(() => {
+    if (!props.candidato.data_nascimento) return null;
+    const birthDate = props.candidato.data_nascimento;
+    
+    // Robust parsing
+    let birth: Date;
+    if (birthDate.includes('/')) {
+        const parts = birthDate.split('/');
+        // Assumes DD/MM/YYYY
+        birth = new Date(`${parts[2]}-${parts[1]}-${parts[0]}`);
+    } else {
+        birth = new Date(birthDate);
+    }
+    
+    if (isNaN(birth.getTime())) return null;
+
+    const today = new Date();
+    let years = today.getFullYear() - birth.getFullYear();
+    const m = today.getMonth() - birth.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+        years--;
+    }
+    return years;
 });
 </script>
 
@@ -92,14 +127,18 @@ const formattedScore = computed(() => {
             <span v-if="candidato.genero">{{ candidato.genero }}</span>
             <span v-if="candidato.genero && candidato.raca">•</span>
             <span v-if="candidato.raca">{{ candidato.raca }}</span>
-            <span v-if="candidato.idade">• {{ candidato.idade }}a</span>
+            <span v-if="candidato.raca">{{ candidato.raca }}</span>
+            <span v-if="age">• {{ age }}a</span>
           </div>
         </div>
 
         <!-- Status Badge -->
-        <div class="flex-shrink-0">
+        <div class="flex-shrink-0 flex items-center gap-1">
           <span class="px-2 py-1 rounded text-[9px] font-bold border uppercase tracking-wide" :class="statusColor">
-            {{ candidato.status_processo || 'Pend' }}
+            {{ candidato.status_processo || 'Pendente' }}
+          </span>
+           <span v-if="candidato.deferimento" class="px-2 py-1 rounded text-[9px] font-bold border uppercase tracking-wide" :class="deferimentoColor">
+            {{ candidato.deferimento }}
           </span>
         </div>
       </div>
@@ -188,9 +227,14 @@ const formattedScore = computed(() => {
             </div>
             
             <!-- Status Badge (Top Right) -->
-            <span class="px-2 py-1 rounded text-xs font-medium border uppercase tracking-wider" :class="statusColor">
-              {{ candidato.status_processo || 'Pendentes' }}
-            </span>
+            <div class="flex items-center gap-2">
+                <span class="px-2 py-1 rounded text-xs font-medium border uppercase tracking-wider" :class="statusColor">
+                {{ candidato.status_processo || 'Pendente' }}
+                </span>
+                <span v-if="candidato.deferimento" class="px-2 py-1 rounded text-xs font-medium border uppercase tracking-wider" :class="deferimentoColor">
+                {{ candidato.deferimento }}
+                </span>
+            </div>
           </div>
 
           <div class="grid grid-cols-2 gap-x-4 gap-y-1 text-sm text-gray-400 mt-2">
@@ -200,7 +244,7 @@ const formattedScore = computed(() => {
               <span class="text-secondary-600">Gênero/Raça:</span> 
               {{ candidato.genero || '-' }} / {{ candidato.raca || '-' }}
             </p>
-            <p v-if="candidato.idade"><span class="text-secondary-600">Idade:</span> {{ candidato.idade }} anos</p>
+            <p v-if="age"><span class="text-secondary-600">Idade:</span> {{ age }} anos</p>
           </div>
 
           <!-- Tags -->

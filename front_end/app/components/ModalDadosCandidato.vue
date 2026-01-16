@@ -57,6 +57,19 @@ const formatBlockName = (name: String) => {
     return String(name).replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
 }
 
+const getStatusColor = (status: string | null) => {
+    if (!status) return 'text-gray-400' // Pendente
+    const s = status.toLowerCase()
+    if (s === 'aprovado') return 'text-emerald-500'
+    if (s === 'recusado') return 'text-red-500' // Danger
+    if (s === 'suplente') return 'text-purple-500' // Primary-ish
+    return 'text-white'
+}
+
+const getStatusLabel = (status: string | null) => {
+    return status || 'Pendente'
+}
+
 // Compute blocks and questions
 const processedBlocks = computed(() => {
     if (isAvaliarMode.value) return {} // No blocks for avaliar
@@ -288,23 +301,31 @@ const handleSave = async (question: any) => {
     }
 }
 
-const updateStatus = async (status: string) => {
-    if (!confirm(`Deseja alterar status para ${status}?`)) return
-    
+const updateStatus = async (status: string | null) => {
+    // No confirmation needed as per user request
     isLoading.value = true
     try {
-        const { error } = await (client.rpc as any)('nxt_upsert_status_processo', {
-            p_id_processo: props.candidato.id_processo,
-            p_status: status
-        })
+        const response: any = await $fetch('/api/selecao/status-processo', {
+            method: 'POST',
+            body: {
+                id_processo: props.candidato.id_processo,
+                status: status
+            }
+        });
 
-        if (error) throw error
+        showToast(response.message, { type: 'info' })
         
-        showToast(`Status atualizado para ${status}`, { type: 'info' })
+        // Update local status
+        if (props.candidato) {
+            props.candidato.status_processo = status;
+        }
+
+        emit('update-candidate', { status: status }) // Ensure parent knows
         emit('close') // Close modal on success
-    } catch (e) {
+        
+    } catch (e: any) {
         console.error(e)
-        showToast('Erro ao atualizar status', { type: 'error' })
+        showToast(e.statusMessage || 'Erro ao atualizar status', { type: 'error' })
     } finally {
         isLoading.value = false
     }
@@ -647,7 +668,7 @@ const performDeleteFile = async (question: any) => {
                                     v-model="answers[question.id_pergunta]"
                                     class="w-full bg-black/20 border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary transition-all appearance-none"
                                 >
-                                    <option v-for="opt in question.opcoes" :key="opt" :value="opt">{{ opt }}</option>
+                                    <option v-for="opt in question.opcoes" :key="opt" :value="opt" class="bg-[#16161E] text-white">{{ opt }}</option>
                                 </select>
                                 
                                 <!-- Save Button -->
@@ -708,13 +729,18 @@ const performDeleteFile = async (question: any) => {
                         <!-- Actions -->
                         <div class="mt-8 bg-[#1E1E2D] rounded-xl p-6 border border-white/5 text-center">
                             <h4 class="text-lg font-bold text-white mb-2">Aprovar o Aluno</h4>
-                            <p class="text-sm text-secondary-400 mb-6">Status Atual: <span class="text-white font-bold">{{ candidato?.status_processo || 'Aguardando' }}</span></p>
+                            <p class="text-sm text-secondary-400 mb-6">
+                                Status Atual: 
+                                <span class="font-bold" :class="getStatusColor(candidato?.status_processo)">
+                                    {{ getStatusLabel(candidato?.status_processo) }}
+                                </span>
+                            </p>
                             
                             <div class="flex flex-wrap justify-center gap-2">
-                                <button @click="updateStatus('Matriculado')" class="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-lg transition-colors text-sm">Aprovar</button>
+                                <button @click="updateStatus('Aprovado')" class="px-4 py-2 bg-emerald-500 hover:bg-emerald-600 text-white font-bold rounded-lg transition-colors text-sm">Aprovar</button>
                                 <button @click="updateStatus('Suplente')" class="px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-lg transition-colors text-sm">Suplente</button>
                                 <button @click="updateStatus('Recusado')" class="px-4 py-2 bg-red-500 hover:bg-red-600 text-white font-bold rounded-lg transition-colors text-sm">Recusar</button>
-                                <button @click="updateStatus('Aguardando')" class="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white font-bold rounded-lg transition-colors text-sm">Resetar</button>
+                                <button @click="updateStatus(null)" class="px-4 py-2 bg-gray-600 hover:bg-gray-700 text-white font-bold rounded-lg transition-colors text-sm">Resetar</button>
                             </div>
                         </div>
                      </div>
