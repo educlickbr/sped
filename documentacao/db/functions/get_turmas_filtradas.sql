@@ -1,12 +1,7 @@
-CREATE OR REPLACE FUNCTION public.get_turmas_filtradas(
-	p_ano_semestre text,
-	p_turno text DEFAULT NULL::text,
-	p_area text DEFAULT NULL::text)
-    RETURNS jsonb
-    LANGUAGE plpgsql
-    COST 100
-    VOLATILE PARALLEL UNSAFE
-AS $BODY$
+CREATE OR REPLACE FUNCTION public.get_turmas_filtradas(p_ano_semestre text, p_turno text DEFAULT NULL::text, p_area text DEFAULT NULL::text)
+ RETURNS jsonb
+ LANGUAGE plpgsql
+AS $function$
 DECLARE
     v_result jsonb;
 BEGIN
@@ -52,7 +47,4 @@ BEGIN
 
   RETURN v_result;
 END;
-$BODY$;
-
-ALTER FUNCTION public.get_turmas_filtradas(p_ano_semestre text, p_turno text DEFAULT NULL::text, p_area text DEFAULT NULL::text)
-    OWNER TO postgres;
+$function$

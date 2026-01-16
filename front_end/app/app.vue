@@ -17,10 +17,10 @@ nuxtApp.hook('page:start', () => {
     isLoading.value = true
     loadStartTime = Date.now()
     
-    // Safety: 8s max
+    // Safety: 2s max (reduced from 8s)
     safetyTimeout = setTimeout(() => {
         isLoading.value = false
-    }, 8000)
+    }, 2000)
 })
 
 // FUNCTION: Smooth finish

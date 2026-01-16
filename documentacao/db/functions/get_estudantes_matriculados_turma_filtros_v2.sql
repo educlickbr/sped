@@ -1,20 +1,7 @@
-CREATE OR REPLACE FUNCTION public.get_estudantes_matriculados_turma_filtros_v2(
-	p_ano_semestre text,
-	p_turno text DEFAULT NULL::text,
-	p_curso text DEFAULT NULL::text,
-	p_busca text DEFAULT NULL::text,
-	p_genero text DEFAULT NULL::text,
-	p_raca text DEFAULT NULL::text,
-	p_renda text DEFAULT NULL::text,
-	p_id_turma uuid DEFAULT NULL::uuid,
-	p_area text DEFAULT NULL::text,
-	p_page integer DEFAULT 1,
-	p_limit integer DEFAULT 20)
-    RETURNS jsonb
-    LANGUAGE plpgsql
-    COST 100
-    VOLATILE PARALLEL UNSAFE
-AS $BODY$
+CREATE OR REPLACE FUNCTION public.get_estudantes_matriculados_turma_filtros_v2(p_ano_semestre text, p_turno text DEFAULT NULL::text, p_curso text DEFAULT NULL::text, p_busca text DEFAULT NULL::text, p_genero text DEFAULT NULL::text, p_raca text DEFAULT NULL::text, p_renda text DEFAULT NULL::text, p_id_turma uuid DEFAULT NULL::uuid, p_area text DEFAULT NULL::text, p_status text DEFAULT NULL::text, p_page integer DEFAULT 1, p_limit integer DEFAULT 20)
+ RETURNS jsonb
+ LANGUAGE plpgsql
+AS $function$
 DECLARE
   v_result jsonb;
 BEGIN
@@ -22,6 +9,7 @@ BEGIN
     SELECT
       -- todas as colunas da matrícula
       m.*,
+      m.rematricula,
 
       -- turma (dados agora vindos de CURSO)
       c.nome_curso AS nome_curso,
@@ -70,36 +58,39 @@ BEGIN
 
     WHERE t.ano_semestre = p_ano_semestre
       AND (p_turno IS NULL OR t.turno = p_turno)
-      AND (p_area IS NULL OR c.area::text = p_area)
-      AND (p_curso IS NULL OR c.nome_curso ILIKE '%' || p_curso || '%')
+      AND (p_area IS NULL OR public.normalizar_texto(c.area::text) = public.normalizar_texto(p_area))
+      AND (p_status IS NULL 
+           OR (p_status ILIKE 'ativa' AND m.status::text = 'Ativo') 
+           OR m.status::text ILIKE p_status)
+      AND (p_curso IS NULL OR public.normalizar_texto(c.nome_curso) ILIKE '%' || public.normalizar_texto(p_curso) || '%')
       AND (p_id_turma IS NULL OR t.id = p_id_turma)
       AND (p_genero IS NULL OR EXISTS (
         SELECT 1 FROM respostas r
         WHERE r.user_expandido_id = u.id
           AND r.id_pergunta = '25edf1cb-ed2f-4ae2-a85d-ef5c6f0af8ea'
-          AND r.resposta ILIKE '%' || p_genero || '%'
+          AND public.normalizar_texto(r.resposta) ILIKE '%' || public.normalizar_texto(p_genero) || '%'
       ))
       AND (p_raca IS NULL OR EXISTS (
         SELECT 1 FROM respostas r
         WHERE r.user_expandido_id = u.id
           AND r.id_pergunta = '9670c817-5db6-4055-8fc9-04cc15d6cd3e'
-          AND r.resposta ILIKE '%' || p_raca || '%'
+          AND public.normalizar_texto(r.resposta) ILIKE '%' || public.normalizar_texto(p_raca) || '%'
       ))
       AND (p_renda IS NULL OR EXISTS (
         SELECT 1 FROM respostas r
         WHERE r.user_expandido_id = u.id
           AND r.id_pergunta = '98d09feb-ec9a-4a30-882d-7de8099c153f'
-          AND r.resposta ILIKE '%' || p_renda || '%'
+          AND public.normalizar_texto(r.resposta) ILIKE '%' || public.normalizar_texto(p_renda) || '%'
       ))
       AND (p_busca IS NULL OR (
-           u.nome ILIKE '%' || p_busca || '%'
-        OR u.sobrenome ILIKE '%' || p_busca || '%'
-        OR u.email ILIKE '%' || p_busca || '%'
+           public.normalizar_texto(u.nome) ILIKE '%' || public.normalizar_texto(p_busca) || '%'
+        OR public.normalizar_texto(u.sobrenome) ILIKE '%' || public.normalizar_texto(p_busca) || '%'
+        OR public.normalizar_texto(u.email) ILIKE '%' || public.normalizar_texto(p_busca) || '%'
         OR EXISTS (
              SELECT 1 FROM respostas r
              WHERE r.user_expandido_id = u.id
                AND r.id_pergunta = '32b1a387-a2a9-4f79-af30-d32026af64fe'
-               AND r.resposta ILIKE '%' || p_busca || '%'
+               AND public.normalizar_texto(r.resposta) ILIKE '%' || public.normalizar_texto(p_busca) || '%'
            )
         OR ra.ra ILIKE '%' || p_busca || '%'
         OR ra.ra_legado ILIKE '%' || p_busca || '%'
@@ -125,7 +116,4 @@ BEGIN
 
   RETURN v_result;
 END;
-$BODY$;
-
-ALTER FUNCTION public.get_estudantes_matriculados_turma_filtros_v2(p_ano_semestre text, p_turno text DEFAULT NULL::text, p_curso text DEFAULT NULL::text, p_busca text DEFAULT NULL::text, p_genero text DEFAULT NULL::text, p_raca text DEFAULT NULL::text, p_renda text DEFAULT NULL::text, p_id_turma uuid DEFAULT NULL::uuid, p_area text DEFAULT NULL::text, p_page integer DEFAULT 1, p_limit integer DEFAULT 20)
-    OWNER TO postgres;
+$function$

@@ -2,10 +2,40 @@
 const props = defineProps<{
     candidatos: any[];
     totalCount: number;
+    statsData?: Record<string, any>; // Optional stats data from backend
 }>();
 
 // Compute statistics from candidates
 const stats = computed(() => {
+    // If statsData is provided, use it
+    if (props.statsData) {
+        const total = props.statsData.total || props.totalCount || 0;
+        
+        // PCD Stats from server data
+        // Expecting statsData.pcd to be object like { "Sim": 5, "Não": 100 }
+        const pcdCount = props.statsData.pcd?.['Sim'] || 0;
+        const pcdPercentage = total > 0 ? Math.round((pcdCount / total) * 100) : 0;
+
+        const processStats = (data: Record<string, number> = {}) => {
+            return Object.entries(data)
+                .map(([name, count]) => ({ 
+                    name: name || 'Não informado', 
+                    count: count as number, 
+                    percentage: total > 0 ? Math.round(((count as number) / total) * 100) : 0 
+                }))
+                .sort((a, b) => b.count - a.count);
+        };
+
+        return {
+            pcdCount,
+            pcdPercentage,
+            genderData: processStats(props.statsData.genero),
+            raceData: processStats(props.statsData.raca),
+            incomeData: processStats(props.statsData.renda)
+        };
+    }
+
+    // Fallback: Legacy behavior (Client-side from candidatos array)
     const all = props.candidatos;
     
     // PCD Stats
@@ -85,7 +115,7 @@ const stats = computed(() => {
                     </div>
                     <div class="h-1.5 bg-white/5 rounded-full overflow-hidden">
                         <div 
-                            class="h-full bg-gradient-to-r from-primary to-primary/60 rounded-full transition-all"
+                            class="h-full bg-gradient-to-r from-primary to-primary rounded-full transition-all"
                             :style="{ width: item.percentage + '%' }"
                         ></div>
                     </div>

@@ -68,4 +68,19 @@ onMounted(() => {
 - **Independente**: Não depende do carregamento de arquivos `.js` ou `.css` externos.
 - **Universal**: Resolve tanto a primeira carga (F5) quanto o estado de hidratação.
 
-Essa técnica pode ser replicada em qualquer projeto Nuxt que exija uma experiência de carregamento "premium" e sem artefatos visuais.
+
+## Atualizações e Ajustes
+
+### Redução do Timeout de Segurança (16/01/2026)
+O `safetyTimeout` em `app.vue` foi reduzido de **8000ms (8s)** para **2000ms (2s)**.
+
+**Motivo:**
+O tempo de 8 segundos estava causando uma percepção de lentidão excessiva ("Aguarde" travado) quando ocorriam erros silenciosos de carregamento ou falhas de hidratação. Com 2 segundos, o loader é removido mais rapidamente, permitindo que o usuário veja o erro ou o conteúdo parcial sem ficar preso na tela de carregamento.
+
+```typescript
+// app.vue (Ajustado)
+// Safety: 2s max (reduced from 8s)
+safetyTimeout = setTimeout(() => {
+    isLoading.value = false
+}, 2000)
+```

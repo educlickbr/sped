@@ -169,13 +169,13 @@ const userInitial = computed(() => {
           
           <div class="bg-div-15 border border-secondary/10 rounded-xl overflow-hidden shadow-sm">
             <!-- Matrículas -->
-            <button class="menu-item group cursor-not-allowed opacity-60">
+            <button @click="handleNavigation('/matriculas')" class="menu-item group">
               <div class="menu-icon bg-orange-500/10 text-orange-500">
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
               </div>
               <div class="flex flex-col text-left">
                 <span class="text-sm font-bold text-text group-hover:text-primary transition-colors">Matrículas</span>
-                <span class="text-[10px] text-secondary font-medium">Gestão de matrículas (Em breve)</span>
+                <span class="text-[10px] text-secondary font-medium">Gestão de matrículas</span>
               </div>
             </button>
 
