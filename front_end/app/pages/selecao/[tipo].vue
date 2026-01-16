@@ -236,12 +236,17 @@ onMounted(() => {
 });
 
 // --- HANDLERS ---
-const handleCandidateUpdate = (payload: { id_processo: string, nota_total_processo: number }) => {
+const handleCandidateUpdate = (payload: { id_processo: string, nota_total_processo?: number, deferimento?: string, status?: string }) => {
     const index = candidatos.value.findIndex(c => c.id_processo === payload.id_processo);
     if (index !== -1) {
-        candidatos.value[index].nota_total_processo = payload.nota_total_processo;
+        if (payload.nota_total_processo !== undefined) candidatos.value[index].nota_total_processo = payload.nota_total_processo;
+        if (payload.deferimento !== undefined) candidatos.value[index].deferimento = payload.deferimento;
+        if (payload.status !== undefined) candidatos.value[index].status_processo = payload.status;
+
         if (selectedCandidateForData.value && selectedCandidateForData.value.id_processo === payload.id_processo) {
-             selectedCandidateForData.value.nota_total_processo = payload.nota_total_processo;
+             if (payload.nota_total_processo !== undefined) selectedCandidateForData.value.nota_total_processo = payload.nota_total_processo;
+             if (payload.deferimento !== undefined) selectedCandidateForData.value.deferimento = payload.deferimento;
+             if (payload.status !== undefined) selectedCandidateForData.value.status_processo = payload.status;
         }
     }
 }

@@ -287,6 +287,23 @@ const handleSave = async (question: any) => {
             // But relying on parent update flow is safer.
         }
 
+        // Check for Deferimento Question IDs and emit update
+        const DEFERIMENTO_IDS = [
+            '518e1943-1a84-4017-b283-67b3914e46e2', // Regulares
+            'cdf7ad73-69bd-4823-978b-ea5367cd1d0b'  // Cursos Livres
+        ];
+
+        if (DEFERIMENTO_IDS.includes(question.id_pergunta)) {
+            emit('update-candidate', {
+                id_processo: props.candidato.id_processo,
+                deferimento: answers.value[question.id_pergunta]
+            });
+            // Also update local prop for immediate reactivity inside modal if used
+            if (props.candidato) {
+                props.candidato.deferimento = answers.value[question.id_pergunta];
+            }
+        }
+
         // Refresh data to update totals or dependencies if needed
         if (isAvaliarMode.value && question.tipo === 'numero') {
              // Maybe refresh to get new total? Or just calc locally.
