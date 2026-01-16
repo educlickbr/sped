@@ -113,27 +113,43 @@ const fetchData = async () => {
     
     isLoading.value = true
     try {
-        let rpcName = 'nxt_get_respostas_nao_arquivos_area'
-        let rpcParams: any = {
-             p_user_id: props.candidato.id_user_expandido,
-             p_area: props.area,
-             p_tipo_processo: props.tipoProcesso,
-             p_tipo_candidatura: props.tipoCandidatura
-        }
+        let data: any = []
+        let error: any = null
 
         if (props.mode === 'documentos') {
-            rpcName = 'nxt_get_respostas_arquivos_area'
-        } else if (props.mode === 'avaliar') {
-            rpcName = 'nxt_get_perguntas_avaliacao_com_respostas'
-            rpcParams = {
-                p_area: props.area,
-                p_id_turma: props.candidato.id_turma,
-                p_id_user_expandido: props.candidato.id_user_expandido,
-                p_id_processo: props.candidato.id_processo
+             const response = await $fetch<any>('/api/common/documentos', {
+                 params: {
+                     area: props.area,
+                     tipo_candidatura: props.tipoCandidatura,
+                     tipo_processo: props.tipoProcesso,
+                     user_id: props.candidato.id_user_expandido,
+                     id_turma: props.candidato.id_turma
+                 }
+             })
+             data = response.documentos
+        } else {
+            let rpcName = 'nxt_get_respostas_nao_arquivos_area'
+            let rpcParams: any = {
+                 p_user_id: props.candidato.id_user_expandido,
+                 p_area: props.area,
+                 p_tipo_processo: props.tipoProcesso,
+                 p_tipo_candidatura: props.tipoCandidatura
             }
+
+            if (props.mode === 'avaliar') {
+                rpcName = 'nxt_get_perguntas_avaliacao_com_respostas'
+                rpcParams = {
+                    p_area: props.area,
+                    p_id_turma: props.candidato.id_turma,
+                    p_id_user_expandido: props.candidato.id_user_expandido,
+                    p_id_processo: props.candidato.id_processo
+                }
+            }
+            
+            const res = await (client.rpc as any)(rpcName, rpcParams)
+            data = res.data
+            error = res.error
         }
-        
-        const { data, error } = await (client.rpc as any)(rpcName, rpcParams)
 
         if (error) throw error
         

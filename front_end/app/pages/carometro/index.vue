@@ -1,17 +1,12 @@
 <script setup lang="ts">
 import { getAnoSemestre } from '../../../utils/seletivo';
-import ModalDadosCandidato from '../../components/ModalDadosCandidato.vue';
-import ModalDiario from '../../components/ModalDiario.vue';
-import ModalStatusMatricula from '../../components/ModalStatusMatricula.vue';
 import { useAppStore } from '~/stores/app';
-import { useToast } from '../../../composables/useToast';
 
 const store = useAppStore();
-const { showToast } = useToast();
 const hashBase = computed(() => store.hash_base || '');
 
 // State
-const activeTab = ref('alunos'); // alunos | declaracao | atestado
+const activeTab = ref('alunos'); // alunos (only tab for carometro)
 const anoSemestre = ref(getAnoSemestre());
 const isLoading = ref(false);
 const isLoadingAlunos = ref(false);
@@ -27,26 +22,13 @@ const pagination = ref({
 });
 const limit = 20;
 
-// Modal State
-const showDataModal = ref(false);
-const selectedCandidateForData = ref<any>(null);
-const modalMode = ref<'dados' | 'documentos' | 'avaliar'>('dados');
-
-// Diario Modal State
-const showDiarioModal = ref(false);
-const selectedCandidateForDiario = ref<any>(null);
-
-// Status Modal State
-const showStatusModal = ref(false);
-const selectedCandidateForStatus = ref<any>(null);
-
 // Filters
 const filters = ref({
     turno: '',
     area: '',
     curso: '', // This will hold the turma ID actually
-    busca: '',
-    status: 'Ativa'
+    busca: ''
+    // Status REMOVED - Always 'Ativo'
 });
 
 // Options
@@ -87,7 +69,7 @@ const fetchStats = async () => {
                 area: !filters.value.curso ? (filters.value.area || null) : null,
                 turno: !filters.value.curso ? (filters.value.turno || null) : null,
                 busca: filters.value.busca || null,
-                status: filters.value.status || null
+                status: 'Ativa' // HARDCODED
             }
         });
         dashboardStats.value = data;
@@ -109,7 +91,7 @@ const fetchAlunos = async (page = 1) => {
                 turno: !filters.value.curso ? (filters.value.turno || null) : null, // Only send turno if no specific course selected
                 
                 busca: filters.value.busca || null,
-                status: filters.value.status || null,
+                status: 'Ativa', // HARDCODED
                 page: page,
                 limit: limit
             }
@@ -155,70 +137,6 @@ const nextPage = async () => {
     }
 };
 
-const openDocumentModal = async (aluno: any) => {
-    // Refresh hash ensures signed URLs are fresh
-    await store.refreshHash();
-    
-    // Map aluno structure to what ModalDadosCandidato expects
-    selectedCandidateForData.value = {
-        ...aluno,
-        id_user_expandido: aluno.aluno_id, // Map from RPC result
-        // area_curso is already present in aluno object from RPC
-    };
-    
-    modalMode.value = 'documentos';
-    showDataModal.value = true;
-};
-
-const handleCandidateUpdate = () => {
-    // Optional: Refresh list if needed, or just close
-    // fetchAlunos(pagination.value.pagina_atual);
-};
-
-const openDiarioModal = (aluno: any) => {
-    selectedCandidateForDiario.value = {
-        ...aluno,
-        aluno_id: aluno.aluno_id,
-        id_turma: aluno.id_turma
-    };
-    showDiarioModal.value = true;
-};
-
-const openStatusModal = (aluno: any) => {
-    selectedCandidateForStatus.value = aluno;
-    showStatusModal.value = true;
-};
-
-const handleStatusUpdate = () => {
-    // Refresh student list to show new status
-    fetchAlunos(pagination.value.pagina_atual);
-    // Also refresh stats
-    fetchStats();
-};
-
-const handleRematricula = async (aluno: any) => {
-    if (!confirm('Você tem certeza que deseja rematricular este aluno?')) return;
-
-    try {
-        const response: any = await $fetch('/api/matriculas/rematricula', {
-            method: 'POST',
-            body: {
-                id_user_expandido: aluno.aluno_id,
-                id_turma_atual: aluno.id_turma
-            }
-        });
-
-        showToast(response.message, { type: 'info' });
-        
-        // Refresh list to potentially show changes (e.g. if we add a 'rematriculado' indicator later)
-        fetchAlunos(pagination.value.pagina_atual);
-
-    } catch (e: any) {
-        console.error('Erro na rematrícula:', e);
-        showToast(e.statusMessage || 'Erro ao realizar rematrícula', { type: 'error' });
-    }
-};
-
 // Watchers
 watch([anoSemestre, () => filters.value.turno, () => filters.value.area], async () => {
     await store.refreshHash();
@@ -241,11 +159,6 @@ watch(() => filters.value.busca, () => {
         fetchStats();
     }, 500);
 });
-watch(() => filters.value.status, async () => {
-    await store.refreshHash();
-    fetchAlunos(1);
-    fetchStats();
-});
 
 onMounted(() => {
     fetchTurmas();
@@ -257,34 +170,12 @@ onMounted(() => {
         <div class="bg-transparent md:bg-div-15 rounded-none md:rounded-xl p-0 md:p-8 flex-1 w-full">
             
             <!-- HEADER / TABS -->
-            <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-8">
-                <!-- Tabs -->
-                <div class="flex items-center gap-6 border-b border-secondary/10 w-full md:w-auto pb-1 overflow-x-auto no-scrollbar">
-                    <button 
-                        @click="activeTab = 'alunos'"
-                        class="text-sm font-bold pb-2 relative transition-colors whitespace-nowrap"
-                        :class="activeTab === 'alunos' ? 'text-primary' : 'text-secondary hover:text-white'"
-                    >
-                        Alunos
-                        <span v-if="activeTab === 'alunos'" class="absolute bottom-[-1px] left-0 w-full h-0.5 bg-primary rounded-full"></span>
-                    </button>
-                    <button 
-                        @click="activeTab = 'declaracao'"
-                        class="text-sm font-bold pb-2 relative transition-colors whitespace-nowrap"
-                        :class="activeTab === 'declaracao' ? 'text-primary' : 'text-secondary hover:text-white'"
-                    >
-                        Declaração de Matrícula
-                        <span v-if="activeTab === 'declaracao'" class="absolute bottom-[-1px] left-0 w-full h-0.5 bg-primary rounded-full"></span>
-                    </button>
-                    <button 
-                        @click="activeTab = 'atestado'"
-                        class="text-sm font-bold pb-2 relative transition-colors whitespace-nowrap"
-                        :class="activeTab === 'atestado' ? 'text-primary' : 'text-secondary hover:text-white'"
-                    >
-                        Atestado Médico
-                        <span v-if="activeTab === 'atestado'" class="absolute bottom-[-1px] left-0 w-full h-0.5 bg-primary rounded-full"></span>
-                    </button>
-                </div>
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 mb-4">
+                 <!-- Title for Carômetro instead of Tabs -->
+                 <h2 class="text-xl font-bold text-white flex items-center gap-2">
+                    <svg class="w-6 h-6 text-primary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+                    Carômetro
+                 </h2>
 
                 <!-- Global Year Select -->
                 <div class="relative w-full md:w-48">
@@ -295,6 +186,8 @@ onMounted(() => {
                     </select>
                 </div>
             </div>
+            
+            <p class="text-xs text-secondary/70 mb-8">Visualização de alunos com matrícula ativa.</p>
 
             <!-- FILTER BAR (2 Rows, Grid 12) -->
             <div class="bg-[#16161E] border border-white/5 rounded-xl p-4 mb-6">
@@ -305,7 +198,7 @@ onMounted(() => {
                 </h4>
 
                 <div class="space-y-3">
-                    <!-- Row 1: Area (3) | Curso (6) | Turno (3) -->
+                    <!-- Row 1: Area | Curso | Turno -->
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
                          <!-- Area -->
                         <div class="md:col-span-3">
@@ -339,10 +232,10 @@ onMounted(() => {
                         </div>
                     </div>
 
-                    <!-- Row 2: Search (9) | Status (3) -->
+                    <!-- Row 2: Search (Full Width) -->
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-3">
                          <!-- Search -->
-                        <div class="md:col-span-9">
+                        <div class="md:col-span-12">
                              <input 
                                 v-model="filters.busca"
                                 type="text" 
@@ -350,23 +243,12 @@ onMounted(() => {
                                 class="w-full bg-[#0f0f15] border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:border-primary focus:outline-none placeholder-secondary/50 h-10"
                             />
                         </div>
-
-                         <!-- Status -->
-                        <div class="md:col-span-3">
-                            <select v-model="filters.status" class="w-full bg-[#0f0f15] border border-white/10 rounded-lg px-3 py-2 text-sm text-white focus:border-primary focus:outline-none appearance-none h-10">
-                                <option value="">Status: Todos</option>
-                                <option value="Ativa">Ativa</option>
-                                <option value="Cancelada">Cancelada</option>
-                                <option value="Trancamento">Trancamento</option>
-                                <option value="Anulada">Anulada</option>
-                            </select>
-                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- CONTENT AREA -->
-            <div v-if="activeTab === 'alunos'" class="space-y-4">
+            <div class="space-y-4">
                 
                 <!-- Loading State -->
                 <div v-if="isLoadingAlunos" class="flex flex-col items-center justify-center py-20">
@@ -385,14 +267,14 @@ onMounted(() => {
 
                 <!-- Student List (Card Layout) -->
                 <div v-else class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-                    <div v-for="aluno in alunos" :key="aluno.id" class="bg-[#16161E] border border-white/5 rounded-xl flex md:overflow-visible overflow-hidden hover:border-primary/30 transition-colors group relative min-h-[160px]">
+                    <div v-for="aluno in alunos" :key="aluno.id" class="bg-[#16161E] border border-white/5 rounded-xl flex md:overflow-visible overflow-hidden hover:border-primary/30 transition-colors group relative min-h-[120px]">
                         
                         <!-- Left: Full Height Photo -->
-                        <div class="w-32 relative flex-shrink-0 bg-white/5 border-r border-white/5 group/photo hover:z-50">
+                        <div class="w-28 relative flex-shrink-0 bg-white/5 border-r border-white/5 group/photo hover:z-50">
                                 <img 
                                 v-if="aluno.foto_resposta && hashBase" 
                                 :src="hashBase + aluno.foto_resposta" 
-                                class="absolute inset-0 w-full h-full object-cover transition-all duration-300 group-hover/photo:scale-[1.8] group-hover/photo:translate-x-16 group-hover/photo:shadow-[0_0_30px_rgba(0,0,0,0.5)] z-10 rounded-l-xl md:rounded-lg"
+                                class="absolute inset-0 w-full h-full object-cover transition-all duration-300 group-hover/photo:scale-[1.8] group-hover/photo:translate-x-14 group-hover/photo:shadow-[0_0_30px_rgba(0,0,0,0.5)] z-10 rounded-l-xl md:rounded-lg"
                                 alt="Foto"
                                 @error="(e: any) => e.target.style.display = 'none'"
                             />
@@ -402,35 +284,13 @@ onMounted(() => {
                             </div>
                         </div>
 
-                        <!-- Right: Info + Actions -->
-                        <div class="flex-1 p-3 flex flex-col justify-between min-w-0 z-10 gap-3 relative">
+                        <!-- Right: Info (Simplified) -->
+                        <div class="flex-1 p-3 flex flex-col justify-center min-w-0 z-10 gap-2 relative">
                             
-                            <!-- Status Bullet (Absolute Top Right) -->
-                             <div 
-                                class="absolute top-3 right-3 flex items-center gap-1.5 px-2 py-0.5 rounded border"
-                                :class="{
-                                    'bg-green-500/10 border-green-500/20 text-green-500': aluno.status === 'Ativo',
-                                    'bg-red-500/10 border-red-500/20 text-red-500': aluno.status === 'Cancelado',
-                                    'bg-yellow-500/10 border-yellow-500/20 text-yellow-500': aluno.status === 'Trancado',
-                                    'bg-white/5 border-white/10 text-secondary': !['Ativo', 'Cancelado', 'Trancado'].includes(aluno.status)
-                                }"
-                             >
-                                    <span 
-                                        class="w-1.5 h-1.5 rounded-full"
-                                        :class="{
-                                            'bg-green-500': aluno.status === 'Ativo',
-                                            'bg-red-500': aluno.status === 'Cancelado',
-                                            'bg-yellow-500': aluno.status === 'Trancado',
-                                            'bg-secondary': !['Ativo', 'Cancelado', 'Trancado'].includes(aluno.status)
-                                        }"
-                                    ></span>
-                                    <span class="text-[9px] font-bold uppercase tracking-wider">{{ aluno.status }}</span>
-                                </div>
-
-                            <!-- Top Info Block -->
+                            <!-- Main Info Block -->
                             <div class="space-y-1">
                                 <!-- Name & Email -->
-                                <div class="pr-20"> <!-- Padding right to avoid overlap with status -->
+                                <div class=""> 
                                     <h5 class="text-sm font-bold text-white truncate leading-tight" :title="aluno.nome + ' ' + aluno.sobrenome">
                                         {{ aluno.nome }} {{ aluno.sobrenome }}
                                     </h5>
@@ -451,15 +311,12 @@ onMounted(() => {
                                          <p class="text-[10px] text-white font-medium truncate" :title="aluno.nome_curso_turno || aluno.nome_curso">{{ aluno.nome_curso }}</p>
                                     </div>
 
-                                    <!-- Turno w/ Toggle -->
+                                    <!-- Turno -->
                                     <div class="flex items-end justify-between pr-2">
                                         <div>
                                             <p class="text-[9px] text-secondary uppercase tracking-wider font-bold mb-0.5">Turno</p>
                                             <p class="text-[10px] text-white font-medium">{{ aluno.turno }}</p>
                                         </div>
-                                        <button class="text-secondary hover:text-primary transition-colors p-0.5 rounded hover:bg-white/5" title="Alterar Turno (Em breve)">
-                                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
-                                        </button>
                                     </div>
 
                                     <!-- RA -->
@@ -467,47 +324,6 @@ onMounted(() => {
                                          <p class="text-[9px] text-secondary uppercase tracking-wider font-bold mb-0.5">RA</p>
                                          <p class="text-[10px] text-white font-medium font-mono">{{ aluno.ra || aluno.ra_legado || '---' }}</p>
                                     </div>
-                                </div>
-                            </div>
-
-                            <!-- Bottom: Status & Action Bar -->
-                            <div class="flex items-center justify-start mt-1 pt-2 border-t border-white/5">
-                                
-                                <!-- Action Buttons -->
-                                <div class="flex items-center gap-1">
-                                    <button 
-                                        @click="openDocumentModal(aluno)"
-                                        class="px-2 py-1 rounded bg-white/5 hover:bg-white/10 text-[9px] font-bold text-secondary hover:text-white transition-colors" 
-                                        title="Ver Documentos"
-                                    >
-                                        Documentos
-                                    </button>
-                                    <button 
-                                        @click="openDiarioModal(aluno)"
-                                        class="px-2 py-1 rounded bg-white/5 hover:bg-white/10 text-[9px] font-bold text-secondary hover:text-white transition-colors" 
-                                        title="Ver Diário"
-                                    >
-                                        Diário
-                                    </button>
-                                    <button 
-                                        @click="openStatusModal(aluno)"
-                                        class="px-2 py-1 rounded bg-white/5 hover:bg-white/10 text-[9px] font-bold text-secondary hover:text-white transition-colors" 
-                                        title="Ver Status"
-                                    >
-                                        Status
-                                    </button>
-                                    <button 
-                                        v-if="aluno.area_curso && aluno.area_curso.toLowerCase() === 'regulares'"
-                                        @click="handleRematricula(aluno)"
-                                        class="px-2 py-1 rounded bg-white/5 hover:bg-white/10 text-[9px] font-bold text-secondary hover:text-white transition-colors" 
-                                        title="Rematrícula"
-                                    >
-                                        Rematrícula
-                                    </button>
-                                    <div class="w-px h-4 bg-white/10 mx-0.5"></div>
-                                    <button class="p-1.5 rounded bg-primary/10 hover:bg-primary/20 text-primary transition-colors" title="Enviar Email">
-                                         <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -539,16 +355,6 @@ onMounted(() => {
                 </div>
             </div>
 
-            <!-- Placeholder for other tabs -->
-            <div v-else class="flex flex-col items-center justify-center py-20 opacity-50 border border-dashed border-white/10 rounded-xl">
-                 <div class="text-4xl mb-4 text-secondary/50">
-                    <svg v-if="activeTab === 'declaracao'" class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                    <svg v-else class="w-16 h-16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path></svg>
-                 </div>
-                 <p class="text-white font-medium">Visualização de {{ activeTab }}</p>
-                 <p class="text-xs text-secondary mt-1">Funcionalidade em desenvolvimento.</p>
-            </div>
-
         </div>
 
         <template #sidebar>
@@ -558,30 +364,5 @@ onMounted(() => {
                 :statsData="dashboardStats"
             />
         </template>
-
-        <!-- Modals -->
-        <ModalDadosCandidato
-            :isOpen="showDataModal"
-            :candidato="selectedCandidateForData"
-            :area="selectedCandidateForData?.area_curso || ''"
-            :tipoProcesso="'matricula'"
-            :tipoCandidatura="'estudante'"
-            :mode="modalMode"
-            @close="showDataModal = false"
-            @update-candidate="handleCandidateUpdate"
-        />
-
-        <ModalDiario
-            :isOpen="showDiarioModal"
-            :aluno="selectedCandidateForDiario"
-            @close="showDiarioModal = false"
-        />
-
-        <ModalStatusMatricula
-            :isOpen="showStatusModal"
-            :aluno="selectedCandidateForStatus"
-            @close="showStatusModal = false"
-            @update-status="handleStatusUpdate"
-        />
     </NuxtLayout>
 </template>

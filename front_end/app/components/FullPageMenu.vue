@@ -180,13 +180,13 @@ const userInitial = computed(() => {
             </button>
 
             <!-- Carômetro -->
-            <button class="menu-item group border-t border-secondary/5 cursor-not-allowed opacity-60">
+            <button @click="handleNavigation('/carometro')" class="menu-item group border-t border-secondary/5">
               <div class="menu-icon bg-orange-500/10 text-orange-500">
                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
               </div>
               <div class="flex flex-col text-left">
                 <span class="text-sm font-bold text-text group-hover:text-primary transition-colors">Carômetro</span>
-                <span class="text-[10px] text-secondary font-medium">Visualização de turmas (Em breve)</span>
+                <span class="text-[10px] text-secondary font-medium">Visualização de turmas</span>
               </div>
             </button>
 

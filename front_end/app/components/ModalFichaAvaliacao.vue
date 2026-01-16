@@ -261,6 +261,18 @@ const generateBody = (items: any[]) => {
         return dateStr;
     };
 
+    const calculateAge = (birthDate: string) => {
+        if (!birthDate) return 'N/A';
+        const today = new Date();
+        const birth = new Date(birthDate);
+        let age = today.getFullYear() - birth.getFullYear();
+        const m = today.getMonth() - birth.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birth.getDate())) {
+            age--;
+        }
+        return age;
+    };
+
     const tituloProcesso = `Processo seletivo ${props.anoSemestre || ''}`;
     const subtituloProcesso = '';
 
@@ -306,6 +318,7 @@ const generateBody = (items: any[]) => {
                         <div class="linha"><strong>Nome completo:</strong> ${upper(aluno.nome)}</div>
                         <div class="linha"><strong>Data da Prova: </strong>${formatDate(t.data_prova)}</div>
                         <div class="linha"><strong>Etnia: </strong> ${fmt(aluno.cor_raca)}</div>
+                        <div class="linha"><strong>Idade: </strong> ${calculateAge(aluno.data_nascimento)} anos</div>
                         <div class="linha"><strong>Gênero: </strong> ${fmt(aluno.identidade_genero)}</div>
                         <div class="linha"><strong>Cursar sem bolsa? </strong> ${fmt(aluno.condicao_receber_bolsa)}</div>
                         <div class="linha"><strong>Experiência na área?: </strong> ________</div>
