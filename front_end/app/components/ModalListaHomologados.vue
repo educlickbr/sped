@@ -536,7 +536,7 @@ const generateFullHTML = (items: any[]) => {
                              </button>
                              
                              <!-- Per-class Print Button -->
-                             <button 
+                             <button
                                 @click.stop="printClass(turma)"
                                 class="p-2 text-primary hover:text-primary hover:bg-white/10 rounded-lg transition-colors ml-2 border-l border-white/10 pl-4"
                                 title="Imprimir somente esta turma"
@@ -571,6 +571,7 @@ const generateFullHTML = (items: any[]) => {
                 </button>
 
                 <button 
+                    v-if="activeTab === 'preview'"
                     @click="printPDF()"
                     class="px-6 py-2.5 bg-primary hover:bg-primary-600 text-white font-bold rounded-lg transition-colors flex items-center gap-2"
                 >
